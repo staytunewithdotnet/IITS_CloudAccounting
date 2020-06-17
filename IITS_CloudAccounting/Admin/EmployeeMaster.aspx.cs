@@ -658,8 +658,8 @@ namespace IITS_CloudAccounting.Admin
                 //message.Body = parser2.Parse();
                 //message.IsBodyHtml = true;
                 //SmtpClientForCompany.smtpClient(this.hfCompanyID.Value).Send(message);
-                Common.CommonHandler.SendSMTPEmail(hfCompanyID.Value, address1, str1.ToUpper() + " invites you to track time and expenses in Bill Transact", parser2.Parse(), true);
-                //await Common.CommonHandler.SendMail(hfCompanyID.Value, address1, str1.ToUpper() + " invites you to track time and expenses in Bill Transact", parser2.Parse(), true);
+                //Common.CommonHandler.SendSMTPEmail(hfCompanyID.Value, address1, str1.ToUpper() + " invites you to track time and expenses in Bill Transact", parser2.Parse(), true);
+                await Common.CommonHandler.SendMail(hfCompanyID.Value, address1, str1.ToUpper() + " invites you to track time and expenses in Bill Transact", parser2.Parse(), true);
                 File.Delete(Path.Combine(path1, "Staff.html"));
             }
             catch (Exception ex)

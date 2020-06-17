@@ -145,8 +145,8 @@ namespace IITS_CloudAccounting.Admin
                 //message.Body = parser.Parse();
                 //message.IsBodyHtml = true;
                 //SmtpClientForCompany.smtpClient(this.hfCompanyID.Value).Send(message);
-                Common.CommonHandler.SendSMTPEmail(hfCompanyID.Value, email, lblSubject.Text, parser.Parse(), true);
-                //await Common.CommonHandler.SendMail(hfCompanyID.Value, email, lblSubject.Text, parser.Parse(), true);
+                //Common.CommonHandler.SendSMTPEmail(hfCompanyID.Value, email, lblSubject.Text, parser.Parse(), true);
+                await Common.CommonHandler.SendMail(hfCompanyID.Value, email, lblSubject.Text, parser.Parse(), true);
             }
       catch (Exception ex)
       {

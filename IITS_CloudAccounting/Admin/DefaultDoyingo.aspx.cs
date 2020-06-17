@@ -405,8 +405,8 @@ namespace IITS_CloudAccounting.Admin
                 //        smtp.Credentials = new NetworkCredential("support@wejustlink.ca", "Yasmin@55");
                 //        smtp.Send(message);
 
-                Common.CommonHandler.SendSMTPEmail("0", email, "Welcome to Bill Transact! Here are your account details", parser.Parse(), true);
-                //await Common.CommonHandler.SendMail("0", email, "Welcome to Bill Transact! Here are your account details", parser.Parse(), true);
+                //Common.CommonHandler.SendSMTPEmail("0", email, "Welcome to Bill Transact! Here are your account details", parser.Parse(), true);
+                await Common.CommonHandler.SendMail("0", email, "Welcome to Bill Transact! Here are your account details", parser.Parse(), true);
             }
       catch (Exception ex)
       {

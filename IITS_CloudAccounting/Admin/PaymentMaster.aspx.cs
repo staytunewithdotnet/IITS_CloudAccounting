@@ -706,8 +706,8 @@ namespace IITS_CloudAccounting.Admin
                 //message.Body = parser2.Parse();
                 //message.IsBodyHtml = true;
 
-                Common.CommonHandler.SendSMTPEmail(hfCompanyID.Value, address1, displayName + " has received your payment for invoice " + str1 + " in Bill Transact", parser2.Parse(), true);
-                //await Common.CommonHandler.SendMail(hfCompanyID.Value, address1, displayName + " has received your payment for invoice " + str1 + " in Bill Transact", parser2.Parse(), true);
+                //Common.CommonHandler.SendSMTPEmail(hfCompanyID.Value, address1, displayName + " has received your payment for invoice " + str1 + " in Bill Transact", parser2.Parse(), true);
+                await Common.CommonHandler.SendMail(hfCompanyID.Value, address1, displayName + " has received your payment for invoice " + str1 + " in Bill Transact", parser2.Parse(), true);
                 //SmtpClientForCompany.smtpClient(this.hfCompanyID.Value).Send(message);
             }
             catch (Exception ex)

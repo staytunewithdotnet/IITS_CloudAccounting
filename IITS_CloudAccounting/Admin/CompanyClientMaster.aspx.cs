@@ -660,7 +660,7 @@ namespace IITS_CloudAccounting.Admin
                 this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add");
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        protected async void btnSubmit_Click(object sender, EventArgs e)
         {
             if (!this.Page.IsValid)
                 return;
@@ -731,7 +731,7 @@ namespace IITS_CloudAccounting.Admin
                 if (num != 0)
                 {
                     if (this.chkSend.Checked)
-                        this.SendMailNew(num);
+                      await  this.SendMailNew(num);
                     StaffClientAssignDetailBLL clientAssignDetailBll = new StaffClientAssignDetailBLL();
                     MembershipUser user = Membership.GetUser();
                     if (user != null)
@@ -862,7 +862,7 @@ namespace IITS_CloudAccounting.Admin
             }
         }
 
-        private void SendMailNew(int clientID)
+        private async Task SendMailNew(int clientID)
         {
             this.objCompanyMasterDT = this.objCompanyMasterBll.GetDataByCompanyID(int.Parse(this.hfCompanyID.Value));
             string str1 = this.objCompanyMasterDT.Rows[0]["CompanyName"].ToString();
@@ -953,8 +953,8 @@ namespace IITS_CloudAccounting.Admin
                 //message.Body = parser2.Parse();
                 //message.IsBodyHtml = true;
                 //SmtpClientForCompany.smtpClient(this.hfCompanyID.Value).Send(message);
-                Common.CommonHandler.SendSMTPEmail(hfCompanyID.Value, address1, str1.ToUpper() + " is now invoicing you with Bill Transact", parser2.Parse(), true);
-                //await Common.CommonHandler.SendMail(hfCompanyID.Value, address1, str1.ToUpper() + " is now invoicing you with Bill Transact", parser2.Parse(), true);
+                //Common.CommonHandler.SendSMTPEmail(hfCompanyID.Value, address1, str1.ToUpper() + " is now invoicing you with Bill Transact", parser2.Parse(), true);
+                await Common.CommonHandler.SendMail(hfCompanyID.Value, address1, str1.ToUpper() + " is now invoicing you with Bill Transact", parser2.Parse(), true);
                 File.Delete(Path.Combine(path1, "Client.html"));
             }
             catch (Exception ex)
@@ -963,7 +963,7 @@ namespace IITS_CloudAccounting.Admin
             }
         }
 
-        protected  void btnUpdate_Click(object sender, EventArgs e)
+        protected async  void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1013,7 +1013,7 @@ namespace IITS_CloudAccounting.Admin
                     if (this.objCompanyClientMasterBll.UpdateCompanyClient(int.Parse(this.hfCompanyClientID.Value), int.Parse(this.hfCompanyID.Value), this.txtClientName.Text.Trim(), iCurrencyID, this.chkEmail.Checked, this.chkSnailMail.Checked, this.txtEmail.Text, this.txtFirstName.Text.Trim(), this.txtLastName.Text.Trim(), this.txtHomePhone.Text.Trim(), this.txtMobile.Text.Trim(), this.chkAssignUsername.Checked, this.txtUsername.Text.Trim(), this.txtAddress1.Text.Trim(), this.txtAddress2.Text.Trim(), iCountryID, iStateID, iCityID, this.txtZipCode.Text.Trim(), this.txtAddress1Secondary.Text.Trim(), this.txtAddress2Secondary.Text.Trim(), iSecondaryCountryID, iSecondaryStateID, iSecondaryCityID, this.txtZipCodeSecondary.Text.Trim(), iIndustryID, this.ddlCompanySize.SelectedItem.Text, this.txtBussinessPhone.Text.Trim(), this.txtFax.Text.Trim(), this.txtInternalNote.Text.Trim(), true, false, false))
                     {
                         if (this.chkSend.Checked)
-                            this.SendMailNew(int.Parse(this.hfCompanyClientID.Value));
+                          await  this.SendMailNew(int.Parse(this.hfCompanyClientID.Value));
                         this.objCompanyClientContactDetailDT = this.objCompanyClientContactDetailBll.GetDataByCompanyClientID(int.Parse(this.hfCompanyClientID.Value));
                         if (this.objCompanyClientContactDetailDT.Rows.Count > 0)
                         {
@@ -1116,7 +1116,7 @@ namespace IITS_CloudAccounting.Admin
                 this.Response.Redirect("CompanyClientMaster.aspx");
         }
 
-        protected  void btnEmail_Click(object sender, EventArgs e)
+        protected async void btnEmail_Click(object sender, EventArgs e)
         {
             int num = 0;
             for (int index = 0; index < this.gvCompanyClient.Rows.Count; ++index)
@@ -1125,7 +1125,7 @@ namespace IITS_CloudAccounting.Admin
                 if (checkBox.Checked)
                 {
                     ++num;
-                    this.SendMailNew(int.Parse(checkBox.ToolTip));
+                  await  this.SendMailNew(int.Parse(checkBox.ToolTip));
                 }
             }
             if (num == 0)

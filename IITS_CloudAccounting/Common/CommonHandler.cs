@@ -23,11 +23,35 @@ namespace IITS_CloudAccounting.Common
         public static bool BaseEnableSSL = false;
         public static async Task SendMail(string CompanyID, string MailTo, string Subject, string Body, bool IsBodyHTML)
         {
-            string apiKey = "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";
-            var client = new SendGridClient(apiKey);
+            try
+            {
+                string apiKey = "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";
+                var client = new SendGridClient(apiKey);
 
+                //Body = "<p>raushan</p>";
+                //string data = @"{
+                //              \""personalizations\"": [
+                //                {
+                //                  \""to\"": [
+                //                    {
+                //                      \""email\"": \""" + MailTo + @"\""
+                //                    }
+                //                  ],
+                //                    \""subject\"": \""" + Subject + @"\""
+                //                }
+                //              ],
+                //              \""from\"": {
+                //                \""email\"": \""" + BaseMailFrom + @"\""
+                //              },
+                //              \""content\"": [
+                //                {
+                //                  \""type\"": \""text/html\"",
+                //                   \""value\"": \""" + Body + @"\""
+                //                }
+                //              ]
+                //            }";
 
-            string data = @"{
+                string data = @"{
                           'personalizations': [
                             {
                               'to': [
@@ -44,17 +68,21 @@ namespace IITS_CloudAccounting.Common
                           'content': [
                             {
                               'type': 'text/html',
-                               'value': '" + Body.Replace("'","") + @"'
+                               'value': '" + Body.Replace("'","##") + @"'
                             }
                           ]
                         }";
 
-            Object json = JsonConvert.DeserializeObject<Object>(data);
-            var response = await client.RequestAsync(SendGridClient.Method.POST,
-                                                 json.ToString(),
-                                                 urlPath: "mail/send");
+                Object json = JsonConvert.DeserializeObject<Object>(data);
+
+                var response = await client.RequestAsync(SendGridClient.Method.POST,
+                                                     json.ToString().Replace("##","'"),
+                                                     urlPath: "mail/send");
+                //var response = await client.RequestAsync(SendGridClient.Method.POST,data, urlPath: "mail/send");
+            }
+            catch (Exception ex) { throw ex; }
         }
-        public static void SendSMTPEmail(string CompanyID, string MailTo,string Subject, string Body, bool IsBodyHTML)
+        public static void SendSMTPEmail(string CompanyID, string MailTo, string Subject, string Body, bool IsBodyHTML)
         {
             try
             {
@@ -95,7 +123,7 @@ namespace IITS_CloudAccounting.Common
 
                 smtp.Send(message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
             }
         }
