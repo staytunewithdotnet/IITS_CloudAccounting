@@ -1,0 +1,553 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Doyingo.master.cs" Inherits="IITS_CloudAccounting.Admin.Doyingo" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Admin Panel</title>
+    <meta charset="utf-8" />
+    <link href="../App_Themes/Doyingo/css/css.css" rel="stylesheet" type="text/css" />
+
+    <link href="../App_Themes/Doyingo/css/uniform.default.min.css" rel="stylesheet" />
+
+    <link href="../App_Themes/Doyingo/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/simple-line-icons.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/menu_cornerbox.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/waves.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/switchery.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/component.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/weather-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/MetroJs.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/toastr.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/modern.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/white.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/select2.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="../App_Themes/Doyingo/js/modernizr.js"> </script>
+    <script src="../App_Themes/Doyingo/js/snap.svg-min.js"> </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../App_Themes/Doyingo/css/otherstyles.css" rel="stylesheet" media="all" />
+    <style>
+        .page-header {
+            margin: 0 0 20px;
+        }
+    </style>
+</head>
+<%-- ReSharper disable UnknownCssClass --%>
+<body class="page-header-fixed  pace-done page-horizontal-bar page-sidebar-fixed compact-menu">
+    <form id="form1" runat="server">
+        <div class="overlay"></div>
+        <div id="main" class="page-content content-wrap container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav navbar-nav navbar-right hideMobile" style="background-color: #EEEEEE;">
+                        <li id="account" runat="server">
+                            <a href="BillingInformation.aspx" style="padding: 0 15px;">My Account</a>
+                        </li>
+                        <li id="setting" runat="server">
+                            <a href="UpdateCompanyDetail.aspx" style="padding: 0 15px;">Setting</a>
+                        </li>
+                        <li id="staffProfile" runat="server">
+                            <a href="UpdateStaffProfile.aspx" style="padding: 0 15px;">Profile</a>
+                        </li>
+                        <li id="help" runat="server">
+                            <a href="NeedHelp.aspx" style="padding: 0 15px;">Help</a>
+                        </li>
+                        <li>
+                            <asp:LoginStatus runat="server" ID="LoginStatus2" LogoutText="Log out" LoginText="Log in" LogoutAction="Redirect" LogoutPageUrl="../MemberArea.aspx" Style="padding: 0 15px;" OnLoggingOut="LoginStatus1_OnLoggingOut" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <div class="navbar-inner">
+                    <div class="sidebar-pusher">
+                        <a href="javascript:void(0);" class="waves-effect waves-button waves-classic push-sidebar">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <div class="logo-box" style="margin-top: -18px;">
+                        <a href="DefaultDoyingo.aspx" class="logo-text">
+                            <asp:Image runat="server" ID="imgLogo" Style="height: 78px; width: 104px;" alt="Bill Transact" />
+                        </a>
+                    </div>
+                    <div class="topmenu-outer">
+                        <div class="top-menu">
+                            <div class="nav navbar-nav navbar-left" id="uploadLogo" runat="server">
+                                <div class="arrow_box">
+                                    <a href="UpdateCompanyLogo.aspx" style="vertical-align: middle;">Upload your Logo</a>
+                                </div>
+                            </div>
+                            <ul class="nav navbar-nav navbar-right" style="display: none;">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
+                                        <span class="user-name">
+                                            <asp:LoginName runat="server" ID="LoginName1" />
+                                            <i class="fa fa-angle-down"></i></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-list" role="menu" style="display: none;">
+                                        <li role="presentation"><a href="ChangePassword.aspx"><i class="fa fa-lock"></i>Change Password</a></li>
+                                        <li role="presentation" class="divider"></li>
+                                        <li role="presentation">
+                                            <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutText="Log out" LoginText="Log in" LogoutAction="Redirect" LogoutPageUrl="../MemberArea.aspx" CssClass="fa fa-sign-out m-r-xs" OnLoggingOut="LoginStatus1_OnLoggingOut" />
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar horizontal-bar">
+                <div class="slimScrollDiv" style="height: 100%; overflow: hidden; position: relative; width: auto;">
+                    <div class="page-sidebar-inner slimscroll" style="height: 100%; overflow: hidden; width: auto;">
+                        <div class="sidebar-header">
+                            <div class="sidebar-profile">
+                            </div>
+                        </div>
+                        <div id="mainUl" runat="server">
+                            <ul id="ulScroll" class="menu accordion-menu" style="background: #0DB9B7;">
+                                <li id="home" runat="server" class="">
+                                    <a href="DefaultDoyingo.aspx"><i class="menu-icon glyphicon glyphicon-home"></i>
+                                        <span class="title">Home </span><span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li id="userManagement" runat="server" class="">
+                                    <a href="CompanyClientMaster.aspx"><i class="menu-icon fa fa-users"></i>
+                                        <span class="title">Clients </span><span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li id="invoice" runat="server" class="">
+                                    <a href="InvoiceMasterNew.aspx"><i class="menu-icon fa fa-file"></i>
+                                        <span class="title">Invoices </span><span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li id="Estimate" runat="server" class="">
+                                    <a href="EstimateMaster.aspx"><i class="menu-icon fa fa-file-excel-o"></i>
+                                        <span class="title">Estimates </span><span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li id="expenseMenu" runat="server" class="">
+                                    <a href="ExpenseMaster.aspx"><i class="menu-icon fa fa-list-alt"></i>
+                                        <span class="title">Expenses </span><span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li id="timeTracking" runat="server" class="">
+                                    <a href="Timesheet.aspx"><i class="menu-icon fa fa-clock-o"></i>
+                                        <span class="title">Time Tracking </span><span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li id="reports" runat="server" class="">
+                                    <a href="AllReports.aspx"><i class="menu-icon fa fa-download"></i>
+                                        <span class="title">Reports </span><span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li id="moreMenu" runat="server" class="">
+                                    <a href="#"><i class="menu-icon fa fa-expand"></i>
+                                        <span class="title">More </span><span class="selected"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="menu accordion-menu sub" style="background: #D4FFFF;">
+                                <div id="homeDiv" style="display: none">
+                                    <li id="mainHome" runat="server">
+                                        <a href="DefaultDoyingo.aspx">
+                                            <span class="title">Overview</span>
+                                        </a>
+                                    </li>
+                                    <li runat="server" id="referDoyingo">
+                                        <a href="ReferralInformation.aspx">
+                                            <span class="title">Refer Bill Transact</span>
+                                        </a>
+                                    </li>
+                                    <li runat="server" id="pricing">
+                                        <a href="UpgradePackage.aspx">
+                                            <span class="title">Pricing & Upgrade</span>
+                                        </a>
+                                    </li>
+                                    <li runat="server" id="doyinGoSupport">
+                                        <a href="DoyinGoSupportTicket.aspx">
+                                            <span class="title">Bill Transact Support Ticket</span>
+                                        </a>
+                                    </li>
+                                    <li id="buyStamp" runat="server" visible="False">
+                                        <a href="GmailInformation.aspx">
+                                            <span class="title">Buy Stamps</span>
+                                        </a>
+                                    </li>
+                                </div>
+
+                                <div id="peopleDiv" style="display: none;">
+                                    <li id="client" runat="server">
+                                        <a href="CompanyClientMaster.aspx">
+                                            <span class="title">Clients</span>
+                                        </a>
+                                    </li>
+                                    <li runat="server" id="staffContractor">
+                                        <a href="EmployeeMaster.aspx">
+                                            <span class="title">Staff and Contractors</span>
+                                        </a>
+                                    </li>
+                                    <li id="accountant" runat="server">
+                                        <a href="InviteAccountant.aspx">
+                                            <span class="title">Accountant</span>
+                                        </a>
+                                    </li>
+                                    <li id="assignClient" runat="server">
+                                        <a href="AssignStaffClient.aspx?staff_to_client=1">
+                                            <span class="title">Assign Clients</span>
+                                        </a>
+                                    </li>
+                                    <li id="sentEmail" runat="server" style="display: none">
+                                        <a href="#">
+                                            <span class="title">Sent Emails</span>
+                                        </a>
+                                    </li>
+                                </div>
+
+                                <div id="invoiceDiv" style="display: none;">
+                                    <li id="newInvoice" runat="server">
+                                        <a href="InvoiceMasterNew.aspx">
+                                            <span class="title">Invoices</span>
+                                        </a>
+                                    </li>
+                                    <li id="recurring" runat="server">
+                                        <a href="RecurringInvoice.aspx">
+                                            <span class="title">Recurring</span>
+                                        </a>
+                                    </li>
+                                    <li id="receivedInvoice" runat="server">
+                                        <a href="ReceivedInvoice.aspx">
+                                            <span class="title">Received Invoice</span>
+                                        </a>
+                                    </li>
+                                    <li id="payments" runat="server">
+                                        <a href="PaymentMaster.aspx">
+                                            <span class="title">Payments</span>
+                                        </a>
+                                    </li>
+                                    <li id="credits" runat="server">
+                                        <a href="CreditNoteMaster.aspx">
+                                            <span class="title">Credits</span>
+                                        </a>
+                                    </li>
+                                    <li id="item" runat="server">
+                                        <a href="ItemMaster.aspx">
+                                            <span class="title">Items</span>
+                                        </a>
+                                    </li>
+                                </div>
+
+                                <div id="estimateDiv" style="display: none;">
+                                    <li id="newEstimate" runat="server">
+                                        <a href="EstimateMaster.aspx">
+                                            <span class="title">New Estimate</span>
+                                        </a>
+                                    </li>
+                                    <li id="receivedEstimate" runat="server">
+                                        <a href="ReceivedEstimate.aspx">
+                                            <span class="title">Received Estimate</span>
+                                        </a>
+                                    </li>
+                                </div>
+
+                                <div id="expensesDiv" style="display: none;">
+                                    <li id="expense" runat="server">
+                                        <a href="ExpenseMaster.aspx">
+                                            <span class="title">Expenses</span>
+                                        </a>
+                                    </li>
+                                    <li id="importExpense" runat="server">
+                                        <a href="ImportExpense.aspx">
+                                            <span class="title">File Import</span>
+                                        </a>
+                                    </li>
+                                </div>
+
+                                <div id="timeTrackingDiv" style="display: none;">
+                                    <li id="timeSheet" runat="server">
+                                        <a href="Timesheet.aspx">
+                                            <span class="title">Timesheet</span>
+                                        </a>
+                                    </li>
+                                    <li id="projects" runat="server">
+                                        <a href="ProjectMaster.aspx">
+                                            <span class="title">Projects</span>
+                                        </a>
+                                    </li>
+                                    <li id="tasks" runat="server">
+                                        <a href="TaskMaster.aspx">
+                                            <span class="title">Tasks</span>
+                                        </a>
+                                    </li>
+                                    <li id="teamTimeSheet" runat="server">
+                                        <a href="TeamTimesheet.aspx">
+                                            <span class="title">Team TimeSheets</span>
+                                        </a>
+                                    </li>
+                                    <li id="genrateInv" runat="server">
+                                        <a href="GenerateInvoice.aspx">
+                                            <span class="title">Generate Invoice</span>
+                                        </a>
+                                    </li>
+                                </div>
+
+                                <div id="reportsDiv" style="display: none"></div>
+
+                                <div id="moreMenuDiv" style="display: none"></div>
+
+                                <div id="accountDiv" style="display: none">
+                                    <li id="billingInfo" runat="server">
+                                        <a href="BillingInformation.aspx">Billing Info</a>
+                                    </li>
+                                    <li id="adminProfile" runat="server">
+                                        <a href="UpdateAdminProfile.aspx" class="">Administrator</a>
+                                    </li>
+                                    <li id="invite" runat="server">
+                                        <a href="InvitePeople.aspx" class="">Invite</a>
+                                    </li>
+                                    <li id="importExport" runat="server">
+                                        <a href="ImportExport.aspx" class="">Import &amp; Export</a>
+                                    </li>
+                                </div>
+
+                                <div id="settingDiv" style="display: none">
+                                    <li id="updateCompany" runat="server">
+                                        <a href="UpdateCompanyDetail.aspx">Company</a>
+                                    </li>
+                                    <%--<li id="acceptCard" runat="server">
+                                        <a href="AcceptCreditCard.aspx">Accept Credit Cards</a>
+                                    </li>--%>
+                                    <li id="paypalSetting" runat="server">
+                                        <a href="CompanyPaypalMaster.aspx">Paypal Setting</a>
+                                    </li>
+                                    <li id="taxes" runat="server">
+                                        <a href="TaxMaster.aspx">Taxes</a>
+                                    </li>
+                                    <li id="colorLogo" runat="server">
+                                        <a href="UpdateCompanyLogo.aspx">Colors &amp; Logos</a>
+                                    </li>
+                                    <li id="templates" runat="server">
+                                        <a href="InvoiceTemplate.aspx">Template</a>
+                                    </li>
+                                    <li id="permissions" runat="server">
+                                        <a href="CompanyUserPermissions.aspx">Permissions</a>
+                                    </li>
+                                    <li id="emails" runat="server">
+                                        <a href="CustomizeEmails.aspx">Emails</a>
+                                    </li>
+                                    <li id="smtp" runat="server">
+                                        <a href="SMTPSettings.aspx">SMTP</a>
+                                    </li>
+                                    <li id="misc" runat="server">
+                                        <a href="Miscellaneous.aspx">Misc</a>
+                                    </li>
+                                </div>
+
+                                <div id="helpDiv" style="display: none"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slimScrollBar" style="background: rgb(204, 204, 204); border-radius: 0; display: none; height: 50px; opacity: 0.3; position: absolute; right: 0; top: 0; width: 7px; z-index: 99;"></div>
+                <div class="slimScrollRail" style="background: rgb(51, 51, 51); border-radius: 0; display: none; height: 100%; opacity: 0.2; position: absolute; right: 0; top: 0; width: 7px; z-index: 90;"></div>
+            </div>
+            <div class="page-inner" style="">
+                <div id="editor" class="bypass" style="display: none;"></div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <div class="col-lg-12" style="margin: 25px 0;"></div>
+                <div class="clearfix"></div>
+
+                <div id="footer-magic">
+                    <img src="../App_Themes/Doyingo/images/spacer.gif" alt="" style="position: absolute; bottom: 228px;" />
+                </div>
+
+                <div class="row" style="border-top: 2px solid #ccc; margin-top: 15px; margin-bottom: 15px;" id="footerRow" runat="server">
+                    <div class="col-lg-2 myFooter">
+                        <h4>Product</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li id="liFish"><a href="UpgradePackage.aspx" id="footer-feature">Pricing &amp; Upgrade</a></li>
+                            <%--<li><a href="#">Referrals</a></li>
+                            <li><a href="#">Report Card</a></li>
+                            <li><a target="_blank" href="#">New Features</a></li>--%>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 myFooter">
+                        <h4>Question & Answer</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <%--<li><a target="_blank" href="#">Blog</a></li>--%>
+                            <li><a target="_blank" href="../FAQs.aspx">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 myFooter">
+                        <h4>Terms</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li><a target="_blank" href="../TermsOfService.aspx">Terms of Service</a></li>
+                            <li><a target="_blank" href="../PrivacyPolicy.aspx">Privacy Policy</a></li>
+                            <%--<li><a href="#">Contact</a></li>
+                            <li><a target="_blank" href="#">We're hiring</a></li>
+                            <li><a target="_blank" href="#">Privacy Policy</a></li>--%>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 myFooter">
+                        <%--<h4>Add-ons</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li><a target="_blank" href="#">Add-on Directory</a></li>
+                            <li><a target="_blank" href="#">Mobile</a></li>
+                            <li><a target="_blank" href="#">API</a></li>
+                        </ul>--%>
+                    </div>
+                    <div class="col-lg-4 myFooter" id="lastDiv">
+                        <a target="_blank" href="#" style="text-decoration: none; display: none;">
+                            <h4>New: Improved Email Delivery</h4>
+                            <br />
+                            <span>Updated processes in place to ensure your invoices make it to your client's inbox.  
+                                        <span style="text-decoration: underline" class="linkish">Learn more</span>.
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="col-lg-12" style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; min-height: 85px; padding: 15px; color: black; font-size: 15px;">
+                    You have <span style="font-weight: bold; color: red; font-size: 18px;">
+                        <asp:Label runat="server" ID="lblDays"></asp:Label>&nbsp;days
+                    </span>remaining in your <asp:Label runat="server" ID="lblPackageName" Text="Free Trial"></asp:Label>. 
+                    <ul id="footerPackageDiv" style="display: inline-block;padding: 0;margin-bottom: 40px;">
+                        <li class="open" style="list-style: none;">
+                            <a href="UpgradePackage.aspx">Upgrade your account</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="page-footer" style="border-bottom: 2px solid #ccc; border-top: 2px solid #ccc;">
+                    <p class="no-s">
+                        <asp:DataList runat="server" ID="dlFooter" Width="100%" RepeatColumns="1" DataKeyField="FooterContentID" DataSourceID="sqldsFooter">
+                            <ItemTemplate>
+                                <p>
+                                    <asp:Label Text='<%# Eval("FooterContent") %>' runat="server" ID="FooterContentLabel" />
+                                </p>
+                            </ItemTemplate>
+                        </asp:DataList>
+                        <asp:SqlDataSource runat="server" ID="sqldsFooter" ConnectionString='<%$ ConnectionStrings:IITS_CloudAccountConnectionString %>' SelectCommand="SELECT * FROM [FooterContent]"></asp:SqlDataSource>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cd-overlay" id="overlay" runat="server"></div>
+
+        <script src="../App_Themes/Doyingo/js/jquery-2.1.3.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery-ui.min.js"> </script>
+        <%--<script src="../App_Themes/Doyingo/js/pace.min.js"> </script>--%>
+        <script src="../App_Themes/Doyingo/js/jquery.blockui.js"> </script>
+        <script src="../App_Themes/Doyingo/js/bootstrap.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.slimscroll.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/switchery.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.uniform.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/classie.js"> </script>
+        <script src="../App_Themes/Doyingo/js/main.js"> </script>
+        <script src="../App_Themes/Doyingo/js/waves.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/main(1).js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.waypoints.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.counterup.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/toastr.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.flot.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.flot.time.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.flot.symbol.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.flot.resize.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.flot.tooltip.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/curvedLines.js"> </script>
+        <script src="../App_Themes/Doyingo/js/MetroJs.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/modern.js"> </script>
+        <script src="../App_Themes/Doyingo/js/form-select2.js"></script>
+        <script src="../App_Themes/Doyingo/js/select2.min.js"></script>
+
+        <script src="../App_Themes/Doyingo/PdfExport/js/html2canvas.js"></script>
+        <script src="../App_Themes/Doyingo/PdfExport/js/ace.js"></script>
+        <script src="../App_Themes/Doyingo/PdfExport/js/jspdf.min.js"></script>
+        <script src="../App_Themes/Doyingo/PdfExport/js/editor.js"></script>
+        <%--<script src="../App_Themes/Doyingo/js/dashboard.js"> </script>--%>
+
+        <%-- ReSharper disable AssignedValueIsNeverUsed --%>
+        <script type="text/javascript">
+            function decimalValue(el, evt) {
+                var charCode = (evt.which) ? evt.which : event.keyCode;
+                var number = el.value.split('.');
+                if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    return false;
+                }
+                //just one dot
+                if (number.length > 1 && charCode == 46) {
+                    return false;
+                }
+                //get the carat position
+                var caratPos = getSelectionStart(el);
+                var dotPos = el.value.indexOf(".");
+                if (caratPos > dotPos && dotPos > -1 && (number[1].length > 1)) {
+                    return false;
+                }
+                return true;
+            }
+
+            function getSelectionStart(o) {
+                if (o.createTextRange) {
+                    var r = document.selection.createRange().duplicate();
+                    r.moveEnd('character', o.value.length);
+                    if (r.text == '') return o.value.length;
+                    return o.value.lastIndexOf(r.text);
+                } else return o.selectionStart;
+            }
+
+            function isNumber(evt) {
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode == 9) {
+                    return true;
+                }
+                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    return false;
+                }
+                return true;
+            }
+
+            function isLetter(evt) {
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode == 9) {
+                    return true;
+                }
+                if (!(charCode > 31 && (charCode < 48 || charCode > 57))) {
+                    return false;
+                }
+                return true;
+            }
+
+            $(document).ready(function () {
+                $("#liFish").bind("mouseenter", function () {
+                    var t = $(this).attr("rel");
+                    if (!t) {
+                        var e = $("#footer-magic img"), i = e.attr("src");
+                        e.attr("src", "../App_Themes/Doyingo/images/animated-fish-loop.gif"), t = setTimeout(function () { t = null, e.attr("src", i); }, 1900);
+                    }
+                });
+            });
+        </script>
+
+        <div id="flotTip" style="display: none; position: absolute;"></div>
+        <asp:HiddenField runat="server" ID="hfCompanyID" />
+        <asp:HiddenField runat="server" ID="hfStaffID" />
+    </form>
+</body>
+</html>

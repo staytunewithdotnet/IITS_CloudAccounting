@@ -1,0 +1,1578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB85661F-1E6D-43DC-B982-E26F23DC4319}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IITS_CloudAccounting</RootNamespace>
+    <AssemblyName>IITS_CloudAccounting</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.5.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin, Version=4.97.4951.28478, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined, Version=1.8.24.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="DABL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DABL\bin\Debug\DABL.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.OData, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=1.6.30117.9648, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="SendGrid, Version=9.16.0.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.9.16.0\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TemplateParser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\TemplateParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Thought.vCards, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Thought.vCards.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AccountantRegistration.aspx" />
+    <Content Include="AccountantSignUp.aspx" />
+    <Content Include="Accountant\AccountantClients.aspx" />
+    <Content Include="Accountant\AccountantProfile.aspx" />
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="Admin\AboutCategoryMaster.aspx" />
+    <Content Include="Admin\AboutContentMaster.aspx" />
+    <Content Include="Admin\AcceptCreditCard.aspx" />
+    <Content Include="Admin\AccountsAgingReport.aspx" />
+    <Content Include="Admin\AdminLoginMaster.aspx" />
+    <Content Include="Admin\AllReports.aspx" />
+    <Content Include="Admin\AssignStaffClient.aspx" />
+    <Content Include="Admin\AutoBillEmailTemplate.aspx" />
+    <Content Include="Admin\BasecampClassic.aspx" />
+    <Content Include="Admin\BillingInformation.aspx" />
+    <Content Include="Admin\BussinessMaster.aspx" />
+    <Content Include="Admin\Cancel.aspx" />
+    <Content Include="Admin\CategoryMaster.aspx" />
+    <Content Include="Admin\ChangePassword.aspx" />
+    <Content Include="Admin\CityMaster.aspx" />
+    <Content Include="Admin\ClientContactDetail.ascx" />
+    <Content Include="Admin\ClientMaster.aspx" />
+    <Content Include="Admin\CloudPackageMaster.aspx" />
+    <Content Include="Admin\CompanyAdminRightsMaster.aspx" />
+    <Content Include="Admin\CompanyClientMaster.aspx" />
+    <Content Include="Admin\CompanyLoginMaster.aspx" />
+    <Content Include="Admin\CompanyMaster.aspx" />
+    <Content Include="Admin\CompanyPackageDetails.aspx" />
+    <Content Include="Admin\CompanyPackageInfo.aspx" />
+    <Content Include="Admin\CompanyPackageReport.aspx" />
+    <Content Include="Admin\CompanyPaypalMaster.aspx" />
+    <Content Include="Admin\CompanyReportStatus.aspx" />
+    <Content Include="Admin\CompanyStatusDateReport.aspx" />
+    <Content Include="Admin\CompanyUserPermissions.aspx" />
+    <Content Include="Admin\ContactMaster.aspx" />
+    <Content Include="Admin\ContractorMaster.aspx" />
+    <Content Include="Admin\CountryMaster.aspx" />
+    <Content Include="Admin\CreditNoteMaster.aspx" />
+    <Content Include="Admin\CurrencyMaster.aspx" />
+    <Content Include="Admin\CurrentAccountMaster.aspx" />
+    <Content Include="Admin\CustomizeEmails.aspx" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\DefaultDoyingo.aspx" />
+    <Content Include="Admin\DoyinGoSupportTicket.aspx" />
+    <Content Include="Admin\EmployeeMaster.aspx" />
+    <Content Include="Admin\EstimatedBillingReport.aspx" />
+    <Content Include="Admin\EstimateMaster.aspx" />
+    <Content Include="Admin\ExpenseMaster.aspx" />
+    <Content Include="Admin\ExpensesReport.aspx" />
+    <Content Include="Admin\ExportToCSV.aspx" />
+    <Content Include="Admin\FAQCategoryMaster.aspx" />
+    <Content Include="Admin\FAQMaster.aspx" />
+    <Content Include="Admin\FeatureCategoryMaster.aspx" />
+    <Content Include="Admin\FeatureContentMaster.aspx" />
+    <Content Include="Admin\FeatureMaster.aspx" />
+    <Content Include="Admin\FooterContent.aspx" />
+    <Content Include="Admin\FormMaster.aspx" />
+    <Content Include="Admin\FreePackageSettings.aspx" />
+    <Content Include="Admin\FrequencyMaster.aspx" />
+    <Content Include="Admin\GenerateInvoice.aspx" />
+    <Content Include="Admin\GmailInformation.aspx" />
+    <Content Include="Admin\HomeMaster.aspx" />
+    <Content Include="Admin\HomePageSlider.aspx" />
+    <Content Include="Admin\ImportCompanyClients.aspx" />
+    <Content Include="Admin\ImportExpense.aspx" />
+    <Content Include="Admin\ImportExport.aspx" />
+    <Content Include="Admin\IndustryMaster.aspx" />
+    <Content Include="Admin\InquiryMaster.aspx" />
+    <Content Include="Admin\InviteAccountant.aspx" />
+    <Content Include="Admin\InvitePeople.aspx" />
+    <Content Include="Admin\InvoiceDetailsReport.aspx" />
+    <Content Include="Admin\InvoiceMaster.aspx" />
+    <Content Include="Admin\InvoiceMasterNew.aspx" />
+    <Content Include="Admin\InvoiceTemplate.aspx" />
+    <Content Include="Admin\ItemMaster.aspx" />
+    <Content Include="Admin\ItemSalesReport.aspx" />
+    <Content Include="Admin\LatePaymentReminderTemplate.aspx" />
+    <Content Include="Admin\MasterAdminLoginMaster.aspx" />
+    <Content Include="Admin\MasterAdminRightsMaster.aspx" />
+    <Content Include="Admin\Miscellaneous.aspx" />
+    <Content Include="Admin\ModuleFormMaster.aspx" />
+    <Content Include="Admin\ModuleMaster.aspx" />
+    <Content Include="Admin\NeedHelp.aspx" />
+    <Content Include="Admin\NewClientEmailTemplate.aspx" />
+    <Content Include="Admin\NewCreditEmailTemplate.aspx" />
+    <Content Include="Admin\NewEstimateEmailTemplate.aspx" />
+    <Content Include="Admin\NewInvoiceEmailTemplate.aspx" />
+    <Content Include="Admin\NewPaymentEmailTemplate.aspx" />
+    <Content Include="Admin\NewStaffEmailTemplate.aspx" />
+    <Content Include="Admin\NoPermission.aspx" />
+    <Content Include="Admin\PackageFeatureMaster.aspx" />
+    <Content Include="Admin\PackageMaster.aspx" />
+    <Content Include="Admin\PackageModuleMaster.aspx" />
+    <Content Include="Admin\PackageUpgradeRequestMaster.aspx" />
+    <Content Include="Admin\PaymentGatewayMaster.aspx" />
+    <Content Include="Admin\PaymentGatewayPaypalMaster.aspx" />
+    <Content Include="Admin\PaymentMaster.aspx" />
+    <Content Include="Admin\PaymentsCollectedReport.aspx" />
+    <Content Include="Admin\PrivacyPolicyContent.aspx" />
+    <Content Include="Admin\ProjectMaster.aspx" />
+    <Content Include="Admin\ProjectMasters.aspx" />
+    <Content Include="Admin\ProjectTaskReport.aspx" />
+    <Content Include="Admin\ProjectUserReport.aspx" />
+    <Content Include="Admin\ReceivedEstimate.aspx" />
+    <Content Include="Admin\ReceivedInvoice.aspx" />
+    <Content Include="Admin\RecurringAnnualReport.aspx" />
+    <Content Include="Admin\RecurringDetailedReport.aspx" />
+    <Content Include="Admin\RecurringInvoice.aspx" />
+    <Content Include="Admin\ReferralInformation.aspx" />
+    <Content Include="Admin\RevenueByClientReport.aspx" />
+    <Content Include="Admin\RunningFromMaster.aspx" />
+    <Content Include="Admin\SalesReport.aspx" />
+    <Content Include="Admin\SecurityQuestionMaster.aspx" />
+    <Content Include="Admin\SMTPSettings.aspx" />
+    <Content Include="Admin\StateMaster.aspx" />
+    <Content Include="Admin\SubCategoryMaster.aspx" />
+    <Content Include="Admin\Success.aspx" />
+    <Content Include="Admin\SupportDepartmentMaster.aspx" />
+    <Content Include="Admin\SupportTicketsMaster.aspx" />
+    <Content Include="Admin\TaskMaster.aspx" />
+    <Content Include="Admin\TasksInvoicedReport.aspx" />
+    <Content Include="Admin\TaxMaster.aspx" />
+    <Content Include="Admin\TaxSummaryReport.aspx" />
+    <Content Include="Admin\TeamTimesheet.aspx" />
+    <Content Include="Admin\TermServiceContent.aspx" />
+    <Content Include="Admin\TestimonialsMaster.aspx" />
+    <Content Include="Admin\testinvoice.html" />
+    <Content Include="Admin\Timesheet.aspx" />
+    <Content Include="Admin\TimesheetDetailsReport.aspx" />
+    <Content Include="Admin\TimesheetReport.aspx" />
+    <Content Include="Admin\TimeToPayReport.aspx" />
+    <Content Include="Admin\UpdateAdminProfile.aspx" />
+    <Content Include="Admin\UpdateCompanyDetail.aspx" />
+    <Content Include="Admin\UpdateCompanyLogo.aspx" />
+    <Content Include="Admin\UpdateStaffProfile.aspx" />
+    <Content Include="Admin\UpgradeCompanyPackage.aspx" />
+    <Content Include="Admin\UpgradePackage.aspx" />
+    <Content Include="AfterRegister.aspx" />
+    <Content Include="App_Themes\Admin\css\bootstrap-colorpalette.css" />
+    <Content Include="App_Themes\Admin\css\bootstrap.min.css" />
+    <Content Include="App_Themes\Admin\css\font-awesome.min.css" />
+    <Content Include="App_Themes\Admin\css\main-responsive.css" />
+    <Content Include="App_Themes\Admin\css\main.css" />
+    <Content Include="App_Themes\Admin\css\perfect-scrollbar.css" />
+    <Content Include="App_Themes\Admin\css\print.css" />
+    <Content Include="App_Themes\Admin\css\style.css" />
+    <Content Include="App_Themes\Admin\css\theme_light.css" />
+    <Content Include="App_Themes\Admin\fonts\clip-font.svg" />
+    <Content Include="App_Themes\Admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\Admin\images\bg.png" />
+    <Content Include="App_Themes\Admin\images\bg_2.png" />
+    <Content Include="App_Themes\Admin\images\bg_3.png" />
+    <Content Include="App_Themes\Admin\images\bg_4.png" />
+    <Content Include="App_Themes\Admin\images\bg_5.png" />
+    <Content Include="App_Themes\Admin\images\loading.gif" />
+    <Content Include="App_Themes\Admin\images\menu-white-arrow.png" />
+    <Content Include="App_Themes\Admin\js\bootstrap-colorpalette.js" />
+    <Content Include="App_Themes\Admin\js\bootstrap-hover-dropdown.min.js" />
+    <Content Include="App_Themes\Admin\js\bootstrap.min.js" />
+    <Content Include="App_Themes\Admin\js\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="App_Themes\Admin\js\jquery.blockUI.js" />
+    <Content Include="App_Themes\Admin\js\jquery.cookie.js" />
+    <Content Include="App_Themes\Admin\js\jquery.icheck.min.js" />
+    <Content Include="App_Themes\Admin\js\jquery.min.js" />
+    <Content Include="App_Themes\Admin\js\jquery.mousewheel.js" />
+    <Content Include="App_Themes\Admin\js\jquery.validate.min.js" />
+    <Content Include="App_Themes\Admin\js\less-1.5.0.min.js" />
+    <Content Include="App_Themes\Admin\js\login.js" />
+    <Content Include="App_Themes\Admin\js\main.js" />
+    <Content Include="App_Themes\Admin\js\perfect-scrollbar.js" />
+    <Content Include="App_Themes\Admin\PdfExport\examples\js\html2canvas.js" />
+    <Content Include="App_Themes\Admin\PdfExport\images\p.gif" />
+    <Content Include="App_Themes\Admin\PdfExport\images\__utm.gif" />
+    <Content Include="App_Themes\Admin\PdfExport\js\ace.js" />
+    <Content Include="App_Themes\Admin\PdfExport\js\editor.js" />
+    <Content Include="App_Themes\Admin\PdfExport\js\html2canvas.js" />
+    <Content Include="App_Themes\Admin\PdfExport\js\jspdf.min.js" />
+    <Content Include="App_Themes\Admin\PdfExport\js\mode-javascript.js" />
+    <Content Include="App_Themes\Admin\PdfExport\js\theme-github.js" />
+    <Content Include="App_Themes\Blue\css\blue.css" />
+    <Content Include="App_Themes\Blue\css\bootstrap.min.css" />
+    <Content Include="App_Themes\Blue\css\css.css" />
+    <Content Include="App_Themes\Blue\css\css1.css" />
+    <Content Include="App_Themes\Blue\css\css3-animations.css" />
+    <Content Include="App_Themes\Blue\css\custom.css" />
+    <Content Include="App_Themes\Blue\css\font-awesome.css" />
+    <Content Include="App_Themes\Blue\css\js_composer.css" />
+    <Content Include="App_Themes\Blue\css\language-selector.css" />
+    <Content Include="App_Themes\Blue\css\responsive.css" />
+    <Content Include="App_Themes\Blue\css\style.css" />
+    <Content Include="App_Themes\Blue\css\switcher-style.css" />
+    <Content Include="App_Themes\Blue\fonts\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\Blue\images\Accountant_Login.png" />
+    <Content Include="App_Themes\Blue\images\arrow.gif" />
+    <Content Include="App_Themes\Blue\images\arrows.png" />
+    <Content Include="App_Themes\Blue\images\carousel_arrows.png" />
+    <Content Include="App_Themes\Blue\images\CleanerData.png" />
+    <Content Include="App_Themes\Blue\images\client-1.png" />
+    <Content Include="App_Themes\Blue\images\client-2.png" />
+    <Content Include="App_Themes\Blue\images\client-3.png" />
+    <Content Include="App_Themes\Blue\images\CloudImage-1.jpg" />
+    <Content Include="App_Themes\Blue\images\CloudImage-2.jpg" />
+    <Content Include="App_Themes\Blue\images\cLOUDiMAGE-3.jpg" />
+    <Content Include="App_Themes\Blue\images\cLOUDiMAGE-4.jpg" />
+    <Content Include="App_Themes\Blue\images\EasyAccess.png" />
+    <Content Include="App_Themes\Blue\images\ExpensesByClient.png" />
+    <Content Include="App_Themes\Blue\images\Features.png" />
+    <Content Include="App_Themes\Blue\images\i-mac.png" />
+    <Content Include="App_Themes\Blue\images\Import-Expenses.png" />
+    <Content Include="App_Themes\Blue\images\InstantlyCapture.png" />
+    <Content Include="App_Themes\Blue\images\InvoicesInFlash.jpeg" />
+    <Content Include="App_Themes\Blue\images\logo.jpg" />
+    <Content Include="App_Themes\Blue\images\Member_Login.png" />
+    <Content Include="App_Themes\Blue\images\page-info-bg.png" />
+    <Content Include="App_Themes\Blue\images\PainlessCollaboration.png" />
+    <Content Include="App_Themes\Blue\images\Pricing.png" />
+    <Content Include="App_Themes\Blue\images\Register.png" />
+    <Content Include="App_Themes\Blue\images\service-1.png" />
+    <Content Include="App_Themes\Blue\images\service-2.png" />
+    <Content Include="App_Themes\Blue\images\service-3.png" />
+    <Content Include="App_Themes\Blue\images\service-4.png" />
+    <Content Include="App_Themes\Blue\images\service-5.png" />
+    <Content Include="App_Themes\Blue\images\Support.png" />
+    <Content Include="App_Themes\Blue\images\test-1.jpg" />
+    <Content Include="App_Themes\Blue\images\test-2.jpg" />
+    <Content Include="App_Themes\Blue\images\test-3.jpg" />
+    <Content Include="App_Themes\Blue\images\tip.png" />
+    <Content Include="App_Themes\Blue\js\bootstrap.js" />
+    <Content Include="App_Themes\Blue\js\comment-reply.min.js" />
+    <Content Include="App_Themes\Blue\js\easy-tabs.min.js" />
+    <Content Include="App_Themes\Blue\js\easyXDM.debug.js" />
+    <Content Include="App_Themes\Blue\js\fancy-select.min.js" />
+    <Content Include="App_Themes\Blue\js\flip-clock.min.js" />
+    <Content Include="App_Themes\Blue\js\html5shiv-printshiv.min.js" />
+    <Content Include="App_Themes\Blue\js\imagesloaded.pkgd.min.js" />
+    <Content Include="App_Themes\Blue\js\isotope.pkgd.min.js" />
+    <Content Include="App_Themes\Blue\js\jquery-migrate.min.js" />
+    <Content Include="App_Themes\Blue\js\jquery.easing.min.js" />
+    <Content Include="App_Themes\Blue\js\jquery.js" />
+    <Content Include="App_Themes\Blue\js\js_composer_front.js" />
+    <Content Include="App_Themes\Blue\js\mix-it-up.min.js" />
+    <Content Include="App_Themes\Blue\js\modernizr.min.js" />
+    <Content Include="App_Themes\Blue\js\ms-drop-down.min.js" />
+    <Content Include="App_Themes\Blue\js\nice-scroll.min.js" />
+    <Content Include="App_Themes\Blue\js\owl-carousel.min.js" />
+    <Content Include="App_Themes\Blue\js\respond.min.js" />
+    <Content Include="App_Themes\Blue\js\retina.min.js" />
+    <Content Include="App_Themes\Blue\js\rrssb-share-btn.min.js" />
+    <Content Include="App_Themes\Blue\js\scripts.js" />
+    <Content Include="App_Themes\Blue\js\sitepress.js" />
+    <Content Include="App_Themes\Blue\js\smooth-scroll.min.js" />
+    <Content Include="App_Themes\Blue\js\switcher.js" />
+    <Content Include="App_Themes\Blue\js\ticker.min.js" />
+    <Content Include="App_Themes\Blue\js\touch-effect.min.js" />
+    <Content Include="App_Themes\Doyingo\css\bootstrap.min.css" />
+    <Content Include="App_Themes\Doyingo\css\component.css" />
+    <Content Include="App_Themes\Doyingo\css\css.css" />
+    <Content Include="App_Themes\Doyingo\css\custom.css" />
+    <Content Include="App_Themes\Doyingo\css\font-awesome.css" />
+    <Content Include="App_Themes\Doyingo\css\invoicing.css" />
+    <Content Include="App_Themes\Doyingo\css\menu_cornerbox.css" />
+    <Content Include="App_Themes\Doyingo\css\MetroJs.min.css" />
+    <Content Include="App_Themes\Doyingo\css\modern.css" />
+    <Content Include="App_Themes\Doyingo\css\modern.min.css" />
+    <Content Include="App_Themes\Doyingo\css\onlyInvoice.css" />
+    <Content Include="App_Themes\Doyingo\css\otherstyles.css" />
+    <Content Include="App_Themes\Doyingo\css\pace-theme-flash.css" />
+    <Content Include="App_Themes\Doyingo\css\referalStyle.css" />
+    <Content Include="App_Themes\Doyingo\css\select2.min.css" />
+    <Content Include="App_Themes\Doyingo\css\simple-line-icons.css" />
+    <Content Include="App_Themes\Doyingo\css\style.css" />
+    <Content Include="App_Themes\Doyingo\css\switchery.min.css" />
+    <Content Include="App_Themes\Doyingo\css\toastr.min.css" />
+    <Content Include="App_Themes\Doyingo\css\uniform.default.min.css" />
+    <Content Include="App_Themes\Doyingo\css\waves.min.css" />
+    <Content Include="App_Themes\Doyingo\css\weather-icons.min.css" />
+    <Content Include="App_Themes\Doyingo\css\white.css" />
+    <Content Include="App_Themes\Doyingo\fonts\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\Doyingo\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\Doyingo\fonts\Simple-Line-Icons.svg" />
+    <Content Include="App_Themes\Doyingo\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="App_Themes\Doyingo\freshbook_print.css" />
+    <Content Include="App_Themes\Doyingo\freshbook_styles.css" />
+    <Content Include="App_Themes\Doyingo\images\advisors.gif" />
+    <Content Include="App_Themes\Doyingo\images\allIcon.png" />
+    <Content Include="App_Themes\Doyingo\images\allthebestHand.png" />
+    <Content Include="App_Themes\Doyingo\images\animated-fish-loop.gif" />
+    <Content Include="App_Themes\Doyingo\images\banner-accepted.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-auto-paid.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-commented.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-created.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-declined.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-disputed.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-draft-partial.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-draft.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-failed.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-invoiced.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-open.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-outstanding.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-paid.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-partial.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-pending.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-received.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-replied.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-resolved.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-retry.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-sent.png" />
+    <Content Include="App_Themes\Doyingo\images\banner-viewed.png" />
+    <Content Include="App_Themes\Doyingo\images\blank.gif" />
+    <Content Include="App_Themes\Doyingo\images\border-bl.gif" />
+    <Content Include="App_Themes\Doyingo\images\border-br.gif" />
+    <Content Include="App_Themes\Doyingo\images\border-shadow.gif" />
+    <Content Include="App_Themes\Doyingo\images\border-top-left.gif" />
+    <Content Include="App_Themes\Doyingo\images\border-top-right.gif" />
+    <Content Include="App_Themes\Doyingo\images\checkmark.png" />
+    <Content Include="App_Themes\Doyingo\images\cleaner-data.png" />
+    <Content Include="App_Themes\Doyingo\images\client-icons.png" />
+    <Content Include="App_Themes\Doyingo\images\close-blue.png" />
+    <Content Include="App_Themes\Doyingo\images\close-button-blue.png" />
+    <Content Include="App_Themes\Doyingo\images\close-grey.png" />
+    <Content Include="App_Themes\Doyingo\images\delete.png" />
+    <Content Include="App_Themes\Doyingo\images\devices-family.png" />
+    <Content Include="App_Themes\Doyingo\images\envelope.png" />
+    <Content Include="App_Themes\Doyingo\images\errorHand.png" />
+    <Content Include="App_Themes\Doyingo\images\fan-perks.png" />
+    <Content Include="App_Themes\Doyingo\images\hands.png" />
+    <Content Include="App_Themes\Doyingo\images\header-basecamp.gif" />
+    <Content Include="App_Themes\Doyingo\images\header-bottom-webapp.png" />
+    <Content Include="App_Themes\Doyingo\images\header-onlinepayment.png" />
+    <Content Include="App_Themes\Doyingo\images\header-top-webapp.png" />
+    <Content Include="App_Themes\Doyingo\images\informationHand.png" />
+    <Content Include="App_Themes\Doyingo\images\logo.jpg" />
+    <Content Include="App_Themes\Doyingo\images\paperclip.png" />
+    <Content Include="App_Themes\Doyingo\images\paypal-small.png" />
+    <Content Include="App_Themes\Doyingo\images\question-mark.png" />
+    <Content Include="App_Themes\Doyingo\images\referrals.png" />
+    <Content Include="App_Themes\Doyingo\images\searchHand.png" />
+    <Content Include="App_Themes\Doyingo\images\spacer.gif" />
+    <Content Include="App_Themes\Doyingo\images\speech-bubble-bottom.png" />
+    <Content Include="App_Themes\Doyingo\images\speech-bubble-top.png" />
+    <Content Include="App_Themes\Doyingo\images\sprite.png" />
+    <Content Include="App_Themes\Doyingo\images\squirrel-mailbox.png" />
+    <Content Include="App_Themes\Doyingo\images\star-blue.png" />
+    <Content Include="App_Themes\Doyingo\images\step1.png" />
+    <Content Include="App_Themes\Doyingo\images\step2.png" />
+    <Content Include="App_Themes\Doyingo\images\stripe-small.png" />
+    <Content Include="App_Themes\Doyingo\images\successfulHand.png" />
+    <Content Include="App_Themes\Doyingo\images\template_classic.gif" />
+    <Content Include="App_Themes\Doyingo\images\template_clean-old.gif" />
+    <Content Include="App_Themes\Doyingo\images\template_clean.gif" />
+    <Content Include="App_Themes\Doyingo\images\transaction-capture.png" />
+    <Content Include="App_Themes\Doyingo\images\uploadLogo.png" />
+    <Content Include="App_Themes\Doyingo\images\visa-mc-paypal.gif" />
+    <Content Include="App_Themes\Doyingo\images\white-bottom-login.png" />
+    <Content Include="App_Themes\Doyingo\images\white-top-login.png" />
+    <Content Include="App_Themes\Doyingo\js\bootstrap.min.js" />
+    <Content Include="App_Themes\Doyingo\js\classie.js" />
+    <Content Include="App_Themes\Doyingo\js\curvedLines.js" />
+    <Content Include="App_Themes\Doyingo\js\dashboard.js" />
+    <Content Include="App_Themes\Doyingo\js\form-select2.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery-2.1.3.min.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery-ui.min.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery.blockui.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery.counterup.min.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery.flot.min.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery.flot.resize.min.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery.flot.symbol.min.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery.flot.time.min.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery.flot.tooltip.min.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery.slimscroll.min.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery.uniform.min.js" />
+    <Content Include="App_Themes\Doyingo\js\jquery.waypoints.min.js" />
+    <Content Include="App_Themes\Doyingo\js\main%281%29.js" />
+    <Content Include="App_Themes\Doyingo\js\main.js" />
+    <Content Include="App_Themes\Doyingo\js\MetroJs.min.js" />
+    <Content Include="App_Themes\Doyingo\js\modern.js" />
+    <Content Include="App_Themes\Doyingo\js\modernizr.js" />
+    <Content Include="App_Themes\Doyingo\js\pace.min.js" />
+    <Content Include="App_Themes\Doyingo\js\searchBox.js" />
+    <Content Include="App_Themes\Doyingo\js\select2.min.js" />
+    <Content Include="App_Themes\Doyingo\js\snap.svg-min.js" />
+    <Content Include="App_Themes\Doyingo\js\switchery.min.js" />
+    <Content Include="App_Themes\Doyingo\js\toastr.min.js" />
+    <Content Include="App_Themes\Doyingo\js\waves.min.js" />
+    <Content Include="App_Themes\Doyingo\PdfExport\examples\js\html2canvas.js" />
+    <Content Include="App_Themes\Doyingo\PdfExport\images\p.gif" />
+    <Content Include="App_Themes\Doyingo\PdfExport\images\__utm.gif" />
+    <Content Include="App_Themes\Doyingo\PdfExport\js\ace.js" />
+    <Content Include="App_Themes\Doyingo\PdfExport\js\editor.js" />
+    <Content Include="App_Themes\Doyingo\PdfExport\js\html2canvas.js" />
+    <Content Include="App_Themes\Doyingo\PdfExport\js\jspdf.min.js" />
+    <Content Include="App_Themes\Doyingo\PdfExport\js\mode-javascript.js" />
+    <Content Include="App_Themes\Doyingo\PdfExport\js\theme-github.js" />
+    <Content Include="App_Themes\Doyingo\time-sheet.js" />
+    <Content Include="App_Themes\sky\css\bootstrap.min.css" />
+    <Content Include="App_Themes\sky\css\font-awesome.min.css" />
+    <Content Include="App_Themes\sky\css\pstyle.css" />
+    <Content Include="App_Themes\sky\css\responsive.css" />
+    <Content Include="App_Themes\sky\css\mycustom.css" />
+    <Content Include="App_Themes\sky\css\slick-theme.css" />
+    <Content Include="App_Themes\sky\css\slick.css" />
+    <Content Include="App_Themes\sky\css\style.css" />
+    <Content Include="App_Themes\sky\fonts\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\sky\fonts\Tondo-Light.svg" />
+    <Content Include="App_Themes\sky\fonts\Tondo.svg" />
+    <Content Include="App_Themes\sky\fonts\Tondo_1.svg" />
+    <Content Include="App_Themes\sky\i\cloud.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-1.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-10.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-11.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-12.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-13.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-14.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-15.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-2.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-3.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-4.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-5.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-6.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-7.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-8.png" />
+    <Content Include="App_Themes\sky\i\ideal-icon-9.png" />
+    <Content Include="App_Themes\sky\js\bootstrap.min.js" />
+    <Content Include="App_Themes\sky\js\index.js" />
+    <Content Include="App_Themes\sky\js\slick.js" />
+    <Content Include="App_Themes\sky\uploads\about-bg.jpg" />
+    <Content Include="App_Themes\sky\uploads\about1.png" />
+    <Content Include="App_Themes\sky\uploads\about2.png" />
+    <Content Include="App_Themes\sky\uploads\about3.png" />
+    <Content Include="App_Themes\sky\uploads\benfit-icon-1.png" />
+    <Content Include="App_Themes\sky\uploads\benfit-icon-2.png" />
+    <Content Include="App_Themes\sky\uploads\benfit-icon-3.png" />
+    <Content Include="App_Themes\sky\uploads\benfit-icon-4.png" />
+    <Content Include="App_Themes\sky\uploads\cloud.png" />
+    <Content Include="App_Themes\sky\uploads\clouds.png" />
+    <Content Include="App_Themes\sky\uploads\fav.ico" />
+    <Content Include="App_Themes\sky\uploads\favIcon_billtransct.ico" />
+    <Content Include="App_Themes\sky\uploads\favIcon_billtransct.png" />
+    <Content Include="App_Themes\sky\uploads\features-bg.jpg" />
+    <Content Include="App_Themes\sky\uploads\features1.png" />
+    <Content Include="App_Themes\sky\uploads\features2.png" />
+    <Content Include="App_Themes\sky\uploads\features3.png" />
+    <Content Include="App_Themes\sky\uploads\features4.png" />
+    <Content Include="App_Themes\sky\uploads\features5.png" />
+    <Content Include="App_Themes\sky\uploads\features6.png" />
+    <Content Include="App_Themes\sky\uploads\fet-1.jpg" />
+    <Content Include="App_Themes\sky\uploads\fet-2.jpg" />
+    <Content Include="App_Themes\sky\uploads\fet-3.jpg" />
+    <Content Include="App_Themes\sky\uploads\fet-4.jpg" />
+    <Content Include="App_Themes\sky\uploads\fet-icon-1.png" />
+    <Content Include="App_Themes\sky\uploads\fet-icon-2.png" />
+    <Content Include="App_Themes\sky\uploads\fet-icon-3.png" />
+    <Content Include="App_Themes\sky\uploads\fet-icon-4.png" />
+    <Content Include="App_Themes\sky\uploads\footer-banner.png" />
+    <Content Include="App_Themes\sky\uploads\login-logo.png" />
+    <Content Include="App_Themes\sky\uploads\logo-.png" />
+    <Content Include="App_Themes\sky\uploads\logo.png" />
+    <Content Include="App_Themes\sky\uploads\people-1.jpg" />
+    <Content Include="App_Themes\sky\uploads\people-2.jpg" />
+    <Content Include="App_Themes\sky\uploads\sinup-logo.png" />
+    <Content Include="App_Themes\sky\uploads\slide-1.jpg" />
+    <Content Include="CheckClient.aspx" />
+    <Content Include="Client\AllInvoice.aspx" />
+    <Content Include="Client\CancelClient.aspx" />
+    <Content Include="Client\ClientCredit.aspx" />
+    <Content Include="Client\ClientEstimate.aspx" />
+    <Content Include="Client\ClientPayment.aspx" />
+    <Content Include="Client\ClientProfile.aspx" />
+    <Content Include="Client\Default.aspx" />
+    <Content Include="Client\InvoicePayment.aspx" />
+    <Content Include="Client\Projects.aspx" />
+    <Content Include="Client\SuccessClient.aspx" />
+    <Content Include="Client\UnpaidInvoice.aspx" />
+    <Content Include="CompanyRegistration.aspx" />
+    <Content Include="CompanySignUp.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="FAQs.aspx" />
+    <Content Include="Features.aspx" />
+    <Content Include="GenerateCaptcha.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="InviteCompanyByAccountant.aspx" />
+    <Content Include="MailTemplate1\AccountantInvitation.html" />
+    <Content Include="MailTemplate1\ClientInvitation.html" />
+    <Content Include="MailTemplate1\CompanyClient.htm" />
+    <Content Include="MailTemplate1\CompanyClientNew.htm" />
+    <Content Include="MailTemplate1\CompanyRegistration.htm" />
+    <Content Include="MailTemplate1\EmployeeInvitation.html" />
+    <Content Include="MailTemplate1\EmployeeInvitationNew.html" />
+    <Content Include="MailTemplate1\ForwardedInvoice.html" />
+    <Content Include="MailTemplate1\NewCompanySignUp.html" />
+    <Content Include="MailTemplate1\PaymentInformation.html" />
+    <Content Include="MailTemplate1\PaymentInformationNew.html" />
+    <Content Include="MailTemplate1\SendCredit.html" />
+    <Content Include="MailTemplate1\SendCreditNew.html" />
+    <Content Include="MailTemplate1\SendEstimate.html" />
+    <Content Include="MailTemplate1\SendEstimateNew.html" />
+    <Content Include="MailTemplate1\SendInvoice.html" />
+    <Content Include="MailTemplate1\SendInvoiceNew.html" />
+    <Content Include="MailTemplate1\UpgradePackage.html" />
+    <Content Include="MailTemplate\AccountantInvitation.html" />
+    <Content Include="MailTemplate\ClientInvitation.html" />
+    <Content Include="MailTemplate\CompanyClient.htm" />
+    <Content Include="MailTemplate\CompanyClientNew.htm" />
+    <Content Include="MailTemplate\CompanyRegistration.htm" />
+    <Content Include="MailTemplate\EmployeeInvitation.html" />
+    <Content Include="MailTemplate\EmployeeInvitationNew.html" />
+    <Content Include="MailTemplate\ForwardedInvoice.html" />
+    <Content Include="MailTemplate\NewCompanySignUp.html" />
+    <Content Include="MailTemplate\PaymentInformation.html" />
+    <Content Include="MailTemplate\PaymentInformationNew.html" />
+    <Content Include="MailTemplate\SendCredit.html" />
+    <Content Include="MailTemplate\SendCreditNew.html" />
+    <Content Include="MailTemplate\SendEstimate.html" />
+    <Content Include="MailTemplate\SendEstimateNew.html" />
+    <Content Include="MailTemplate\SendInvoice.html" />
+    <Content Include="MailTemplate\SendInvoiceNew.html" />
+    <Content Include="MailTemplate\UpgradePackage.html" />
+    <Content Include="MemberArea.aspx" />
+    <Content Include="NewPricingTable.aspx" />
+    <Content Include="PricingTable.aspx" />
+    <Content Include="PrivacyPolicy.aspx" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Service References\com.mobiletranzact.www\configuration91.svcinfo" />
+    <Content Include="Service References\com.mobiletranzact.www\configuration.svcinfo" />
+    <Content Include="Service References\com.mobiletranzact.www\IITS_CloudAccounting.com.mobiletranzact.www.MakeOrderPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\com.mobiletranzact.www\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="SliderControl.ascx" />
+    <Content Include="SliderControl1.ascx" />
+    <Content Include="Support.aspx" />
+    <Content Include="TermsOfService.aspx" />
+    <Content Include="Testimonial.aspx" />
+    <Content Include="ViewPackageDetails.aspx" />
+    <Content Include="Web_2.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web_2.Debug.config">
+      <DependentUpon>Web_2.config</DependentUpon>
+    </Content>
+    <Content Include="Web_2.Release.config">
+      <DependentUpon>Web_2.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountantRegistration.aspx.cs">
+      <DependentUpon>AccountantRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountantSignUp.aspx.cs">
+      <DependentUpon>AccountantSignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accountant\AccountantClients.aspx.cs">
+      <DependentUpon>AccountantClients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accountant\AccountantMaster.Master.cs">
+      <DependentUpon>AccountantMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accountant\AccountantProfile.aspx.cs">
+      <DependentUpon>AccountantProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AboutCategoryMaster.aspx.cs">
+      <DependentUpon>AboutCategoryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AboutContentMaster.aspx.cs">
+      <DependentUpon>AboutContentMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AcceptCreditCard.aspx.cs">
+      <DependentUpon>AcceptCreditCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AccountsAgingReport.aspx.cs">
+      <DependentUpon>AccountsAgingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminLoginMaster.aspx.cs">
+      <DependentUpon>AdminLoginMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AllReports.aspx.cs">
+      <DependentUpon>AllReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AssignStaffClient.aspx.cs">
+      <DependentUpon>AssignStaffClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AutoBillEmailTemplate.aspx.cs">
+      <DependentUpon>AutoBillEmailTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BasecampClassic.aspx.cs">
+      <DependentUpon>BasecampClassic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BillingInformation.aspx.cs">
+      <DependentUpon>BillingInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BussinessMaster.aspx.cs">
+      <DependentUpon>BussinessMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Cancel.aspx.cs">
+      <DependentUpon>Cancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CategoryMaster.aspx.cs">
+      <DependentUpon>CategoryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CityMaster.aspx.cs">
+      <DependentUpon>CityMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ClientContactDetail.ascx.cs">
+      <DependentUpon>ClientContactDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ClientMaster.aspx.cs">
+      <DependentUpon>ClientMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CloudPackageMaster.aspx.cs">
+      <DependentUpon>CloudPackageMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyAdminRightsMaster.aspx.cs">
+      <DependentUpon>CompanyAdminRightsMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyClientMaster.aspx.cs">
+      <DependentUpon>CompanyClientMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyLoginMaster.aspx.cs">
+      <DependentUpon>CompanyLoginMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyMaster.aspx.cs">
+      <DependentUpon>CompanyMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyPackageDetails.aspx.cs">
+      <DependentUpon>CompanyPackageDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyPackageInfo.aspx.cs">
+      <DependentUpon>CompanyPackageInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyPackageReport.aspx.cs">
+      <DependentUpon>CompanyPackageReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyPaypalMaster.aspx.cs">
+      <DependentUpon>CompanyPaypalMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyReportStatus.aspx.cs">
+      <DependentUpon>CompanyReportStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyStatusDateReport.aspx.cs">
+      <DependentUpon>CompanyStatusDateReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyUserPermissions.aspx.cs">
+      <DependentUpon>CompanyUserPermissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ContactMaster.aspx.cs">
+      <DependentUpon>ContactMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ContractorMaster.aspx.cs">
+      <DependentUpon>ContractorMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CountryMaster.aspx.cs">
+      <DependentUpon>CountryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreditNoteMaster.aspx.cs">
+      <DependentUpon>CreditNoteMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CurrencyMaster.aspx.cs">
+      <DependentUpon>CurrencyMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CurrentAccountMaster.aspx.cs">
+      <DependentUpon>CurrentAccountMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CustomizeEmails.aspx.cs">
+      <DependentUpon>CustomizeEmails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DefaultDoyingo.aspx.cs">
+      <DependentUpon>DefaultDoyingo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Doyingo.Master.cs">
+      <DependentUpon>Doyingo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DoyinGoSupportTicket.aspx.cs">
+      <DependentUpon>DoyinGoSupportTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EmployeeMaster.aspx.cs">
+      <DependentUpon>EmployeeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EstimatedBillingReport.aspx.cs">
+      <DependentUpon>EstimatedBillingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EstimateMaster.aspx.cs">
+      <DependentUpon>EstimateMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ExpenseMaster.aspx.cs">
+      <DependentUpon>ExpenseMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ExpensesReport.aspx.cs">
+      <DependentUpon>ExpensesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ExportToCSV.aspx.cs">
+      <DependentUpon>ExportToCSV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FAQCategoryMaster.aspx.cs">
+      <DependentUpon>FAQCategoryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FAQMaster.aspx.cs">
+      <DependentUpon>FAQMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FeatureCategoryMaster.aspx.cs">
+      <DependentUpon>FeatureCategoryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FeatureContentMaster.aspx.cs">
+      <DependentUpon>FeatureContentMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FeatureMaster.aspx.cs">
+      <DependentUpon>FeatureMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FooterContent.aspx.cs">
+      <DependentUpon>FooterContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FormMaster.aspx.cs">
+      <DependentUpon>FormMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FreePackageSettings.aspx.cs">
+      <DependentUpon>FreePackageSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FrequencyMaster.aspx.cs">
+      <DependentUpon>FrequencyMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GenerateInvoice.aspx.cs">
+      <DependentUpon>GenerateInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GmailInformation.aspx.cs">
+      <DependentUpon>GmailInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomeMaster.aspx.cs">
+      <DependentUpon>HomeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomePageSlider.aspx.cs">
+      <DependentUpon>HomePageSlider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ImportCompanyClients.aspx.cs">
+      <DependentUpon>ImportCompanyClients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ImportExpense.aspx.cs">
+      <DependentUpon>ImportExpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ImportExport.aspx.cs">
+      <DependentUpon>ImportExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\IndustryMaster.aspx.cs">
+      <DependentUpon>IndustryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InquiryMaster.aspx.cs">
+      <DependentUpon>InquiryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InviteAccountant.aspx.cs">
+      <DependentUpon>InviteAccountant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InvitePeople.aspx.cs">
+      <DependentUpon>InvitePeople.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InvoiceDetailsReport.aspx.cs">
+      <DependentUpon>InvoiceDetailsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InvoiceMaster.aspx.cs">
+      <DependentUpon>InvoiceMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InvoiceMasterNew.aspx.cs">
+      <DependentUpon>InvoiceMasterNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InvoiceTemplate.aspx.cs">
+      <DependentUpon>InvoiceTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ItemMaster.aspx.cs">
+      <DependentUpon>ItemMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ItemSalesReport.aspx.cs">
+      <DependentUpon>ItemSalesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LatePaymentReminderTemplate.aspx.cs">
+      <DependentUpon>LatePaymentReminderTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MasterAdminLoginMaster.aspx.cs">
+      <DependentUpon>MasterAdminLoginMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MasterAdminRightsMaster.aspx.cs">
+      <DependentUpon>MasterAdminRightsMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Miscellaneous.aspx.cs">
+      <DependentUpon>Miscellaneous.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ModuleFormMaster.aspx.cs">
+      <DependentUpon>ModuleFormMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ModuleMaster.aspx.cs">
+      <DependentUpon>ModuleMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NeedHelp.aspx.cs">
+      <DependentUpon>NeedHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewClientEmailTemplate.aspx.cs">
+      <DependentUpon>NewClientEmailTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewCreditEmailTemplate.aspx.cs">
+      <DependentUpon>NewCreditEmailTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewEstimateEmailTemplate.aspx.cs">
+      <DependentUpon>NewEstimateEmailTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewInvoiceEmailTemplate.aspx.cs">
+      <DependentUpon>NewInvoiceEmailTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewPaymentEmailTemplate.aspx.cs">
+      <DependentUpon>NewPaymentEmailTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewStaffEmailTemplate.aspx.cs">
+      <DependentUpon>NewStaffEmailTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NoPermission.aspx.cs">
+      <DependentUpon>NoPermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PackageFeatureMaster.aspx.cs">
+      <DependentUpon>PackageFeatureMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PackageMaster.aspx.cs">
+      <DependentUpon>PackageMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PackageModuleMaster.aspx.cs">
+      <DependentUpon>PackageModuleMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PackageUpgradeRequestMaster.aspx.cs">
+      <DependentUpon>PackageUpgradeRequestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PaymentGatewayMaster.aspx.cs">
+      <DependentUpon>PaymentGatewayMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PaymentGatewayPaypalMaster.aspx.cs">
+      <DependentUpon>PaymentGatewayPaypalMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PaymentMaster.aspx.cs">
+      <DependentUpon>PaymentMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PaymentsCollectedReport.aspx.cs">
+      <DependentUpon>PaymentsCollectedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PrivacyPolicyContent.aspx.cs">
+      <DependentUpon>PrivacyPolicyContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProjectMaster.aspx.cs">
+      <DependentUpon>ProjectMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProjectMasters.aspx.cs">
+      <DependentUpon>ProjectMasters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProjectTaskReport.aspx.cs">
+      <DependentUpon>ProjectTaskReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProjectUserReport.aspx.cs">
+      <DependentUpon>ProjectUserReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ReceivedEstimate.aspx.cs">
+      <DependentUpon>ReceivedEstimate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ReceivedInvoice.aspx.cs">
+      <DependentUpon>ReceivedInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RecurringAnnualReport.aspx.cs">
+      <DependentUpon>RecurringAnnualReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RecurringDetailedReport.aspx.cs">
+      <DependentUpon>RecurringDetailedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RecurringInvoice.aspx.cs">
+      <DependentUpon>RecurringInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ReferralInformation.aspx.cs">
+      <DependentUpon>ReferralInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RevenueByClientReport.aspx.cs">
+      <DependentUpon>RevenueByClientReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RunningFromMaster.aspx.cs">
+      <DependentUpon>RunningFromMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SalesReport.aspx.cs">
+      <DependentUpon>SalesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SecurityQuestionMaster.aspx.cs">
+      <DependentUpon>SecurityQuestionMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SmtpClientForCompany.cs" />
+    <Compile Include="Admin\SMTPSettings.aspx.cs">
+      <DependentUpon>SMTPSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StateMaster.aspx.cs">
+      <DependentUpon>StateMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SubCategoryMaster.aspx.cs">
+      <DependentUpon>SubCategoryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SupportDepartmentMaster.aspx.cs">
+      <DependentUpon>SupportDepartmentMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SupportTicketsMaster.aspx.cs">
+      <DependentUpon>SupportTicketsMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TaskMaster.aspx.cs">
+      <DependentUpon>TaskMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TasksInvoicedReport.aspx.cs">
+      <DependentUpon>TasksInvoicedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TaxMaster.aspx.cs">
+      <DependentUpon>TaxMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TaxSummaryReport.aspx.cs">
+      <DependentUpon>TaxSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TeamTimesheet.aspx.cs">
+      <DependentUpon>TeamTimesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TermServiceContent.aspx.cs">
+      <DependentUpon>TermServiceContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TestimonialsMaster.aspx.cs">
+      <DependentUpon>TestimonialsMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Timesheet.aspx.cs">
+      <DependentUpon>Timesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TimesheetDetailsReport.aspx.cs">
+      <DependentUpon>TimesheetDetailsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TimesheetReport.aspx.cs">
+      <DependentUpon>TimesheetReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TimeToPayReport.aspx.cs">
+      <DependentUpon>TimeToPayReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateAdminProfile.aspx.cs">
+      <DependentUpon>UpdateAdminProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateCompanyDetail.aspx.cs">
+      <DependentUpon>UpdateCompanyDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateCompanyLogo.aspx.cs">
+      <DependentUpon>UpdateCompanyLogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateStaffProfile.aspx.cs">
+      <DependentUpon>UpdateStaffProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpgradeCompanyPackage.aspx.cs">
+      <DependentUpon>UpgradeCompanyPackage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpgradePackage.aspx.cs">
+      <DependentUpon>UpgradePackage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AfterRegister.aspx.cs">
+      <DependentUpon>AfterRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckClient.aspx.cs">
+      <DependentUpon>CheckClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\AllInvoice.aspx.cs">
+      <DependentUpon>AllInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\CancelClient.aspx.cs">
+      <DependentUpon>CancelClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ClientCredit.aspx.cs">
+      <DependentUpon>ClientCredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ClientEstimate.aspx.cs">
+      <DependentUpon>ClientEstimate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ClientManagement.Master.cs">
+      <DependentUpon>ClientManagement.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ClientPayment.aspx.cs">
+      <DependentUpon>ClientPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ClientProfile.aspx.cs">
+      <DependentUpon>ClientProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\InvoicePayment.aspx.cs">
+      <DependentUpon>InvoicePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\SuccessClient.aspx.cs">
+      <DependentUpon>SuccessClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\UnpaidInvoice.aspx.cs">
+      <DependentUpon>UnpaidInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CloudAccounting.Master.cs">
+      <DependentUpon>CloudAccounting.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CloudAccounting.Master.designer.cs">
+      <DependentUpon>CloudAccounting.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CommonHandler.cs" />
+    <Compile Include="CompanyRegistration.aspx.cs">
+      <DependentUpon>CompanyRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanySignUp.aspx.cs">
+      <DependentUpon>CompanySignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQs.aspx.cs">
+      <DependentUpon>FAQs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Features.aspx.cs">
+      <DependentUpon>Features.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenerateCaptcha.aspx.cs">
+      <DependentUpon>GenerateCaptcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\AboutContentHandler.ashx.cs">
+      <DependentUpon>AboutContentHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\ClientHandler.ashx.cs">
+      <DependentUpon>ClientHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\CompanyLogoFile.ashx.cs">
+      <DependentUpon>CompanyLogoFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\ExpenseHandler.ashx.cs">
+      <DependentUpon>ExpenseHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\FeatureHandler.ashx.cs">
+      <DependentUpon>FeatureHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\HomeSliderHandler1.ashx.cs">
+      <DependentUpon>HomeSliderHandler1.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\HomeSliderHandler2.ashx.cs">
+      <DependentUpon>HomeSliderHandler2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="InviteCompanyByAccountant.aspx.cs">
+      <DependentUpon>InviteCompanyByAccountant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberArea.aspx.cs">
+      <DependentUpon>MemberArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileTranzactService.cs" />
+    <Compile Include="NewPricingTable.aspx.cs">
+      <DependentUpon>NewPricingTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PricingTable.aspx.cs">
+      <DependentUpon>PricingTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\com.mobiletranzact.www\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SliderControl.ascx.cs">
+      <DependentUpon>SliderControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SliderControl.ascx.designer.cs">
+      <DependentUpon>SliderControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SliderControl1.ascx.cs">
+      <DependentUpon>SliderControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SliderControl1.ascx.designer.cs">
+      <DependentUpon>SliderControl1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Support.aspx.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermsOfService.aspx.cs">
+      <DependentUpon>TermsOfService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testimonial.aspx.cs">
+      <DependentUpon>Testimonial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPackageDetails.aspx.cs">
+      <DependentUpon>ViewPackageDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="TempHTMLFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Admin.Master" />
+    <Content Include="Admin\Doyingo.Master" />
+    <Content Include="Accountant\AccountantMaster.Master" />
+    <None Include="App_Themes\Admin\fonts\clip-font.eot" />
+    <None Include="App_Themes\Admin\fonts\clip-font.ttf" />
+    <None Include="App_Themes\Admin\fonts\clip-font.woff" />
+    <None Include="App_Themes\Admin\fonts\fontawesome-webfont.eot" />
+    <None Include="App_Themes\Admin\fonts\fontawesome-webfont.ttf" />
+    <None Include="App_Themes\Admin\fonts\fontawesome-webfont.woff" />
+    <None Include="App_Themes\Blue\fonts\fontawesome-webfont.eot" />
+    <None Include="App_Themes\Blue\fonts\fontawesome-webfont.ttf" />
+    <None Include="App_Themes\Blue\fonts\fontawesome-webfont.woff" />
+    <None Include="App_Themes\Blue\fonts\FontAwesome.otf" />
+    <None Include="App_Themes\Doyingo\fonts\fontawesome-webfont.eot" />
+    <None Include="App_Themes\Doyingo\fonts\fontawesome-webfont.ttf" />
+    <None Include="App_Themes\Doyingo\fonts\fontawesome-webfont.woff" />
+    <None Include="App_Themes\Doyingo\fonts\fontawesome-webfont.woff2" />
+    <None Include="App_Themes\Doyingo\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="App_Themes\Doyingo\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="App_Themes\Doyingo\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="App_Themes\Doyingo\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="App_Themes\Doyingo\fonts\Simple-Line-Icons.eot" />
+    <None Include="App_Themes\Doyingo\fonts\Simple-Line-Icons.ttf" />
+    <None Include="App_Themes\Doyingo\fonts\Simple-Line-Icons.woff" />
+    <None Include="App_Themes\Doyingo\fonts\weathericons-regular-webfont.eot" />
+    <None Include="App_Themes\Doyingo\fonts\weathericons-regular-webfont.ttf" />
+    <None Include="App_Themes\Doyingo\fonts\weathericons-regular-webfont.woff" />
+    <None Include="App_Themes\Doyingo\images\invoice-classic.pdf" />
+    <None Include="App_Themes\Doyingo\images\invoice-clean-old.pdf" />
+    <None Include="App_Themes\Doyingo\images\invoice-clean.pdf" />
+    <Content Include="CloudAccounting.Master" />
+    <Content Include="Client\ClientManagement.Master" />
+    <Content Include="Handler\AboutContentHandler.ashx" />
+    <Content Include="Handler\ClientHandler.ashx" />
+    <Content Include="Handler\CompanyLogoFile.ashx" />
+    <Content Include="Handler\ExpenseHandler.ashx" />
+    <Content Include="Handler\FeatureHandler.ashx" />
+    <Content Include="Handler\HomeSliderHandler1.ashx" />
+    <Content Include="Handler\HomeSliderHandler2.ashx" />
+    <Content Include="packages.config" />
+    <Content Include="App_Themes\sky\fonts\fontawesome-webfont.eot" />
+    <Content Include="App_Themes\sky\fonts\fontawesome-webfont.ttf" />
+    <Content Include="App_Themes\sky\fonts\fontawesome-webfont.woff" />
+    <Content Include="App_Themes\sky\fonts\fontawesome-webfont.woff2" />
+    <Content Include="App_Themes\sky\fonts\FontAwesome.otf" />
+    <Content Include="App_Themes\sky\fonts\Tondo-Light.eot" />
+    <Content Include="App_Themes\sky\fonts\Tondo-Light.ttf" />
+    <Content Include="App_Themes\sky\fonts\Tondo-Light.woff" />
+    <Content Include="App_Themes\sky\fonts\Tondo-Light.woff2" />
+    <Content Include="App_Themes\sky\fonts\Tondo.eot" />
+    <Content Include="App_Themes\sky\fonts\Tondo.ttf" />
+    <Content Include="App_Themes\sky\fonts\Tondo.woff" />
+    <Content Include="App_Themes\sky\fonts\Tondo.woff2" />
+    <Content Include="App_Themes\sky\fonts\Tondo_1.eot" />
+    <Content Include="App_Themes\sky\fonts\Tondo_1.ttf" />
+    <Content Include="App_Themes\sky\fonts\Tondo_1.woff" />
+    <Content Include="App_Themes\sky\fonts\Tondo_1.woff2" />
+    <Content Include="App_Themes\sky\uploads\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\Compiled.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
+    <None Include="SampleFile\SampleClients.csv" />
+    <None Include="SampleFile\sample_expenses.csv" />
+    <Content Include="Service References\com.mobiletranzact.www\MobileTranzactService.wsdl" />
+    <None Include="UploadCSVFile\My Company_SampleClients.csv" />
+    <None Include="UploadCSVFile\sample_expenses.csv" />
+    <None Include="UploadvCardFile\john-doe.vcf" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\com.mobiletranzact.www\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1923</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

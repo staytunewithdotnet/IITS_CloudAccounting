@@ -1,0 +1,20 @@
+.GetStarted {
+    height: 200px;
+    background-color: #0d83dd;
+    padding: 40px 50px;
+    color: white;
+    text-align: center;
+}
+
+.GetStartedUsers {
+    height: 200px;
+    background-color: #66a402;
+    padding: 60px 40px;
+    color: white;
+    text-align:center;
+}
+
+.pad5
+{
+    padding:5px;
+}

@@ -1,0 +1,498 @@
+﻿.totals.ta_right > span {
+    color: black;
+    font-size: 15px;
+}
+
+.dispute-bubble {
+    background-color: #fffbe1;
+    border: 1px solid #e4dfbe;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.dispute-nib.left {
+    background-position: -69px -50px;
+    left: -10px;
+}
+
+.dispute-nib {
+    background-image: url("../images/allIcon.png");
+    background-repeat: no-repeat;
+    display: block;
+    height: 20px;
+    position: absolute;
+    top: 9px;
+    width: 10px;
+}
+
+    .dispute-nib.right {
+        background-position: -59px -50px;
+        right: -10px;
+    }
+
+.example {
+    color: #888;
+    font-size: 11px;
+    line-height: 16px;
+    margin-top: 5px;
+}
+
+.client-icon-medium {
+    -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-image: url(../images/client-icons.png);
+    background-position: -60px 0;
+    height: 40px;
+    width: 40px;
+}
+
+.staff-icon-medium {
+    -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-image: url(../images/client-icons.png);
+    background-position: -220px 0;
+    height: 40px;
+    width: 40px;
+}
+
+    .contractor-icon-large {
+        background-position: -100px 0 !important;
+    }
+
+    .staff-icon-large, .contractor-icon-large, .advisor-icon-large, .client-icon-large {
+        -o-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        background-image: url(../images/client-icons.png);
+        background-position: 0 0;
+        height: 60px;
+        width: 60px;
+    }
+
+    .bg-system-light {
+        background-color: #cbe7fc;
+    }
+
+div.float_right, .float_right {
+    float: right;
+}
+
+div.float_left, .float_left {
+    float: left;
+}
+.cutline-top {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+.float_left {
+    float: left;
+}
+
+.ta_left {
+    text-align: left;
+}
+
+.tax1 {
+    display: none;
+}
+
+.invbody-summary .border {
+    border-top: solid 1px #e5e5e5;
+    padding-top: 3px;
+}
+
+.hi > tbody > tr > td, .hi > tbody > tr > th {
+    text-align: center !important;
+}
+
+.totals.ta_right > strong {
+    color: black;
+    font-size: 15px;
+}
+
+.invoice-container .status-draft {
+    background: url("../images/banner-draft.png") top left no-repeat;
+}
+
+.invoice-container .status-draft-partial {
+    background: url("../images/banner-draft-partial.png") top left no-repeat;
+}
+
+.invoice-container .status-created {
+    background: url("../images/banner-created.png") top left no-repeat;
+}
+
+.invoice-container .status-sent {
+    background: url("../images/banner-sent.png") top left no-repeat;
+}
+
+.invoice-container .status-viewed {
+    background: url("../images/banner-viewed.png") top left no-repeat;
+}
+
+.invoice-container .status-disputed {
+    background: url("../images/banner-disputed.png") top left no-repeat;
+}
+
+.invoice-container .status-paid {
+    background: url("../images/banner-paid.png") top left no-repeat;
+}
+
+.invoice-container .status-partial {
+    background: url("../images/banner-partial.png") top left no-repeat;
+}
+
+.invoice-container .status-pending {
+    background: url("../images/banner-pending.png") top left no-repeat;
+}
+
+.invoice-container .status-declined {
+    background: url("../images/banner-declined.png") top left no-repeat;
+}
+
+.invoice-container .status-auto-paid {
+    background: url("../images/banner-auto-paid.png") top left no-repeat;
+}
+
+.invoice-container .status-retry {
+    background: url("../images/banner-retry.png") top left no-repeat;
+}
+
+.invoice-container .status-failed {
+    background: url("../images/banner-failed.png") top left no-repeat;
+}
+
+.invoice-container .status-replied {
+    background: url("../images/banner-replied.png") top left no-repeat;
+}
+
+.invoice-container .status-commented {
+    background: url("../images/banner-commented.png") top left no-repeat;
+}
+
+.invoice-container .status-resolved {
+    background: url("../images/banner-resolved.png") top left no-repeat;
+}
+
+.invoice-container .status-accepted {
+    background: url("../images/banner-accepted.png") top left no-repeat;
+}
+
+.invoice-container .status-invoiced {
+    background: url("../images/banner-invoiced.png") top left no-repeat;
+}
+
+.invoice-container .status-outstanding {
+    background: url("../images/banner-outstanding.png") top left no-repeat;
+}
+
+.invoice-container .status-open {
+    background: url("../images/banner-open.png") top left no-repeat;
+}
+
+.invoice-container .status-draft, .invoice-container .status-draft-partial, .invoice-container .status-created, .invoice-container .status-sent, .invoice-container .status-viewed, .invoice-container .status-commented, .invoice-container .status-resolved, .invoice-container .status-disputed, .invoice-container .status-paid, .invoice-container .status-partial, .invoice-container .status-pending, .invoice-container .status-declined, .invoice-container .status-auto-paid, .invoice-container .status-retry, .invoice-container .status-failed, .invoice-container .status-replied, .invoice-container .status-accepted, .invoice-container .status-invoiced, .invoice-container .status-outstanding, .invoice-container .status-open {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    height: 133px;
+    width: 133px;
+    z-index: 20;
+}
+
+.rounded-container {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.invoice-container {
+    clear: both;
+    padding: 54px 40px 72px 40px;
+    z-index: 0;
+}
+
+.invheader-invoicedetails .invheader-invoicedetails-balance th div, .attachment-header th div {
+    border-left: solid 1px #f1f1f1;
+    border-top: solid 1px #f1f1f1;
+    padding: 3px 5px;
+}
+
+.invoice-brand {
+    float: right;
+    font-size: 11px;
+    margin-top: 22px;
+    margin-right: 1px;
+    color: #777777;
+}
+
+.invbody-summary {
+    float: right;
+}
+
+.gridTableView {
+    margin-bottom: 20px;
+}
+
+    .gridTableView > tbody > tr > td:last-child, .gridTableView > tbody > tr > th:last-child {
+        text-align: right;
+    }
+
+    .gridTableView > tbody > tr > td {
+        font-family: Arial, "Arial Unicode", "Arial Unicode MS", Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: left;
+        padding: 5px !important;
+        border-bottom: 1px solid #c7c7c7;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+    }
+
+    .gridTableView > tbody > tr > th {
+        background-color: #e3e3e3;
+        line-height: 22px;
+        padding: 5px !important;
+        border-top: solid 1px #c7c7c7;
+        border-bottom: solid 1px #c7c7c7;
+        vertical-align: top;
+        border-left: 1px solid #e3e3e3;
+        border-right: 1px solid #e3e3e3;
+    }
+
+.totals {
+    font-size: 12px;
+    float: right;
+    border-left: 1px solid #ccc;
+    padding-left: 15px;
+    margin-bottom: 22px;
+}
+
+.ta_right {
+    text-align: right;
+}
+
+.dropdown-menu li a:hover {
+    background: #3399FF;
+    color: white;
+}
+
+.btn-lg {
+    font-size: 18px;
+    font-weight: bold;
+    height: 45px;
+    line-height: 43px;
+    margin: 0 0 17px 5px;
+    padding: 0 19px;
+    border-radius: 0;
+}
+
+.gridTable.table > tbody > tr > th:last-child, .gridTable.table > tbody > tr > td:last-child {
+    background-color: white;
+    border: none;
+}
+
+.gridTable.table > tbody > tr > th {
+    background-color: #0D83DE;
+    color: #ffffff;
+    font-weight: normal;
+    padding: 5px 5px !important;
+    line-height: 18px;
+    border: none;
+}
+
+.gridTable.table > tbody > tr > td {
+    text-align: left;
+    font-weight: normal;
+    padding: 5px 5px !important;
+    line-height: 18px;
+}
+
+.gridTable.table > tbody > tr > th:last-child, .gridTable.table > tbody > tr > th:nth-last-child(2) {
+    text-align: right;
+}
+
+.gridTable.table > tbody > tr > td:nth-last-child(2), .gridTable.table > tbody > tr > td:last-child {
+    text-align: right;
+    background-color: #f0f0f0;
+    padding: 2px 6px 2px 0;
+    color: #000;
+}
+
+.gridTable.table > tbody > tr > td:last-child {
+    text-align: right;
+    background-color: #fff;
+    padding: 2px 6px 2px 0;
+    color: #000;
+}
+
+.gridTable > button, input, select, textarea, input[type="text"] {
+    padding: 5px;
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+.invheader, .invheader th, .invbody, .invbody .description, .invstub, .invstub th, .invstub-viewestimate, .attachment-header, .attachment-header th {
+    font-family: Arial, "Arial Unicode", "Arial Unicode MS", Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+}
+
+.invheader {
+    min-height: 270px;
+    position: relative;
+}
+
+.invheader-upper {
+    z-index: 10;
+    position: relative;
+    margin-left: 0.5in;
+    min-height: 90px;
+}
+
+.invheader-address-account {
+    float: left;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.invheader-logo-container {
+    width: 250px;
+    height: 90px;
+    float: right;
+}
+
+.invheader-lower {
+    clear: both;
+    margin-top: 54px;
+    margin-left: 0.5in;
+    min-height: 126px;
+}
+
+.invheader-address-client {
+    float: left;
+    width: 50%;
+    padding-bottom: 20px;
+}
+
+.invheader-invoicedetails {
+    float: right;
+    width: 48%;
+    padding-bottom: 20px;
+    text-align: right;
+}
+
+    .invheader-invoicedetails table {
+        width: 100%;
+    }
+
+    .invheader-invoicedetails .invheader-invoicedetails-balance th, .attachment-header th {
+        border-left: solid 1px #c7c7c7;
+    }
+
+    .invheader-invoicedetails .invheader-invoicedetails-balance td, .attachment-header td {
+        border-right: solid 1px #c7c7c7;
+    }
+
+    .invheader-invoicedetails .invheader-invoicedetails-balance th, .invheader-invoicedetails .invheader-invoicedetails-balance td, .attachment-header th, .attachment-header td {
+        background-color: #e5e5e5;
+        border-top: solid 1px #c7c7c7;
+        border-bottom: solid 1px #c7c7c7;
+        padding: 0;
+        font-weight: bold;
+    }
+
+.invheader-logo {
+    text-align: center;
+    font-size: 11px;
+    line-height: 12px;
+}
+
+.invheader-logo {
+    float: right;
+}
+
+.invbody-summary .invbody-summary-clean {
+    border: 0;
+    background-color: transparent;
+}
+
+.invbody-summary-subtotal td, .invbody-summary-subtotal th {
+    padding-top: 3px;
+}
+
+.invbody-summary th, .invbody-summary td {
+    padding: 0 5px;
+}
+
+.invbody-summary td {
+    text-align: right;
+}
+
+.invbody-summary-paid td, .invbody-summary-paid th {
+    padding-bottom: 3px;
+}
+
+.invbody-summary-total td, .invbody-summary-total th {
+    background-color: #e5e5e5;
+    border-top: solid 1px #c7c7c7;
+    border-bottom: solid 1px #c7c7c7;
+    padding: 0;
+}
+
+#printNone {
+    display: block;
+}
+
+@media print {
+    #printNone {
+        display: none;
+    }
+}
+
+.panel-body .x_button {
+    background-image: url('../images/close-grey.png');
+}
+
+.x_button {
+    background: url('../images/close-blue.png') no-repeat left top;
+    width: 51px;
+    height: 46px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+}
+
+.panel-body .close-button-blue {
+    background-image: url('../images/allIcon.png');
+    background-position: -59px -19px;
+}
+
+    .panel-body .close-button-blue:hover {
+        background-position: -78px -19px;
+    }
+
+.close-button-blue {
+    display: block;
+    width: 19px;
+    padding-top: 19px;
+    overflow: hidden;
+    height: 0;
+    float: right;
+    background: url('../images/close-button-blue.png') no-repeat left top;
+    margin: 1px;
+    cursor: pointer;
+}
+
+.dropdownFirst > option:nth-child(2) {
+    background-color: #ff9;
+}

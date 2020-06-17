@@ -1,0 +1,579 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="IITS_CloudAccounting.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Admin Panel</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="../App_Themes/Admin/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../App_Themes/Admin/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../App_Themes/Admin/css/style.css" />
+    <link rel="stylesheet" href="../App_Themes/Admin/css/main.css" />
+    <link rel="stylesheet" href="../App_Themes/Admin/css/main-responsive.css" />
+    <link rel="stylesheet" href="../App_Themes/Admin/css/bootstrap-colorpalette.css" />
+    <link rel="stylesheet" href="../App_Themes/Admin/css/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../App_Themes/Admin/css/theme_light.css" type="text/css" id="skin_color" />
+    <link rel="stylesheet" href="../App_Themes/Admin/css/print.css" type="text/css" media="print" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 span {
+            padding-top: 7px;
+            float: left;
+        }
+
+        .form-group .text {
+            margin-top: 0;
+        }
+
+        .radio input[type=radio], .radio-inline input[type=radio], .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox] {
+            margin-left: 0;
+            margin-top: -5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="clip-list-2"></span>
+                    </button>
+                    <a class="navbar-brand" href="Default.aspx">Bill Transact
+                    </a>
+                </div>
+                <div class="navbar-tools">
+                    <ul class="nav navbar-right">
+                        <li class="dropdown current-user">
+                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+                                <span class="username">
+                                    <asp:LoginName runat="server" ID="LoginName1" />
+                                </span>
+                                <i class="clip-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="ChangePassword.aspx">
+                                        <i class="clip-user-2"></i>
+                                        &nbsp;Change Password
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutPageUrl="../MemberArea.aspx" CssClass="clip-exit" OnLoggingOut="LoginStatus1_OnLoggingOut" />
+                                    <%--<a href="#">
+                                        <i class="clip-exit"></i>
+                                        &nbsp;Log Out
+                                    </a>--%>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <%-- ReSharper disable UnknownCssClass --%>
+            <div class="navbar-content">
+                <%-- ReSharper restore UnknownCssClass --%>
+                <div class="main-navigation navbar-collapse collapse">
+                    <div class="navigation-toggler">
+                        <i class="clip-list-2"></i>
+                    </div>
+                    <ul class="main-navigation-menu" id="mainUl" runat="server">
+                        <li id="home" runat="server" class="">
+                            <a href="Default.aspx"><i class="clip-home-3"></i>
+                                <span class="title">Dashboard </span><span class="selected"></span>
+                            </a>
+                        </li>
+                        <li id="generalMaster" runat="server">
+                            <a href="javascript:void(0)"><i class="clip-screen"></i>
+                                <span class="title">General Master </span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="freePackage" runat="server">
+                                    <a href="FreePackageSettings.aspx">
+                                        <span class="title">Free Package Settings</span>
+                                    </a>
+                                </li>
+                                <li id="paymentGateway" runat="server">
+                                    <a href="PaymentGatewayMaster.aspx">
+                                        <span class="title">Payment Gateway Master</span>
+                                    </a>
+                                </li>
+                                <li id="paymentGatewayPaypal" runat="server">
+                                    <a href="PaymentGatewayPaypalMaster.aspx">
+                                        <span class="title">Payment Gateway Paypal</span>
+                                    </a>
+                                </li>
+                                <li id="country" runat="server">
+                                    <a href="CountryMaster.aspx">
+                                        <span class="title">Country Master</span>
+                                    </a>
+                                </li>
+                                <li id="state" runat="server">
+                                    <a href="StateMaster.aspx">
+                                        <span class="title">State Master</span>
+                                    </a>
+                                </li>
+                                <li id="city" runat="server">
+                                    <a href="CityMaster.aspx">
+                                        <span class="title">City Master</span>
+                                    </a>
+                                </li>
+                                <li id="currency" runat="server">
+                                    <a href="CurrencyMaster.aspx">
+                                        <span class="title">Currency Master</span>
+                                    </a>
+                                </li>
+                                <li id="securityQuestion" runat="server">
+                                    <a href="SecurityQuestionMaster.aspx">
+                                        <span class="title">Security Question Master</span>
+                                    </a>
+                                </li>
+                                <li id="frequency" runat="server">
+                                    <a href="FrequencyMaster.aspx">
+                                        <span class="title">Frequency Master</span>
+                                    </a>
+                                </li>
+                                <li id="bussiness" runat="server">
+                                    <a href="BussinessMaster.aspx">
+                                        <span class="title">Bussiness Master</span>
+                                    </a>
+                                </li>
+                                <li id="industry" runat="server">
+                                    <a href="IndustryMaster.aspx">
+                                        <span class="title">Industry Master</span>
+                                    </a>
+                                </li>
+                                <li id="currentAccount" runat="server">
+                                    <a href="CurrentAccountMaster.aspx">
+                                        <span class="title">Current Account</span>
+                                    </a>
+                                </li>
+                                <li id="runningFrom" runat="server">
+                                    <a href="RunningFromMaster.aspx">
+                                        <span class="title">Running From</span>
+                                    </a>
+                                </li>
+                                <li id="Category" runat="server">
+                                    <a href="CategoryMaster.aspx">
+                                        <span class="title">Expense Category</span>
+                                    </a>
+                                </li>
+                                <li id="SubCategory" runat="server">
+                                    <a href="SubCategoryMaster.aspx">
+                                        <span class="title">Expense Sub Category</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="supportMasters" runat="server">
+                            <a href="javascript:void(0)"><i class="clip-stack"></i>
+                                <span class="title">Support Tickets</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="supportDepartment" runat="server">
+                                    <a href="SupportDepartmentMaster.aspx">
+                                        <span class="title">Support Department Master</span>
+                                    </a>
+                                </li>
+                                <li id="supportTickets" runat="server">
+                                    <a href="SupportTicketsMaster.aspx">
+                                        <span class="title">Bill Transact Support Tickets</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="masterAdminMagmnt" runat="server">
+                            <a href="javascript:void(0)"><i class="clip-user-5" style="margin: 0;"></i>
+                                <span class="title">Master Admin Mangmnt</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="masterAdmin" runat="server" class="">
+                                    <a href="MasterAdminLoginMaster.aspx">
+                                        <span class="title">Master Admin Login</span>
+                                    </a>
+                                </li>
+                                <li id="masterAdminRights" runat="server" class="">
+                                    <a href="MasterAdminRightsMaster.aspx">
+                                        <span class="title">Master Admin Rights</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <%--<li id="packageUpgradeRequest" runat="server" class="">
+                            <a href="PackageUpgradeRequestMaster.aspx"><i class="fa fa-paper-plane-o"></i>
+                                <span class="title">Package Upgrade Request</span><span class="selected"></span>
+                            </a>
+                        </li>--%>
+                        <li id="packageManagement" runat="server">
+                            <a href="javascript:void(0)"><i class="fa fa-list-ul"></i>
+                                <span class="title">Package Management</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <%--<li runat="server" id="module">
+                                    <a href="ModuleMaster.aspx">
+                                        <span class="title">Modules Master</span>
+                                    </a>
+                                </li>
+                                <li id="package" runat="server">
+                                    <a href="PackageMaster.aspx">
+                                        <span class="title">Package Master</span>
+                                    </a>
+                                </li>--%>
+                                <li id="PackageModule" runat="server">
+                                    <a href="PackageModuleMaster.aspx">
+                                        <span class="title">Package Module Master</span>
+                                    </a>
+                                </li>
+                                <li id="PackageFeature" runat="server">
+                                    <a href="PackageFeatureMaster.aspx">
+                                        <span class="title">Package Feature Master</span>
+                                    </a>
+                                </li>
+                                <li id="cloudPackage" runat="server">
+                                    <a href="CloudPackageMaster.aspx">
+                                        <span class="title">Cloud Package Master</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="companyManagement" runat="server">
+                            <a href="javascript:void(0)"><i class="fa fa-list-ul"></i>
+                                <span class="title">Company Management</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li runat="server" id="companyMaster">
+                                    <a href="CompanyMaster.aspx">
+                                        <span class="title">Company Master</span>
+                                    </a>
+                                </li>
+                                <li runat="server" id="companyLoginMaster">
+                                    <a href="CompanyLoginMaster.aspx">
+                                        <span class="title">Company Login Master</span>
+                                    </a>
+                                </li>
+                                <li runat="server" id="companyPackageInfo">
+                                    <a href="CompanyPackageInfo.aspx">
+                                        <span class="title">Company Package Info</span>
+                                    </a>
+                                </li>
+                                <%--<li runat="server" id="companyPackageDetails">
+                                    <a href="CompanyPackageDetails.aspx">
+                                        <span class="title">Company Package Details</span>
+                                    </a>
+                                </li>
+                                <li runat="server" id="companyRightsMaster">
+                                    <a href="CompanyAdminRightsMaster.aspx">
+                                        <span class="title">Company Rights Master</span>
+                                    </a>
+                                </li>--%>
+                            </ul>
+                        </li>
+                        <%--<li id="userManagement" runat="server">
+                            <a href="javascript:void(0)"><i class="fa fa-user"></i>
+                                <span class="title">User Management</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="client" runat="server">
+                                    <a href="CompanyClientMaster.aspx">
+                                        <span class="title">Client Master</span>
+                                    </a>
+                                </li>
+                                <li runat="server" id="employee">
+                                    <a href="EmployeeMaster.aspx">
+                                        <span class="title">Employee Master</span>
+                                    </a>
+                                </li>
+                                <li runat="server" id="contractor">
+                                    <a href="ContractorMaster.aspx">
+                                        <span class="title">Contractor Master</span>
+                                    </a>
+                                </li>
+                                <li id="accountant" runat="server">
+                                    <a href="#">
+                                        <span class="title">Accountant</span>
+                                    </a>
+                                </li>
+                                <li id="assignClient" runat="server">
+                                    <a href="#">
+                                        <span class="title">Assign Clients</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="invoice" runat="server">
+                            <a href="javascript:void(0)"><i class="fa fa-file"></i>
+                                <span class="title">Invoice Management</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="newInvoice" runat="server">
+                                    <a href="InvoiceMasterNew.aspx">
+                                        <span class="title">New Invoice</span>
+                                    </a>
+                                </li>
+                                <li id="recurring" runat="server">
+                                    <a href="RecurringInvoice.aspx">
+                                        <span class="title">Recurring</span>
+                                    </a>
+                                </li>
+                                <li id="receivedInvoice" runat="server">
+                                    <a href="#">
+                                        <span class="title">Received Invoice</span>
+                                    </a>
+                                </li>
+                                <li id="payments" runat="server">
+                                    <a href="#">
+                                        <span class="title">Payments</span>
+                                    </a>
+                                </li>
+                                <li id="credits" runat="server">
+                                    <a href="CreditNoteMaster.aspx">
+                                        <span class="title">Credits</span>
+                                    </a>
+                                </li>
+                                <li id="item" runat="server">
+                                    <a href="ItemMaster.aspx">
+                                        <span class="title">Items</span>
+                                    </a>
+                                </li>
+                                <li id="taxMaster" runat="server">
+                                    <a href="TaxMaster.aspx">
+                                        <span class="title">Tax</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="Estimate" runat="server">
+                            <a href="javascript:void(0)"><i class="fa fa-file-excel-o"></i>
+                                <span class="title">Estimate Management</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="newEstimate" runat="server">
+                                    <a href="EstimateMaster.aspx">
+                                        <span class="title">New Estimate</span>
+                                    </a>
+                                </li>
+                                <li id="receivedEstimate" runat="server">
+                                    <a href="#">
+                                        <span class="title">Received Estimate</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="expenseMenu" runat="server">
+                            <a href="javascript:void(0)"><i class="fa-list-alt"></i>
+                                <span class="title">Expense</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="expense" runat="server">
+                                    <a href="ExpenseMaster.aspx">
+                                        <span class="title">Expenses</span>
+                                    </a>
+                                </li>
+                                <li id="importExpense" runat="server">
+                                    <a href="#">
+                                        <span class="title">File Import</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>--%>
+                        <li id="formManagement" runat="server">
+                            <a href="javascript:void(0)"><i class="clip-screen"></i>
+                                <span class="title">Form Management</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="formMaster" runat="server">
+                                    <a href="FormMaster.aspx">
+                                        <span class="title">Form Master</span>
+                                    </a>
+                                </li>
+                                <li id="moduleFormMaster" runat="server">
+                                    <a href="ModuleFormMaster.aspx">
+                                        <span class="title">Module Form Master</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="adminReports" runat="server">
+                            <a href="javascript:void(0)"><i class="clip-download-3"></i>
+                                <span class="title">Reports</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li runat="server" id="companyActive">
+                                    <a href="CompanyReportStatus.aspx">
+                                        <span class="title">Company Active/Inactive</span>
+                                    </a>
+                                </li>
+                                <li runat="server" id="companyActiveDate">
+                                    <a href="CompanyStatusDateReport.aspx">
+                                        <span class="title">Active/Inactive Package</span>
+                                    </a>
+                                </li>
+                                <li runat="server" id="companyPackageReport">
+                                    <a href="CompanyPackageReport.aspx">
+                                        <span class="title">Company Package Report</span>
+                                    </a>
+                                </li>
+                                <li runat="server" id="salesReport">
+                                    <a href="SalesReport.aspx">
+                                        <span class="title">Sales Report</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="cmsMaster" runat="server">
+                            <a href="javascript:void(0)"><i class="fa fa-user"></i>
+                                <span class="title">CMS Masters</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li id="homeMaster" runat="server">
+                                    <a href="HomeMaster.aspx">
+                                        <span class="title">Home Page Content</span>
+                                    </a>
+                                </li>
+                                <li id="homePageSlider" runat="server">
+                                    <a href="HomePageSlider.aspx">
+                                        <span class="title">Home Page Slider</span>
+                                    </a>
+                                </li>
+                                <li id="clientMaster" runat="server">
+                                    <a href="ClientMaster.aspx">
+                                        <span class="title">Client Master</span>
+                                    </a>
+                                </li>
+                                <li id="FooterContent" runat="server">
+                                    <a href="FooterContent.aspx">
+                                        <span class="title">Footer Content</span>
+                                    </a>
+                                </li>
+                                <li id="privacyPolicy" runat="server">
+                                    <a href="PrivacyPolicyContent.aspx">
+                                        <span class="title">Privacy Policy Content</span>
+                                    </a>
+                                </li>
+                                <li id="termService" runat="server">
+                                    <a href="TermServiceContent.aspx">
+                                        <span class="title">Terms Service Content</span>
+                                    </a>
+                                </li>
+                                <li id="TestimonialsMaster" runat="server">
+                                    <a href="TestimonialsMaster.aspx">
+                                        <span class="title">Testimonials Master</span>
+                                    </a>
+                                </li>
+                                <li id="inquiryMaster" runat="server">
+                                    <a href="InquiryMaster.aspx">
+                                        <span class="title">Inquiry Master</span>
+                                    </a>
+                                </li>
+                                <li id="contactMaster" runat="server">
+                                    <a href="ContactMaster.aspx">
+                                        <span class="title">Contact Master</span>
+                                    </a>
+                                </li>
+                                <li id="aboutCat" runat="server">
+                                    <a href="AboutCategoryMaster.aspx">
+                                        <span class="title">About Category</span>
+                                    </a>
+                                </li>
+                                <li id="aboutCon" runat="server">
+                                    <a href="AboutContentMaster.aspx">
+                                        <span class="title">About Content</span>
+                                    </a>
+                                </li>
+                                <li id="featureCat" runat="server">
+                                    <a href="FeatureMaster.aspx">
+                                        <span class="title">Feature Master</span>
+                                    </a>
+                                </li>
+                                <li id="faqCat" runat="server">
+                                    <a href="FAQCategoryMaster.aspx">
+                                        <span class="title">FAQ Category</span>
+                                    </a>
+                                </li>
+                                <li id="faqMaster" runat="server">
+                                    <a href="FAQMaster.aspx">
+                                        <span class="title">FAQ Master</span>
+                                    </a>
+                                </li>
+                                <li id="supportMaster" runat="server">
+                                    <a href="#">
+                                        <span class="title">Support Master</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="container">
+                    <%-- ReSharper disable UnknownCssClass --%>
+                    <div id="editor" class="bypass" style="display: none;"></div>
+                    <%-- ReSharper restore UnknownCssClass --%>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <div class="footer clearfix">
+            <div class="footer-inner">
+                <p>
+                    <%--All Rights Reserved © Bill Transact  |  Designed & Developed By <a title="Website Design, Software Development, Domain Registration, Web Hosting, Reseller Hosting, Bulk SMS, SEO Service provider in Ahmedabad, Gujarat, INDIA" href="http://www.i-infotechsys.com" target="_blank">I-INFOTECHSYS</a>--%>
+                    <asp:DataList runat="server" ID="dlFooter" Width="100%" RepeatColumns="1" DataKeyField="FooterContentID" DataSourceID="sqldsFooter">
+                        <ItemTemplate>
+                            <p>
+                                <asp:Label Text='<%# Eval("FooterContent") %>' runat="server" ID="FooterContentLabel" />
+                            </p>
+                        </ItemTemplate>
+                    </asp:DataList>
+                    <asp:SqlDataSource runat="server" ID="sqldsFooter" ConnectionString='<%$ ConnectionStrings:IITS_CloudAccountConnectionString %>' SelectCommand="SELECT * FROM [FooterContent]"></asp:SqlDataSource>
+                </p>
+            </div>
+            <div class="footer-items">
+                <span class="go-top"><i class="clip-chevron-up"></i></span>
+            </div>
+        </div>
+
+        <script src="../App_Themes/Admin/js/jquery.min.js"></script>
+        <script src="../App_Themes/Admin/js/jquery-ui-1.10.2.custom.min.js"></script>
+        <script src="../App_Themes/Admin/js/bootstrap.min.js"></script>
+        <script src="../App_Themes/Admin/js/bootstrap-hover-dropdown.min.js"></script>
+        <script src="../App_Themes/Admin/js/jquery.blockUI.js"></script>
+        <script src="../App_Themes/Admin/js/jquery.icheck.min.js"></script>
+        <script src="../App_Themes/Admin/js/jquery.mousewheel.js"></script>
+        <script src="../App_Themes/Admin/js/perfect-scrollbar.js"></script>
+        <script src="../App_Themes/Admin/js/less-1.5.0.min.js"></script>
+        <script src="../App_Themes/Admin/js/jquery.cookie.js"></script>
+        <script src="../App_Themes/Admin/js/bootstrap-colorpalette.js"></script>
+        <script src="../App_Themes/Admin/js/main.js"></script>
+
+        <script src="../App_Themes/Admin/PdfExport/js/html2canvas.js"></script>
+        <script src="../App_Themes/Admin/PdfExport/js/ace.js"></script>
+        <script src="../App_Themes/Admin/PdfExport/js/jspdf.min.js"></script>
+        <script src="../App_Themes/Admin/PdfExport/js/editor.js"></script>
+        <script>
+            jQuery(document).ready(function () {
+                Main.init();
+            });
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* --- switcher style --------------------- */
+/* switcher */
+.switcher {
+  position: fixed;
+  top: 15%;
+  z-index: 1000000000;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -khtml-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.switcher .switcherWrappper {
+  position: relative;
+}
+.switcher .switcherShowHide {
+  background-color: #ff6b6b;
+  color: #ffffff;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 21px;
+  overflow: hidden;
+  position: absolute;
+  left: 100%;
+  -webkit-border-radius: 0 2px 2px 0;
+  -moz-border-radius: 0 2px 2px 0;
+  -o-border-radius: 0 2px 2px 0;
+  -ms-border-radius: 0 2px 2px 0;
+  -khtml-border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
+  top: 20px;
+  /*-webkit-box-shadow: 1px 0px 0px 0 rgba(0, 0, 0, 0.2),0px 1px 0px 0 rgba(0, 0, 0, 0.2),0px -1px 0px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:    1px 0px 0px 0 rgba(0, 0, 0, 0.2),0px 1px 0px 0 rgba(0, 0, 0, 0.2),0px -1px 0px 0 rgba(0, 0, 0, 0.2);
+    box-shadow:         1px 0px 0px 0 rgba(0, 0, 0, 0.2),0px 1px 0px 0 rgba(0, 0, 0, 0.2),0px -1px 0px 0 rgba(0, 0, 0, 0.2);
+    */
+}
+.switcher .switcherShowHide i {
+  font-size: 24px;
+}
+.switcher .switcherContents {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 231px;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  -khtml-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 0 2px 2px 0;
+  -moz-border-radius: 0 2px 2px 0;
+  -o-border-radius: 0 2px 2px 0;
+  -ms-border-radius: 0 2px 2px 0;
+  -khtml-border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
+}
+.switcher .switcherContents header {
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  background-color: #ff6b6b;
+  text-align: center;
+}
+.switcher .switcherContents header h5 {
+  color: #ffffff;
+  margin-bottom: 0;
+}
+.switcherContent {
+  padding: 20px 0;
+  border-bottom: 1px solid #cccccc;
+}
+.switcherContent .title {
+  display: block;
+  margin-bottom: 20px;
+}
+.switcherContent:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.switcher.opened {
+  left: 0 !important;
+}
+.switcherContent ul {
+  text-align: center;
+  margin-top: -5px;
+}
+.switcherContent ul li {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 5px;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  -o-border-radius: 2px 2px 2px 2px;
+  -ms-border-radius: 2px 2px 2px 2px;
+  -khtml-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -khtml-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.switcherContent ul li:last-child {
+  margin-right: 0;
+}
+/* skinsColor */
+.skinsColor ul li {
+  width: 16px;
+  height: 16px;
+}
+/* tempLayout */
+.tempLayout ul li {
+  border: 1px solid #7a7c82;
+  width: 30%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #7a7c82;
+}
+.tempLayout ul li:hover {
+  background-color: #7a7c82;
+  color: #ffffff;
+}
+.tempLayout ul .active-layout {
+  background-color: #7a7c82;
+  color: #ffffff;
+}
+/* patterens */
+.patterens ul li {
+  width: 17px;
+  height: 17px;
+  border: 1px solid #cccccc;
+}
+.patterens ul li img {
+  width: 100%;
+  height: 100%;
+}
+.patterens ul li:nth-child(8n+8) {
+  margin-right: 0;
+}

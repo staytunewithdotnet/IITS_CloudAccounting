@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AAD0C10-0766-405F-A310-619508BB15D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DABL</RootNamespace>
+    <AssemblyName>DABL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AboutCategoryMasterBLL.cs" />
+    <Compile Include="BLL\AboutContentMasterBLL.cs" />
+    <Compile Include="BLL\AccountantClientDetailBLL.cs" />
+    <Compile Include="BLL\AccountantMasterBLL.cs" />
+    <Compile Include="BLL\AdminPermissionMasterBLL.cs" />
+    <Compile Include="BLL\AutoBillEmailTemplateBLL.cs" />
+    <Compile Include="BLL\BussinessMasterBLL.cs" />
+    <Compile Include="BLL\CategoryMasterBLL.cs" />
+    <Compile Include="BLL\ChangeUsernameBLL.cs" />
+    <Compile Include="BLL\CityMasterBLL.cs" />
+    <Compile Include="BLL\ClientMasterBLL.cs" />
+    <Compile Include="BLL\ClientPermissionMasterBLL.cs" />
+    <Compile Include="BLL\CloudPackageDetailsBLL.cs" />
+    <Compile Include="BLL\CloudPackageMasterBLL.cs" />
+    <Compile Include="BLL\CompanyAdminRightsMasterBLL.cs" />
+    <Compile Include="BLL\CompanyClientContactDetailBLL.cs" />
+    <Compile Include="BLL\CompanyClientMasterBLL.cs" />
+    <Compile Include="BLL\CompanyLoginMasterBLL.cs" />
+    <Compile Include="BLL\CompanyMasterBLL.cs" />
+    <Compile Include="BLL\CompanyPackageDetailsBLL.cs" />
+    <Compile Include="BLL\CompanyPackageMasterBLL.cs" />
+    <Compile Include="BLL\CompanyPaymentMasterBLL.cs" />
+    <Compile Include="BLL\CompanyPaypalMasterBLL.cs" />
+    <Compile Include="BLL\CompanyUserMasterBLL.cs" />
+    <Compile Include="BLL\ContactMasterBLL.cs" />
+    <Compile Include="BLL\ContractorMasterBLL.cs" />
+    <Compile Include="BLL\ContractorProjectDetailBLL.cs" />
+    <Compile Include="BLL\CountryMasterBLL.cs" />
+    <Compile Include="BLL\CreditDefaultTermsMasterBLL.cs" />
+    <Compile Include="BLL\CreditHistoryDetailBLL.cs" />
+    <Compile Include="BLL\CreditItemDetailBLL.cs" />
+    <Compile Include="BLL\CreditMasterBLL.cs" />
+    <Compile Include="BLL\CreditTaskDetailBLL.cs" />
+    <Compile Include="BLL\CurrencyMasterBLL.cs" />
+    <Compile Include="BLL\CurrentAccountMasterBLL.cs" />
+    <Compile Include="BLL\DoyinGoSupportDiscussionBLL.cs" />
+    <Compile Include="BLL\DoyinGoSupportTicketBLL.cs" />
+    <Compile Include="BLL\DoyinGoTicketAttachmentBLL.cs" />
+    <Compile Include="BLL\EmailNotificationsBLL.cs" />
+    <Compile Include="BLL\EstimateDefaultTermsMasterBLL.cs" />
+    <Compile Include="BLL\EstimateDisputeHistoryBLL.cs" />
+    <Compile Include="BLL\EstimateItemDetailBLL.cs" />
+    <Compile Include="BLL\EstimateMasterBLL.cs" />
+    <Compile Include="BLL\EstimateTaskDetailBLL.cs" />
+    <Compile Include="BLL\ExpenseMasterBLL.cs" />
+    <Compile Include="BLL\FAQCategoryMasterBLL.cs" />
+    <Compile Include="BLL\FAQMasterBLL.cs" />
+    <Compile Include="BLL\FeatureCategoryMasterBLL.cs" />
+    <Compile Include="BLL\FeatureContentMasterBLL.cs" />
+    <Compile Include="BLL\FeatureMasterBLL.cs" />
+    <Compile Include="BLL\FooterContentBLL.cs" />
+    <Compile Include="BLL\FormGridCompanyAdminMasterBLL.cs" />
+    <Compile Include="BLL\FormGridMasterAdminMasterAdminMasterBLL.cs" />
+    <Compile Include="BLL\FormMasterBLL.cs" />
+    <Compile Include="BLL\FreePackageSettingsBLL.cs" />
+    <Compile Include="BLL\FrequencyMasterBLL.cs" />
+    <Compile Include="BLL\HomeMasterBLL.cs" />
+    <Compile Include="BLL\HomePageSliderBLL.cs" />
+    <Compile Include="BLL\IndustryMasterBLL.cs" />
+    <Compile Include="BLL\InquiryMasterBLL.cs" />
+    <Compile Include="BLL\InvoiceDefaultTermsMasterBLL.cs" />
+    <Compile Include="BLL\InvoiceDisputeHistoryBLL.cs" />
+    <Compile Include="BLL\InvoiceItemDetailBLL.cs" />
+    <Compile Include="BLL\InvoiceMasterBLL.cs" />
+    <Compile Include="BLL\InvoiceTaskDetailBLL.cs" />
+    <Compile Include="BLL\ItemMasterBLL.cs" />
+    <Compile Include="BLL\LatePaymentReminderTemplateBLL.cs" />
+    <Compile Include="BLL\MasterAdminLoginMasterBLL.cs" />
+    <Compile Include="BLL\MasterAdminRightsMasterBLL.cs" />
+    <Compile Include="BLL\MiscellaneousMasterBLL.cs" />
+    <Compile Include="BLL\ModuleFormMasterBLL.cs" />
+    <Compile Include="BLL\ModuleMasterBLL.cs" />
+    <Compile Include="BLL\NewClientEmailTemplateBLL.cs" />
+    <Compile Include="BLL\NewCreditEmailTemplateBLL.cs" />
+    <Compile Include="BLL\NewEstimateEmailTemplateBLL.cs" />
+    <Compile Include="BLL\NewInvoiceEmailTemplateBLL.cs" />
+    <Compile Include="BLL\NewPaymentEmailTemplateBLL.cs" />
+    <Compile Include="BLL\NewStaffEmailTemplateBLL.cs" />
+    <Compile Include="BLL\PackageDetailsBLL.cs" />
+    <Compile Include="BLL\PackageFeatureMasterBLL.cs" />
+    <Compile Include="BLL\PackageMasterBLL.cs" />
+    <Compile Include="BLL\PackageModuleMasterBLL.cs" />
+    <Compile Include="BLL\PackageUpgradeRequestMasterBLL.cs" />
+    <Compile Include="BLL\PasswordQuestionBLL.cs" />
+    <Compile Include="BLL\PaymentGatewayMasterBLL.cs" />
+    <Compile Include="BLL\PaymentGatewayPaypalMasterBLL.cs" />
+    <Compile Include="BLL\PaymentMasterBLL.cs" />
+    <Compile Include="BLL\PrivacyPolicyContentBLL.cs" />
+    <Compile Include="BLL\ProjectMasterBLL.cs" />
+    <Compile Include="BLL\ProjectTaskDetailBLL.cs" />
+    <Compile Include="BLL\RecurringItemDetailBLL.cs" />
+    <Compile Include="BLL\RecurringMasterBLL.cs" />
+    <Compile Include="BLL\RecurringTaskDetailBLL.cs" />
+    <Compile Include="BLL\ReportEstimatedBillingClientBLL.cs" />
+    <Compile Include="BLL\ReportEstimatedBillingProjectBLL.cs" />
+    <Compile Include="BLL\ReportEstimatedBillingTaskBLL.cs" />
+    <Compile Include="BLL\ReportEstimatedBillingTeamBLL.cs" />
+    <Compile Include="BLL\ReportInvoiceDetailsBLL.cs" />
+    <Compile Include="BLL\ReportItemSalesBLL.cs" />
+    <Compile Include="BLL\ReportProjectTaskBLL.cs" />
+    <Compile Include="BLL\ReportProjectUserBLL.cs" />
+    <Compile Include="BLL\ReportTasksInvoicedBLL.cs" />
+    <Compile Include="BLL\ReportTimesheetBLL.cs" />
+    <Compile Include="BLL\ReportTimesheetDetailsClientBLL.cs" />
+    <Compile Include="BLL\ReportTimesheetDetailsProjectBLL.cs" />
+    <Compile Include="BLL\ReportTimesheetDetailsTaskBLL.cs" />
+    <Compile Include="BLL\ReportTimesheetDetailsTeamBLL.cs" />
+    <Compile Include="BLL\RunningFromMasterBLL.cs" />
+    <Compile Include="BLL\SecurityQuestionMasterBLL.cs" />
+    <Compile Include="BLL\SMTPSettingsBLL.cs" />
+    <Compile Include="BLL\StaffClientAssignDetailBLL.cs" />
+    <Compile Include="BLL\StaffMasterBLL.cs" />
+    <Compile Include="BLL\StaffPermissionMasterBLL.cs" />
+    <Compile Include="BLL\StaffProjectDetailBLL.cs" />
+    <Compile Include="BLL\StateMasterBLL.cs" />
+    <Compile Include="BLL\SubCategoryMasterBLL.cs" />
+    <Compile Include="BLL\SupportDepartmentMasterBLL.cs" />
+    <Compile Include="BLL\TaskMasterBLL.cs" />
+    <Compile Include="BLL\TaxMasterBLL.cs" />
+    <Compile Include="BLL\TeamSummaryBLL.cs" />
+    <Compile Include="BLL\TemplateMasterBLL.cs" />
+    <Compile Include="BLL\TemplateSettingsBLL.cs" />
+    <Compile Include="BLL\TermServiceContentBLL.cs" />
+    <Compile Include="BLL\TestimonialsMasterBLL.cs" />
+    <Compile Include="BLL\TimesheetMasterBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="DAL\CloudAccountDA.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\AboutCategoryMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\AboutContentMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\AccountantClientDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\AccountantMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\AdminPermissionMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\aspnet_MembershipTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\aspnet_UsersTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\AutoBillEmailTemplateTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\BussinessMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CategoryMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ChangeUsernameTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CityMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ClientMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ClientPermissionMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CloudPackageDetailsTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CloudPackageMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CompanyAdminRightsMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CompanyClientContactDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CompanyClientMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CompanyLoginMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CompanyMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CompanyPackageDetailsTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CompanyPackageMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CompanyPaymentMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CompanyPaypalMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CompanyUserMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ContactMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ContractorMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ContractorProjectDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CountryMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CreditDefaultTermsMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CreditHistoryDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CreditItemDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CreditMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CreditTaskDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CurrencyMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\CurrentAccountMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\DoyinGoSupportDiscussionTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\DoyinGoSupportTicketTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\DoyinGoTicketAttachmentTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\EmailNotificationsTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\EstimateDefaultTermsMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\EstimateDisputeHistoryTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\EstimateItemDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\EstimateMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\EstimateTaskDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ExpenseMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FAQCategoryMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FAQMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FeatureCategoryMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FeatureContentMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FeatureMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FooterContentTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FormGridCompanyAdminMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FormGridMasterAdminMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FormMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FreePackageSettingsTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\FrequencyMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\HomeMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\HomePageSliderTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\IndustryMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\InquiryMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\InvoiceDefaultTermsMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\InvoiceDisputeHistoryTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\InvoiceItemDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\InvoiceMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\InvoiceTaskDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ItemMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\LatePaymentReminderTemplateTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\MasterAdminLoginMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\MasterAdminRightsMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\MiscellaneousMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ModuleFormMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ModuleMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\NewClientEmailTemplateTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\NewCreditEmailTemplateTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\NewEstimateEmailTemplateTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\NewInvoiceEmailTemplateTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\NewPaymentEmailTemplateTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\NewStaffEmailTemplateTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\PackageDetailsTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\PackageFeatureMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\PackageMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\PackageModuleMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\PackageUpgradeRequestMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\PaymentGatewayMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\PaymentGatewayPaypalMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\PaymentMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\PrivacyPolicyContentTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ProjectMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ProjectTaskDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\RecurringItemDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\RecurringMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\RecurringTaskDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportEstimatedBillingClientTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportEstimatedBillingProjectTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportEstimatedBillingTaskTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportEstimatedBillingTeamTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportExpensesTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportInvoiceDetailsTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportItemSalesTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportPaymentsCollectedTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportProjectTaskTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportProjectUserTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportRecurringAnnualTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportRecurringDetailedTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportRevenueByClientTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportTasksInvoicedTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportTaxSummaryTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportTimesheetDetailsClientTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportTimesheetDetailsProjectTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportTimesheetDetailsTaskTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportTimesheetDetailsTeamTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\ReportTimesheetTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\RunningFromMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\SecurityQuestionMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\SMTPSettingsTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\StaffClientAssignDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\StaffMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\StaffPermissionMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\StaffProjectDetailTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\StateMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\SubCategoryMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\SupportDepartmentMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\TableAdapterManager.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\TaskMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\TaxMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\TeamSummaryTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\TemplateMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\TemplateSettingsTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\TermServiceContentTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\TestimonialsMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\TimesheetGridMasterTableAdapter.cs" />
+    <Compile Include="DAL\CloudAccountDATableAdapters\TimesheetMasterTableAdapter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

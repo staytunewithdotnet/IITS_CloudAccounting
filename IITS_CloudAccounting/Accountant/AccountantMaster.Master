@@ -1,0 +1,197 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AccountantMaster.master.cs" Inherits="IITS_CloudAccounting.Accountant.AccountantMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Accountant Panel</title>
+    <meta charset="utf-8" />
+    <link href="../App_Themes/Doyingo/css/css.css" rel="stylesheet" type="text/css" />
+
+    <link href="../App_Themes/Doyingo/css/uniform.default.min.css" rel="stylesheet" />
+
+    <link href="../App_Themes/Doyingo/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/simple-line-icons.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/menu_cornerbox.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/waves.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/switchery.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/component.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/weather-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/MetroJs.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/toastr.min.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/modern.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/white.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Doyingo/css/select2.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="../App_Themes/Doyingo/js/modernizr.js"> </script>
+    <script src="../App_Themes/Doyingo/js/snap.svg-min.js"> </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../App_Themes/Doyingo/css/otherstyles.css" rel="stylesheet" media="all" />
+    <link href="../App_Themes/Doyingo/css/invoicing.css" rel="stylesheet" media="all" />
+    <style>
+        .page-header {
+            margin: 0 0 20px;
+        }
+
+        .page-horizontal-bar.page-sidebar-fixed.page-header-fixed.compact-menu .page-inner {
+            padding: 100px 0 50px 0 !important;
+        }
+    </style>
+</head>
+<body class="page-header-fixed  pace-done page-horizontal-bar page-sidebar-fixed compact-menu">
+    <form id="form1" runat="server">
+        <div class="overlay"></div>
+
+        <div id="main" class="page-content content-wrap container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav navbar-nav navbar-right hideMobile" style="background-color: #EEEEEE;">
+                        <li id="staffProfile" runat="server">
+                            <a href="AccountantProfile.aspx" style="padding: 0 15px;">Profile</a>
+                        </li>
+                        <li>
+                            <asp:LoginStatus runat="server" ID="LoginStatus2" LogoutText="Log out" LoginText="Log in" LogoutAction="Redirect" LogoutPageUrl="../MemberArea.aspx" Style="padding: 0 15px;" OnLoggingOut="LoginStatus1_OnLoggingOut" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <div class="navbar-inner">
+                    <div class="sidebar-pusher">
+                        <a href="javascript:void(0);" class="waves-effect waves-button waves-classic push-sidebar">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <div class="logo-box" style="margin-top: -18px;">
+                        <a href="AccountantClients.aspx" class="logo-text">
+                            <%--<img src="../App_Themes/Blue/images/logo.jpg" style="height: 80%; width: 80%;" alt="DoyinGo" />--%>
+                            <asp:Image runat="server" ImageUrl="../App_Themes/Blue/images/logo.jpg" ID="imgLogo" Style="height: 78px; width: 104px;" alt="Bill Transact" />
+                        </a>
+                    </div>
+                    <!-- Logo Box -->
+
+                </div>
+            </div>
+            <div class="page-inner" style="">
+                <div id="editor" class="bypass" style="display: none;"></div>
+                <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="Server" />
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <div class="col-lg-12" style="margin: 25px 0;"></div>
+                <div class="clearfix"></div>
+
+                <div class="clearfix"></div>
+                <div class="page-footer" style="border-bottom: 2px solid #ccc; border-top: 2px solid #ccc;">
+                    <p class="no-s">
+                        <%--All Rights Reserved © Bill Transact  |  Designed & Developed By <a title="Website Design, Software Development, Domain Registration, Web Hosting, Reseller Hosting, Bulk SMS, SEO Service provider in Ahmedabad, Gujarat, INDIA" href="http://www.i-infotechsys.com" target="_blank">I-INFOTECHSYS</a>--%>
+                        <asp:DataList runat="server" ID="dlFooter" Width="100%" RepeatColumns="1" DataKeyField="FooterContentID" DataSourceID="sqldsFooter">
+                            <ItemTemplate>
+                                <p>
+                                    <asp:Label Text='<%# Eval("FooterContent") %>' runat="server" ID="FooterContentLabel" />
+                                </p>
+                            </ItemTemplate>
+                        </asp:DataList>
+                        <asp:SqlDataSource runat="server" ID="sqldsFooter" ConnectionString='<%$ ConnectionStrings:IITS_CloudAccountConnectionString %>' SelectCommand="SELECT * FROM [FooterContent]"></asp:SqlDataSource>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cd-overlay" id="overlay" runat="server"></div>
+
+        <script src="../App_Themes/Doyingo/js/jquery-2.1.3.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery-ui.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.blockui.js"> </script>
+        <script src="../App_Themes/Doyingo/js/bootstrap.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.slimscroll.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/switchery.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.uniform.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/classie.js"> </script>
+        <script src="../App_Themes/Doyingo/js/main.js"> </script>
+        <script src="../App_Themes/Doyingo/js/waves.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/main(1).js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.waypoints.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.counterup.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/toastr.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.flot.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.flot.time.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.flot.symbol.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.flot.resize.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/jquery.flot.tooltip.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/curvedLines.js"> </script>
+        <script src="../App_Themes/Doyingo/js/MetroJs.min.js"> </script>
+        <script src="../App_Themes/Doyingo/js/modern.js"> </script>
+        <script src="../App_Themes/Doyingo/js/form-select2.js"></script>
+        <script src="../App_Themes/Doyingo/js/select2.min.js"></script>
+        <script src="../App_Themes/Doyingo/PdfExport/js/html2canvas.js"></script>
+        <script src="../App_Themes/Doyingo/PdfExport/js/ace.js"></script>
+        <script src="../App_Themes/Doyingo/PdfExport/js/jspdf.min.js"></script>
+        <script src="../App_Themes/Doyingo/PdfExport/js/editor.js"></script>
+
+        <%-- ReSharper disable AssignedValueIsNeverUsed --%>
+        <script type="text/javascript">
+            function decimalValue(el, evt) {
+                var charCode = (evt.which) ? evt.which : event.keyCode;
+                var number = el.value.split('.');
+                if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    return false;
+                }
+                //just one dot
+                if (number.length > 1 && charCode == 46) {
+                    return false;
+                }
+                //get the carat position
+                var caratPos = getSelectionStart(el);
+                var dotPos = el.value.indexOf(".");
+                if (caratPos > dotPos && dotPos > -1 && (number[1].length > 1)) {
+                    return false;
+                }
+                return true;
+            }
+
+            function getSelectionStart(o) {
+                if (o.createTextRange) {
+                    var r = document.selection.createRange().duplicate();
+                    r.moveEnd('character', o.value.length);
+                    if (r.text == '') return o.value.length;
+                    return o.value.lastIndexOf(r.text);
+                } else return o.selectionStart;
+            }
+
+            function isNumber(evt) {
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode == 9) {
+                    return true;
+                }
+                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    return false;
+                }
+                return true;
+            }
+
+            function isLetter(evt) {
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode == 9) {
+                    return true;
+                }
+                if (!(charCode > 31 && (charCode < 48 || charCode > 57))) {
+                    return false;
+                }
+                return true;
+            }
+
+        </script>
+
+        <div id="flotTip" style="display: none; position: absolute;"></div>
+    </form>
+</body>
+</html>
