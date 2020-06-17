@@ -25,32 +25,10 @@ namespace IITS_CloudAccounting.Common
         {
             try
             {
-                string apiKey = "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";
+               string apiKey = "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";
+                // apiKey = "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";
                 var client = new SendGridClient(apiKey);
-
-                //Body = "<p>raushan</p>";
-                //string data = @"{
-                //              \""personalizations\"": [
-                //                {
-                //                  \""to\"": [
-                //                    {
-                //                      \""email\"": \""" + MailTo + @"\""
-                //                    }
-                //                  ],
-                //                    \""subject\"": \""" + Subject + @"\""
-                //                }
-                //              ],
-                //              \""from\"": {
-                //                \""email\"": \""" + BaseMailFrom + @"\""
-                //              },
-                //              \""content\"": [
-                //                {
-                //                  \""type\"": \""text/html\"",
-                //                   \""value\"": \""" + Body + @"\""
-                //                }
-                //              ]
-                //            }";
-
+                
                 string data = @"{
                           'personalizations': [
                             {

@@ -664,44 +664,59 @@ namespace IITS_CloudAccounting.Admin
         {
             if (!this.Page.IsValid)
                 return;
-            if (this.txtEmail.Text.Trim().Length > 0)
+            try
             {
-                int? iCurrencyID = new int?();
-                int? iCountryID = new int?();
-                int? iStateID = new int?();
-                int? iCityID = new int?();
-                int? iSecondaryCountryID = new int?();
-                int? iSecondaryStateID = new int?();
-                int? iSecondaryCityID = new int?();
-                int? iIndustryID = new int?();
-                if (this.ddlCurrency.SelectedIndex > 0)
-                    iCurrencyID = new int?(int.Parse(this.ddlCurrency.SelectedItem.Value));
-                if (this.ddlCountry.SelectedIndex > 0)
-                    iCountryID = new int?(int.Parse(this.ddlCountry.SelectedItem.Value));
-                if (this.ddlState.SelectedIndex > 0)
-                    iStateID = new int?(int.Parse(this.ddlState.SelectedItem.Value));
-                if (this.ddlCity.SelectedIndex > 0)
-                    iCityID = new int?(int.Parse(this.ddlCity.SelectedItem.Value));
-                if (this.ddlCountrySecondary.SelectedIndex > 0)
-                    iSecondaryCountryID = new int?(int.Parse(this.ddlCountrySecondary.SelectedItem.Value));
-                if (this.ddlStateSecondary.SelectedIndex > 0)
-                    iSecondaryStateID = new int?(int.Parse(this.ddlStateSecondary.SelectedItem.Value));
-                if (this.ddlCitySecondary.SelectedIndex > 0)
-                    iSecondaryCityID = new int?(int.Parse(this.ddlCitySecondary.SelectedItem.Value));
-                if (this.ddlIndustry.SelectedIndex > 0)
-                    iIndustryID = new int?(int.Parse(this.ddlIndustry.SelectedItem.Value));
-                if (this.txtUsername.Text.Trim().Length > 0 && this.txtPassword.Text.Trim().Length > 0)
+                if (this.txtEmail.Text.Trim().Length > 0)
                 {
-                    if (this.txtPassword.Text.Trim().Length <= 3)
-                        this.txtPassword.Text = Doyingo.GenerateCode(8);
-                    MembershipCreateStatus status;
-                    Membership.CreateUser(this.txtUsername.Text.Trim(), this.txtPassword.Text.Trim(), this.txtEmail.Text, "What's Your Email?", this.txtEmail.Text, true, out status);
-                    if (status == MembershipCreateStatus.Success)
+                    int? iCurrencyID = new int?();
+                    int? iCountryID = new int?();
+                    int? iStateID = new int?();
+                    int? iCityID = new int?();
+                    int? iSecondaryCountryID = new int?();
+                    int? iSecondaryStateID = new int?();
+                    int? iSecondaryCityID = new int?();
+                    int? iIndustryID = new int?();
+                    if (this.ddlCurrency.SelectedIndex > 0)
+                        iCurrencyID = new int?(int.Parse(this.ddlCurrency.SelectedItem.Value));
+                    if (this.ddlCountry.SelectedIndex > 0)
+                        iCountryID = new int?(int.Parse(this.ddlCountry.SelectedItem.Value));
+                    if (this.ddlState.SelectedIndex > 0)
+                        iStateID = new int?(int.Parse(this.ddlState.SelectedItem.Value));
+                    if (this.ddlCity.SelectedIndex > 0)
+                        iCityID = new int?(int.Parse(this.ddlCity.SelectedItem.Value));
+                    if (this.ddlCountrySecondary.SelectedIndex > 0)
+                        iSecondaryCountryID = new int?(int.Parse(this.ddlCountrySecondary.SelectedItem.Value));
+                    if (this.ddlStateSecondary.SelectedIndex > 0)
+                        iSecondaryStateID = new int?(int.Parse(this.ddlStateSecondary.SelectedItem.Value));
+                    if (this.ddlCitySecondary.SelectedIndex > 0)
+                        iSecondaryCityID = new int?(int.Parse(this.ddlCitySecondary.SelectedItem.Value));
+                    if (this.ddlIndustry.SelectedIndex > 0)
+                        iIndustryID = new int?(int.Parse(this.ddlIndustry.SelectedItem.Value));
+                    if (this.txtUsername.Text.Trim().Length > 0 && this.txtPassword.Text.Trim().Length > 0)
                     {
-                        Roles.AddUserToRole(this.txtUsername.Text.Trim(), "CompanyClient");
+                        if (this.txtPassword.Text.Trim().Length <= 3)
+                            this.txtPassword.Text = Doyingo.GenerateCode(8);
+                        MembershipCreateStatus status;
+                        Membership.CreateUser(this.txtUsername.Text.Trim(), this.txtPassword.Text.Trim(), this.txtEmail.Text, "What's Your Email?", this.txtEmail.Text, true, out status);
+                        if (status == MembershipCreateStatus.Success)
+                        {
+                            Roles.AddUserToRole(this.txtUsername.Text.Trim(), "CompanyClient");
+                        }
+                        else
+                        {
+                            do
+                            {
+                                this.txtUsername.Text = Doyingo.GenerateCode(6);
+                                this.txtPassword.Text = Doyingo.GenerateCode(8);
+                                Membership.CreateUser(this.txtUsername.Text.Trim(), this.txtPassword.Text, this.txtEmail.Text, "What's Your Email?", this.txtEmail.Text, true, out status);
+                            }
+                            while (status != MembershipCreateStatus.Success);
+                            Roles.AddUserToRole(this.txtUsername.Text.Trim(), "CompanyClient");
+                        }
                     }
-                    else
+                    if (this.txtUsername.Text.Trim().Length == 0)
                     {
+                        MembershipCreateStatus status;
                         do
                         {
                             this.txtUsername.Text = Doyingo.GenerateCode(6);
@@ -711,106 +726,101 @@ namespace IITS_CloudAccounting.Admin
                         while (status != MembershipCreateStatus.Success);
                         Roles.AddUserToRole(this.txtUsername.Text.Trim(), "CompanyClient");
                     }
-                }
-                if (this.txtUsername.Text.Trim().Length == 0)
-                {
-                    MembershipCreateStatus status;
-                    do
+                    string sOrganizationName = this.txtClientName.Text.Trim();
+                    if (string.IsNullOrEmpty(sOrganizationName))
+                        sOrganizationName = this.txtEmail.Text.Trim();
+                    int num = this.objCompanyClientMasterBll.AddCompanyClient(int.Parse(this.hfCompanyID.Value), sOrganizationName, iCurrencyID, this.chkEmail.Checked, this.chkSnailMail.Checked, this.txtEmail.Text, this.txtFirstName.Text.Trim(), this.txtLastName.Text.Trim(), this.txtHomePhone.Text.Trim(), this.txtMobile.Text.Trim(), this.chkAssignUsername.Checked, this.txtUsername.Text.Trim(), this.txtAddress1.Text.Trim(), this.txtAddress2.Text.Trim(), iCountryID, iStateID, iCityID, this.txtZipCode.Text.Trim(), this.txtAddress1Secondary.Text.Trim(), this.txtAddress2Secondary.Text.Trim(), iSecondaryCountryID, iSecondaryStateID, iSecondaryCityID, this.txtZipCodeSecondary.Text.Trim(), iIndustryID, this.ddlCompanySize.SelectedItem.Text, this.txtBussinessPhone.Text.Trim(), this.txtFax.Text.Trim(), this.txtInternalNote.Text.Trim(), true, false, false);
+                    if (num != 0)
                     {
-                        this.txtUsername.Text = Doyingo.GenerateCode(6);
-                        this.txtPassword.Text = Doyingo.GenerateCode(8);
-                        Membership.CreateUser(this.txtUsername.Text.Trim(), this.txtPassword.Text, this.txtEmail.Text, "What's Your Email?", this.txtEmail.Text, true, out status);
-                    }
-                    while (status != MembershipCreateStatus.Success);
-                    Roles.AddUserToRole(this.txtUsername.Text.Trim(), "CompanyClient");
-                }
-                string sOrganizationName = this.txtClientName.Text.Trim();
-                if (string.IsNullOrEmpty(sOrganizationName))
-                    sOrganizationName = this.txtEmail.Text.Trim();
-                int num = this.objCompanyClientMasterBll.AddCompanyClient(int.Parse(this.hfCompanyID.Value), sOrganizationName, iCurrencyID, this.chkEmail.Checked, this.chkSnailMail.Checked, this.txtEmail.Text, this.txtFirstName.Text.Trim(), this.txtLastName.Text.Trim(), this.txtHomePhone.Text.Trim(), this.txtMobile.Text.Trim(), this.chkAssignUsername.Checked, this.txtUsername.Text.Trim(), this.txtAddress1.Text.Trim(), this.txtAddress2.Text.Trim(), iCountryID, iStateID, iCityID, this.txtZipCode.Text.Trim(), this.txtAddress1Secondary.Text.Trim(), this.txtAddress2Secondary.Text.Trim(), iSecondaryCountryID, iSecondaryStateID, iSecondaryCityID, this.txtZipCodeSecondary.Text.Trim(), iIndustryID, this.ddlCompanySize.SelectedItem.Text, this.txtBussinessPhone.Text.Trim(), this.txtFax.Text.Trim(), this.txtInternalNote.Text.Trim(), true, false, false);
-                if (num != 0)
-                {
-                    if (this.chkSend.Checked)
-                      await  this.SendMailNew(num);
-                    StaffClientAssignDetailBLL clientAssignDetailBll = new StaffClientAssignDetailBLL();
-                    MembershipUser user = Membership.GetUser();
-                    if (user != null)
-                    {
-                        string str = user.ToString();
-                        if (Roles.IsUserInRole(str, "Employee"))
+                        if (this.chkSend.Checked)
+                            await this.SendMailNew(num);
+                        else await Task.Delay(100);
+                        StaffClientAssignDetailBLL clientAssignDetailBll = new StaffClientAssignDetailBLL();
+                        MembershipUser user = Membership.GetUser();
+                        if (user != null)
                         {
-                            this.objStaffMasterDT = this.objStaffMasterBll.GetDataByStaffUserName(str);
-                            if (this.objStaffMasterDT.Rows.Count > 0)
+                            string str = user.ToString();
+                            if (Roles.IsUserInRole(str, "Employee"))
                             {
-                                this.hfCompanyID.Value = this.objStaffMasterDT.Rows[0]["CompanyID"].ToString();
-                                this.hfStaffID.Value = this.objStaffMasterDT.Rows[0]["StaffID"].ToString();
-                            }
-                            clientAssignDetailBll.AddStaffClientAssignDetail(int.Parse(this.hfCompanyID.Value), int.Parse(this.hfStaffID.Value), num, true);
-                        }
-                    }
-                    this.SetClientContactRowData();
-                    DataTable dataTable = this.ViewState["ClientContactTable"] as DataTable;
-                    if (dataTable != null)
-                    {
-                        foreach (DataRow dataRow in (InternalDataCollectionBase)dataTable.Rows)
-                        {
-                            string str1 = dataRow.ItemArray[0] as string;
-                            string str2 = dataRow.ItemArray[1] as string;
-                            string str3 = dataRow.ItemArray[2] as string;
-                            string str4 = dataRow.ItemArray[3] as string;
-                            string str5 = dataRow.ItemArray[4] as string;
-                            string str6 = dataRow.ItemArray[5] as string;
-                            string str7 = dataRow.ItemArray[6] as string;
-                            string str8 = dataRow.ItemArray[7] as string;
-                            string str9 = str1.Replace("&nbsp;", "");
-                            string sFirstName = str2.Replace("&nbsp;", "");
-                            string sLastName = str3.Replace("&nbsp;", "");
-                            string sHomePhone = str4.Replace("&nbsp;", "");
-                            string sMobile = str5.Replace("&nbsp;", "");
-                            string str10 = str7.Replace("&nbsp;", "");
-                            string str11 = str8.Replace("&nbsp;", "");
-                            if (str9 != null && !string.IsNullOrEmpty(str9))
-                            {
-                                this.objCompanyClientContactDetailDT = this.objCompanyClientContactDetailBll.GetDataByCompanyEmail(int.Parse(this.hfCompanyID.Value), str9.Trim());
-                                this.objCompanyClientMasterDT = this.objCompanyClientMasterBll.GetDataByCompanyEmail(int.Parse(this.hfCompanyID.Value), str9.Trim());
-                                this.objStaffMasterDT = this.objStaffMasterBll.GetDataByCompanyEmail(int.Parse(this.hfCompanyID.Value), str9.Trim());
-                                this.objContractorMasterDT = this.objContractorMasterBll.GetDataByCompanyEmail(int.Parse(this.hfCompanyID.Value), str9.Trim());
-                                if (this.objCompanyClientContactDetailDT.Rows.Count <= 0 || this.objCompanyClientMasterDT.Rows.Count <= 0 || (this.objStaffMasterDT.Rows.Count <= 0 || this.objContractorMasterDT.Rows.Count <= 0))
+                                this.objStaffMasterDT = this.objStaffMasterBll.GetDataByStaffUserName(str);
+                                if (this.objStaffMasterDT.Rows.Count > 0)
                                 {
-                                    while (true)
+                                    this.hfCompanyID.Value = this.objStaffMasterDT.Rows[0]["CompanyID"].ToString();
+                                    this.hfStaffID.Value = this.objStaffMasterDT.Rows[0]["StaffID"].ToString();
+                                }
+                                clientAssignDetailBll.AddStaffClientAssignDetail(int.Parse(this.hfCompanyID.Value), int.Parse(this.hfStaffID.Value), num, true);
+                            }
+                        }
+                        this.SetClientContactRowData();
+                        DataTable dataTable = this.ViewState["ClientContactTable"] as DataTable;
+                        if (dataTable != null)
+                        {
+                            foreach (DataRow dataRow in (InternalDataCollectionBase)dataTable.Rows)
+                            {
+                                string str1 = dataRow.ItemArray[0] as string;
+                                string str2 = dataRow.ItemArray[1] as string;
+                                string str3 = dataRow.ItemArray[2] as string;
+                                string str4 = dataRow.ItemArray[3] as string;
+                                string str5 = dataRow.ItemArray[4] as string;
+                                string str6 = dataRow.ItemArray[5] as string;
+                                string str7 = dataRow.ItemArray[6] as string;
+                                string str8 = dataRow.ItemArray[7] as string;
+                                string str9 = str1.Replace("&nbsp;", "");
+                                string sFirstName = str2.Replace("&nbsp;", "");
+                                string sLastName = str3.Replace("&nbsp;", "");
+                                string sHomePhone = str4.Replace("&nbsp;", "");
+                                string sMobile = str5.Replace("&nbsp;", "");
+                                string str10 = str7.Replace("&nbsp;", "");
+                                string str11 = str8.Replace("&nbsp;", "");
+                                if (str9 != null && !string.IsNullOrEmpty(str9))
+                                {
+                                    this.objCompanyClientContactDetailDT = this.objCompanyClientContactDetailBll.GetDataByCompanyEmail(int.Parse(this.hfCompanyID.Value), str9.Trim());
+                                    this.objCompanyClientMasterDT = this.objCompanyClientMasterBll.GetDataByCompanyEmail(int.Parse(this.hfCompanyID.Value), str9.Trim());
+                                    this.objStaffMasterDT = this.objStaffMasterBll.GetDataByCompanyEmail(int.Parse(this.hfCompanyID.Value), str9.Trim());
+                                    this.objContractorMasterDT = this.objContractorMasterBll.GetDataByCompanyEmail(int.Parse(this.hfCompanyID.Value), str9.Trim());
+                                    if (this.objCompanyClientContactDetailDT.Rows.Count <= 0 || this.objCompanyClientMasterDT.Rows.Count <= 0 || (this.objStaffMasterDT.Rows.Count <= 0 || this.objContractorMasterDT.Rows.Count <= 0))
                                     {
-                                        if (str10.Trim().Length == 0)
-                                            str10 = Doyingo.GenerateCode(6);
-                                        if (str11.Trim().Length <= 3)
-                                            str11 = Doyingo.GenerateCode(8);
-                                        MembershipCreateStatus status;
-                                        Membership.CreateUser(str10.Trim(), str11, str9.Trim(), "What is your email?", str9.Trim(), true, out status);
-                                        if (status != MembershipCreateStatus.Success)
-                                            str10 = str11 = "";
-                                        else
-                                            break;
+                                        while (true)
+                                        {
+                                            if (str10.Trim().Length == 0)
+                                                str10 = Doyingo.GenerateCode(6);
+                                            if (str11.Trim().Length <= 3)
+                                                str11 = Doyingo.GenerateCode(8);
+                                            MembershipCreateStatus status;
+                                            Membership.CreateUser(str10.Trim(), str11, str9.Trim(), "What is your email?", str9.Trim(), true, out status);
+                                            if (status != MembershipCreateStatus.Success)
+                                                str10 = str11 = "";
+                                            else
+                                                break;
+                                        }
+                                        if (!Roles.IsUserInRole(str10.Trim(), "CompanyClient"))
+                                            Roles.AddUserToRole(str10.Trim(), "CompanyClient");
+                                        if (bool.Parse(str6))
+                                            this.SendMail(str10, str11, str9);
+                                        this.objCompanyClientContactDetailBll.AddCompanyClientContact(int.Parse(this.hfCompanyID.Value), num, str9, sFirstName, sLastName, sHomePhone, sMobile, bool.Parse(str6), str10, bool.Parse(str6));
                                     }
-                                    if (!Roles.IsUserInRole(str10.Trim(), "CompanyClient"))
-                                        Roles.AddUserToRole(str10.Trim(), "CompanyClient");
-                                    if (bool.Parse(str6))
-                                        this.SendMail(str10, str11, str9);
-                                    this.objCompanyClientContactDetailBll.AddCompanyClientContact(int.Parse(this.hfCompanyID.Value), num, str9, sFirstName, sLastName, sHomePhone, sMobile, bool.Parse(str6), str10, bool.Parse(str6));
                                 }
                             }
                         }
+
+                        this.Session["saveClient"] = (object)1;
+                        this.DisplayAlert("Details Added Successfully.");
+                        this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add&ID=" + (object)num);
                     }
-                    this.Session["saveClient"] = (object)1;
-                    this.DisplayAlert("Details Added Successfully.");
-                    this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add&ID=" + (object)num);
+                    else
+                    {
+                        this.DisplayAlert("Fail to Add New Details.");
+                        this.Clear();
+                    }
                 }
                 else
-                {
-                    this.DisplayAlert("Fail to Add New Details.");
-                    this.Clear();
-                }
+                    this.DisplayAlert("Please Fill All Details...!");
             }
-            else
-                this.DisplayAlert("Please Fill All Details...!");
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         private void SendMail(string user, string pass, string email)
@@ -840,7 +850,7 @@ namespace IITS_CloudAccounting.Admin
             //string address = "noreply@DoyniGo.com";
             //this.objSMTPSettingsDT = this.objSMTPSettingsBll.GetDataByCompanyID(int.Parse(this.hfCompanyID.Value));
             //if (this.objSMTPSettingsDT.Rows.Count > 0)
-              //  address = this.objSMTPSettingsDT.Rows[0]["SMTPFrom"].ToString();
+            //  address = this.objSMTPSettingsDT.Rows[0]["SMTPFrom"].ToString();
             Parser parser = new Parser(this.Server.MapPath("~/MailTemplate/CompanyClient.htm"), Variables);
             try
             {
@@ -963,7 +973,7 @@ namespace IITS_CloudAccounting.Admin
             }
         }
 
-        protected async  void btnUpdate_Click(object sender, EventArgs e)
+        protected async void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1013,7 +1023,8 @@ namespace IITS_CloudAccounting.Admin
                     if (this.objCompanyClientMasterBll.UpdateCompanyClient(int.Parse(this.hfCompanyClientID.Value), int.Parse(this.hfCompanyID.Value), this.txtClientName.Text.Trim(), iCurrencyID, this.chkEmail.Checked, this.chkSnailMail.Checked, this.txtEmail.Text, this.txtFirstName.Text.Trim(), this.txtLastName.Text.Trim(), this.txtHomePhone.Text.Trim(), this.txtMobile.Text.Trim(), this.chkAssignUsername.Checked, this.txtUsername.Text.Trim(), this.txtAddress1.Text.Trim(), this.txtAddress2.Text.Trim(), iCountryID, iStateID, iCityID, this.txtZipCode.Text.Trim(), this.txtAddress1Secondary.Text.Trim(), this.txtAddress2Secondary.Text.Trim(), iSecondaryCountryID, iSecondaryStateID, iSecondaryCityID, this.txtZipCodeSecondary.Text.Trim(), iIndustryID, this.ddlCompanySize.SelectedItem.Text, this.txtBussinessPhone.Text.Trim(), this.txtFax.Text.Trim(), this.txtInternalNote.Text.Trim(), true, false, false))
                     {
                         if (this.chkSend.Checked)
-                          await  this.SendMailNew(int.Parse(this.hfCompanyClientID.Value));
+                            await this.SendMailNew(int.Parse(this.hfCompanyClientID.Value));
+                        else await Task.Delay(100);
                         this.objCompanyClientContactDetailDT = this.objCompanyClientContactDetailBll.GetDataByCompanyClientID(int.Parse(this.hfCompanyClientID.Value));
                         if (this.objCompanyClientContactDetailDT.Rows.Count > 0)
                         {
@@ -1125,7 +1136,7 @@ namespace IITS_CloudAccounting.Admin
                 if (checkBox.Checked)
                 {
                     ++num;
-                  await  this.SendMailNew(int.Parse(checkBox.ToolTip));
+                    await this.SendMailNew(int.Parse(checkBox.ToolTip));
                 }
             }
             if (num == 0)
