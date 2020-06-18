@@ -805,7 +805,7 @@ namespace IITS_CloudAccounting.Admin
 
                         this.Session["saveClient"] = (object)1;
                         this.DisplayAlert("Details Added Successfully.");
-                        this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add&ID=" + (object)num);
+                        this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add&ID=" + (object)num,false);
                     }
                     else
                     {
@@ -942,7 +942,7 @@ namespace IITS_CloudAccounting.Admin
           (object) str4
         },
         {
-          (object) "loginLink",
+          (object) "login link",
           (object) "<a target=\"_blank\" href=\"http://www.billtransact.com/MemberArea.aspx\">https://www.billtransact.com/MemberArea.aspx</a>"
         }
       };
@@ -1085,7 +1085,7 @@ namespace IITS_CloudAccounting.Admin
                         }
                         this.Session["updateClient"] = (object)1;
                         this.DisplayAlert("Update Successfully..");
-                        this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+                        this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"],false);
                     }
                     else
                         this.DisplayAlert("Fail to Update Details.");
