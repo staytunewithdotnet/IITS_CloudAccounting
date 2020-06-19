@@ -53,7 +53,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      FileStream fileStream = new FileStream(this.Server.MapPath("~/App_Themes/Blue/images/logo.jpg"), FileMode.Open, FileAccess.Read);
+      FileStream fileStream = new FileStream(this.Server.MapPath("~/App_Themes/Blue/images/defaultlogo.png"), FileMode.Open, FileAccess.Read);
       byte[] numArray = new byte[fileStream.Length];
       fileStream.Read(numArray, 0, (int) fileStream.Length);
       fileStream.Close();
