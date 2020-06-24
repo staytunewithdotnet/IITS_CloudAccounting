@@ -631,6 +631,8 @@
     <Content Include="Client\ClientPayment.aspx" />
     <Content Include="Client\ClientProfile.aspx" />
     <Content Include="Client\Default.aspx" />
+    <Content Include="Client\InvoiceIOPayment.aspx" />
+    <Content Include="Client\InvoicePaymentMode.aspx" />
     <Content Include="Client\InvoicePayment.aspx" />
     <Content Include="Client\Projects.aspx" />
     <Content Include="Client\SuccessClient.aspx" />
@@ -1316,6 +1318,14 @@
     </Compile>
     <Compile Include="Client\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\InvoiceIOPayment.aspx.cs">
+      <DependentUpon>InvoiceIOPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\InvoicePaymentMode.aspx.cs">
+      <DependentUpon>InvoicePaymentMode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Client\InvoicePayment.aspx.cs">
