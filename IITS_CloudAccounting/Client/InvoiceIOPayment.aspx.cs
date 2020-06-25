@@ -36,7 +36,7 @@ namespace IITS_CloudAccounting.Client
             string TransactionTypeID = "14";
             string TranAuthKey = "Debit";
             string ProductID = "7";
-            string ReturnURL = "http://olufimo.com/paymentSuccess.aspx";
+            string ReturnURL = ConfigurationManager.AppSettings["SuccessClientURL"];
             //string ExtraParam1 = "";
             //string ExtraParam2 = "";
             //string ExtraParam3 = "";
@@ -50,7 +50,7 @@ namespace IITS_CloudAccounting.Client
             postData += "&TranAuthKey=" + Uri.EscapeDataString(TranAuthKey);
             postData += "&OrderAmount=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceTotal"]));
             postData += "&ReturnURL=" + Uri.EscapeDataString(ReturnURL);
-            postData += "&OrderNo=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceNumber"]));
+            postData += "&OrderNo=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceNumber"]) + "BT");
             //postData += "&ExtraParam1=" + Uri.EscapeDataString(ExtraParam1);
             //postData += "&ExtraParam2=" + Uri.EscapeDataString(ExtraParam2);
             //postData += "&ExtraParam3=" + Uri.EscapeDataString(ExtraParam3);
