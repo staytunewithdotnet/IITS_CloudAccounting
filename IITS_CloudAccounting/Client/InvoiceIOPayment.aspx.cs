@@ -5,13 +5,16 @@
 // Assembly location: E:\Projects\Doyingo_Migration\Website\bin\IITS_CloudAccounting.dll
 
 using DABL.BLL;
+using DABL.Common;
 using DABL.DAL;
 using System;
 using System.Configuration;
+using System.Data;
 using System.IO;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -51,8 +54,8 @@ namespace IITS_CloudAccounting.Client
             postData += "&OrderAmount=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceTotal"]));
             postData += "&ReturnURL=" + Uri.EscapeDataString(ReturnURL);
             postData += "&OrderNo=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceNumber"]) + "BT");
-            //postData += "&ExtraParam1=" + Uri.EscapeDataString(ExtraParam1);
-            //postData += "&ExtraParam2=" + Uri.EscapeDataString(ExtraParam2);
+            //postData += "&CardNumber=" + Uri.EscapeDataString("23423423423423");
+            //postData += "&PIN=" + Uri.EscapeDataString("1234");
             //postData += "&ExtraParam3=" + Uri.EscapeDataString(ExtraParam3);
 
             var data = Encoding.ASCII.GetBytes(postData);
@@ -68,6 +71,38 @@ namespace IITS_CloudAccounting.Client
 
             var response = (HttpWebResponse)request.GetResponse();
             var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+
+            MembershipUser user = Membership.GetUser();
+            if (user != null)
+            {
+                Dbutility objDbutility = new Dbutility();
+                CloudAccountDA.CompanyClientMasterDataTable objCompanyClientMasterDT = new CloudAccountDA.CompanyClientMasterDataTable();
+                CompanyClientMasterBLL objCompanyClientMasterBll = new CompanyClientMasterBLL();
+                objCompanyClientMasterDT = objCompanyClientMasterBll.GetDataByUsername(user.ToString());
+                if (objCompanyClientMasterDT.Rows.Count > 0)
+                {
+                    string query = "Select CardNumber,PinNumber From CompanyClientMaster Where CompanyClientID='"
+                   + objCompanyClientMasterDT.Rows[0]["CompanyClientID"].ToString() + "'";
+                    DataTable dtClient = objDbutility.BindDataTable(query);
+                    if (dtClient.Rows.Count>0)
+                    {
+                        string cardNo = Convert.ToString(dtClient.Rows[0]["CardNumber"]);
+                        string pinNo = Convert.ToString(dtClient.Rows[0]["PinNumber"]);
+                        if(!string.IsNullOrEmpty(cardNo)&& !string.IsNullOrEmpty(pinNo))
+                        {
+                            Regex regReplace = new Regex("name=\"txtCardNumber\"");
+                            responseString = regReplace.Replace(responseString, "name=\"txtCardNumber\" value=\""+ cardNo + "\"  ", 1);
+
+                            regReplace = new Regex("name=\"txtPIN\"");
+                            responseString = regReplace.Replace(responseString, "name=\"txtPIN\" value=\""+ pinNo + "\"  ", 1);
+
+                            regReplace = new Regex("<body>");
+                            responseString = regReplace.Replace(responseString, "<body onload=\"javascript:document.getElementById('form1').submit();\">  ", 1);
+                        }
+                    }
+                }
+            }
             string strResultnew = responseString.Replace("./IOPayerPaymentGateway.aspx", "http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
             Response.Write(strResultnew);
             return;
@@ -114,6 +149,6 @@ namespace IITS_CloudAccounting.Client
             return cipherText;
         }
 
-       
+
     }
 }

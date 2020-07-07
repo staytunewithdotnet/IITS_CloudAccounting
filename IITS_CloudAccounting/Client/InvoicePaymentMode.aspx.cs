@@ -28,14 +28,17 @@ namespace IITS_CloudAccounting.Client
 
         }
 
-        protected void rdIOPayment_CheckedChanged(object sender, EventArgs e)
+        protected void rdButton_CheckedChanged(object sender, EventArgs e)
         {
-            this.Response.Redirect(string.Format("InvoiceIOPayment.aspx?invoice={0}&val={1}", this.Request.QueryString["invoice"], this.Request.QueryString["val"]));
+            if (Request.Form["__EVENTTARGET"] != null && Request.Form["__EVENTTARGET"] == "ctl00$ContentPlaceHolder1$rdIOPayment")
+            {
+                this.Response.Redirect(string.Format("InvoiceIOPayment.aspx?invoice={0}&val={1}", this.Request.QueryString["invoice"], this.Request.QueryString["val"]));
+            }
+            else
+            {
+                this.Response.Redirect(string.Format("InvoicePayment.aspx?invoice={0}&val={1}", this.Request.QueryString["invoice"], this.Request.QueryString["val"]));
+            }
         }
 
-        protected void rdPayPal_CheckedChanged(object sender, EventArgs e)
-        {
-            this.Response.Redirect(string.Format("InvoicePayment.aspx?invoice={0}&val={1}", this.Request.QueryString["invoice"], this.Request.QueryString["val"]));
-        }
     }
 }

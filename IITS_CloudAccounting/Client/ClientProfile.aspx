@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Client Profile" Language="C#" MasterPageFile="~/Client/ClientManagement.Master" AutoEventWireup="true" CodeBehind="ClientProfile.aspx.cs" Inherits="IITS_CloudAccounting.Client.ClientProfile" %>
+﻿<%@ Page Title="Client Profile" Language="C#" MasterPageFile="~/Client/ClientManagement.Master" AutoEventWireup="true" 
+    CodeBehind="ClientProfile.aspx.cs" Inherits="IITS_CloudAccounting.Client.ClientProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -83,6 +84,37 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="clearfix" style="border-bottom: 5px solid #eee;"></div>
+
+                    <div class="col-lg-12">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-lg-3 control-label">&nbsp;</div>
+                                <div class="col-lg-9">
+                                    <h3>Payment Information</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-horizontal form-group">
+                        <div class="col-lg-2 control-label" style="text-align: left; width: 19%;">
+                            Card Number
+                        </div>
+                        <div class="col-lg-3" style="padding-left: 0;">
+                            <asp:TextBox runat="server" ID="txtCardNo" PlaceHolder="Please enter card no." CssClass="form-control text"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-horizontal form-group">
+                        <div class="col-lg-2 control-label" style="text-align: left; width: 19%;">
+                            PIN Number
+                        </div>
+                        <div class="col-lg-3" style="padding-left: 0;">
+                            <asp:TextBox runat="server" ID="txtPIN" PlaceHolder="Enter PIN" CssClass="form-control text"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="clearfix" style="margin-bottom: 15px;"></div>
 
                     <div class="clearfix" style="border-bottom: 5px solid #eee;"></div>
 

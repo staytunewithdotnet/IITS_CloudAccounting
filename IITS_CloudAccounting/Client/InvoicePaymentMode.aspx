@@ -29,12 +29,12 @@
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="col-lg-12">
-                            <asp:RadioButton ID="rdIOPayment" runat="server" Text="IO Payment" AutoPostBack="true" OnCheckedChanged="rdIOPayment_CheckedChanged" />
+                            <asp:RadioButton ID="rdIOPayment" runat="server" Text="IO Payment" AutoPostBack="true" OnCheckedChanged="rdButton_CheckedChanged" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-lg-12">
-                            <asp:RadioButton ID="rdPayPal" runat="server" Text="Pay Pal Payment" AutoPostBack="true" OnCheckedChanged="rdPayPal_CheckedChanged" />
+                            <asp:RadioButton ID="rdPayPal" runat="server" Text="Pay Pal Payment" AutoPostBack="true" OnCheckedChanged="rdButton_CheckedChanged" />
                         </div>
                     </div>
                 </div>
