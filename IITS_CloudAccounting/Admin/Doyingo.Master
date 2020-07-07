@@ -329,6 +329,9 @@
                                     <li id="paypalSetting" runat="server">
                                         <a href="CompanyPaypalMaster.aspx">Paypal Setting</a>
                                     </li>
+                                     <li id="ioSetting" runat="server">
+                                        <a href="CompanyIOMaster.aspx">IO Setting</a>
+                                    </li>
                                     <li id="taxes" runat="server">
                                         <a href="TaxMaster.aspx">Taxes</a>
                                     </li>

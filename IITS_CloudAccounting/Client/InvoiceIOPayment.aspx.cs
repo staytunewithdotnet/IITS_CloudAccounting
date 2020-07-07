@@ -76,26 +76,27 @@ namespace IITS_CloudAccounting.Client
             MembershipUser user = Membership.GetUser();
             if (user != null)
             {
+                string str = user.ToString();
                 Dbutility objDbutility = new Dbutility();
-                CloudAccountDA.CompanyClientMasterDataTable objCompanyClientMasterDT = new CloudAccountDA.CompanyClientMasterDataTable();
-                CompanyClientMasterBLL objCompanyClientMasterBll = new CompanyClientMasterBLL();
-                objCompanyClientMasterDT = objCompanyClientMasterBll.GetDataByUsername(user.ToString());
-                if (objCompanyClientMasterDT.Rows.Count > 0)
+                CompanyLoginMasterBLL objCompanyLoginMasterBll = new CompanyLoginMasterBLL();
+                CloudAccountDA.CompanyLoginMasterDataTable objCompanyLoginMasterDT = new CloudAccountDA.CompanyLoginMasterDataTable();
+                objCompanyLoginMasterDT = objCompanyLoginMasterBll.GetDataByCompanyLoginName(str);
+                if (objCompanyLoginMasterDT.Rows.Count > 0)
                 {
-                    string query = "Select CardNumber,PinNumber From CompanyClientMaster Where CompanyClientID='"
-                   + objCompanyClientMasterDT.Rows[0]["CompanyClientID"].ToString() + "'";
-                    DataTable dtClient = objDbutility.BindDataTable(query);
-                    if (dtClient.Rows.Count>0)
+                    str = objCompanyLoginMasterDT.Rows[0]["CompanyID"].ToString();
+                    str = " Select CardNumber,PinNumber From CompanyIOMaster Where CompanyID='" + str + "'";
+                    DataTable dtCompanyIOMaster = objDbutility.BindDataTable(str);
+                    if (dtCompanyIOMaster.Rows.Count > 0)
                     {
-                        string cardNo = Convert.ToString(dtClient.Rows[0]["CardNumber"]);
-                        string pinNo = Convert.ToString(dtClient.Rows[0]["PinNumber"]);
-                        if(!string.IsNullOrEmpty(cardNo)&& !string.IsNullOrEmpty(pinNo))
+                        string cardNo = Convert.ToString(dtCompanyIOMaster.Rows[0]["CardNumber"]);
+                        string pinNo = Convert.ToString(dtCompanyIOMaster.Rows[0]["PinNumber"]);
+                        if (!string.IsNullOrEmpty(cardNo) && !string.IsNullOrEmpty(pinNo))
                         {
                             Regex regReplace = new Regex("name=\"txtCardNumber\"");
-                            responseString = regReplace.Replace(responseString, "name=\"txtCardNumber\" value=\""+ cardNo + "\"  ", 1);
+                            responseString = regReplace.Replace(responseString, "name=\"txtCardNumber\" value=\"" + cardNo + "\"  ", 1);
 
                             regReplace = new Regex("name=\"txtPIN\"");
-                            responseString = regReplace.Replace(responseString, "name=\"txtPIN\" value=\""+ pinNo + "\"  ", 1);
+                            responseString = regReplace.Replace(responseString, "name=\"txtPIN\" value=\"" + pinNo + "\"  ", 1);
 
                             regReplace = new Regex("<body>");
                             responseString = regReplace.Replace(responseString, "<body onload=\"javascript:document.getElementById('form1').submit();\">  ", 1);
@@ -103,6 +104,7 @@ namespace IITS_CloudAccounting.Client
                     }
                 }
             }
+
             string strResultnew = responseString.Replace("./IOPayerPaymentGateway.aspx", "http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
             Response.Write(strResultnew);
             return;

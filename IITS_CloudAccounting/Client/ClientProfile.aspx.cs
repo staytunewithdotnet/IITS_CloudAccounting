@@ -333,16 +333,10 @@ namespace IITS_CloudAccounting.Client
                                 this.DisplayAlert("Password & confirm password not match");
                         }
                         if (this.objCompanyClientMasterBll.UpdateClientProfile(int.Parse(this.hfClientID.Value), int.Parse(this.hfCompanyID.Value), this.txtEmail.Text, this.txtFirstName.Text.Trim(), this.txtLastName.Text.Trim(), this.txtHomePhone.Text.Trim(), this.txtMobile.Text.Trim(), this.txtUsername.Text.Trim(), this.txtAddress1.Text.Trim(), this.txtAddress2.Text.Trim(), iCountryID, iStateID, iCityID, this.txtZipCode.Text.Trim(), this.txtAddress1Secondary.Text.Trim(), this.txtAddress2Secondary.Text.Trim(), iSecondaryCountryID, iSecondaryStateID, iSecondaryCityID, this.txtZipCodeSecondary.Text.Trim(), this.txtBussinessPhone.Text.Trim(), this.txtFax.Text.Trim()))
-                        {                           
-                            string result = objDbutility.ExecuteQuery("Update CompanyClientMaster Set CardNumber='" + txtCardNo.Text.Trim() + "', PinNumber='"
-                                   + txtPIN.Text.Trim() + "' Where CompanyClientID=" + hfClientID.Value.Trim());
-                            if (string.IsNullOrEmpty(result))
-                            {
-
-                                this.Session["updateProfile"] = (object)1;
-                                this.DisplayAlert("Profile is updated successfully");
-                                this.Response.Redirect("~/Client/ClientProfile.aspx");
-                            }
+                        {
+                            this.Session["updateProfile"] = (object)1;
+                            this.DisplayAlert("Profile is updated successfully");
+                            this.Response.Redirect("~/Client/ClientProfile.aspx");
                         }
                         else
                             this.DisplayAlert("Some error occured while updating your profile please try after sometime..!");

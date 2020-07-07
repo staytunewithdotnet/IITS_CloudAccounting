@@ -192,6 +192,7 @@
     <Content Include="Admin\CompanyPackageDetails.aspx" />
     <Content Include="Admin\CompanyPackageInfo.aspx" />
     <Content Include="Admin\CompanyPackageReport.aspx" />
+    <Content Include="Admin\CompanyIOMaster.aspx" />
     <Content Include="Admin\CompanyPaypalMaster.aspx" />
     <Content Include="Admin\CompanyReportStatus.aspx" />
     <Content Include="Admin\CompanyStatusDateReport.aspx" />
@@ -849,6 +850,10 @@
     </Compile>
     <Compile Include="Admin\CompanyPackageReport.aspx.cs">
       <DependentUpon>CompanyPackageReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyIOMaster.aspx.cs">
+      <DependentUpon>CompanyIOMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\CompanyPaypalMaster.aspx.cs">
