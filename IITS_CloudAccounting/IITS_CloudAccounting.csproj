@@ -192,7 +192,7 @@
     <Content Include="Admin\CompanyPackageDetails.aspx" />
     <Content Include="Admin\CompanyPackageInfo.aspx" />
     <Content Include="Admin\CompanyPackageReport.aspx" />
-    <Content Include="Admin\CompanyIOMaster.aspx" />
+    <Content Include="Admin\CompanyIOPayerMaster.aspx" />
     <Content Include="Admin\CompanyPaypalMaster.aspx" />
     <Content Include="Admin\CompanyReportStatus.aspx" />
     <Content Include="Admin\CompanyStatusDateReport.aspx" />
@@ -257,6 +257,7 @@
     <Content Include="Admin\PackageMaster.aspx" />
     <Content Include="Admin\PackageModuleMaster.aspx" />
     <Content Include="Admin\PackageUpgradeRequestMaster.aspx" />
+    <Content Include="Admin\PaymentGatewayIOPayerMaster.aspx" />
     <Content Include="Admin\PaymentGatewayMaster.aspx" />
     <Content Include="Admin\PaymentGatewayPaypalMaster.aspx" />
     <Content Include="Admin\PaymentMaster.aspx" />
@@ -852,8 +853,8 @@
       <DependentUpon>CompanyPackageReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyIOMaster.aspx.cs">
-      <DependentUpon>CompanyIOMaster.aspx</DependentUpon>
+    <Compile Include="Admin\CompanyIOPayerMaster.aspx.cs">
+      <DependentUpon>CompanyIOPayerMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\CompanyPaypalMaster.aspx.cs">
@@ -1114,6 +1115,10 @@
     </Compile>
     <Compile Include="Admin\PackageUpgradeRequestMaster.aspx.cs">
       <DependentUpon>PackageUpgradeRequestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PaymentGatewayIOPayerMaster.aspx.cs">
+      <DependentUpon>PaymentGatewayIOPayerMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\PaymentGatewayMaster.aspx.cs">

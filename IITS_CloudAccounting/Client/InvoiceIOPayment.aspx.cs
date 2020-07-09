@@ -31,82 +31,80 @@ namespace IITS_CloudAccounting.Client
         {
             string invoiceId = InvoiceIOPayment.Decrypt(HttpUtility.UrlDecode(this.Request.QueryString["invoice"]), this.Request.QueryString["val"]);
             objInvoiceMasterDT = objInvoiceMasterBLL.GetDataByInvoiceID(Convert.ToInt32(invoiceId));
-            var request = (HttpWebRequest)WebRequest.Create("http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
-
-            //string MerchantName = "Billtransact";
-            string MerchantID = "7";
-            string MerchantAuthKey = "Billtransact";
-            string TransactionTypeID = "14";
-            string TranAuthKey = "Debit";
-            string ProductID = "7";
-            string ReturnURL = ConfigurationManager.AppSettings["SuccessClientURL"];
-            //string ExtraParam1 = "";
-            //string ExtraParam2 = "";
-            //string ExtraParam3 = "";
-
-            //var postData = "MerchantName=" + Uri.EscapeDataString(MerchantName);
-            //postData += "MerchantID=" + Uri.EscapeDataString(MerchantID);
-            var postData = "MerchantID=" + Uri.EscapeDataString(MerchantID);
-            postData += "&ProductID=" + Uri.EscapeDataString(ProductID);
-            postData += "&TransactionTypeID=" + Uri.EscapeDataString(TransactionTypeID);
-            postData += "&MerchantAuthKey=" + Uri.EscapeDataString(MerchantAuthKey);
-            postData += "&TranAuthKey=" + Uri.EscapeDataString(TranAuthKey);
-            postData += "&OrderAmount=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceTotal"]));
-            postData += "&ReturnURL=" + Uri.EscapeDataString(ReturnURL);
-            postData += "&OrderNo=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceNumber"]) + "BT");
-            //postData += "&CardNumber=" + Uri.EscapeDataString("23423423423423");
-            //postData += "&PIN=" + Uri.EscapeDataString("1234");
-            //postData += "&ExtraParam3=" + Uri.EscapeDataString(ExtraParam3);
-
-            var data = Encoding.ASCII.GetBytes(postData);
-            request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded";
-            request.ContentLength = data.Length;
-
-            using (var stream = request.GetRequestStream())
+            string postData = string.Empty;
+            if (objInvoiceMasterDT?.Rows.Count > 0)
             {
-                stream.Write(data, 0, data.Length);
-            }
-            Response.Clear();
+                var request = (HttpWebRequest)WebRequest.Create("http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
 
-            var response = (HttpWebResponse)request.GetResponse();
-            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
-
-
-            MembershipUser user = Membership.GetUser();
-            if (user != null)
-            {
-                string str = user.ToString();
-                Dbutility objDbutility = new Dbutility();
-                CompanyLoginMasterBLL objCompanyLoginMasterBll = new CompanyLoginMasterBLL();
-                CloudAccountDA.CompanyLoginMasterDataTable objCompanyLoginMasterDT = new CloudAccountDA.CompanyLoginMasterDataTable();
-                objCompanyLoginMasterDT = objCompanyLoginMasterBll.GetDataByCompanyLoginName(str);
-                if (objCompanyLoginMasterDT.Rows.Count > 0)
+                MembershipUser user = Membership.GetUser();
+                if (user != null)
                 {
-                    str = objCompanyLoginMasterDT.Rows[0]["CompanyID"].ToString();
-                    str = " Select CardNumber,PinNumber From CompanyIOMaster Where CompanyID='" + str + "'";
-                    DataTable dtCompanyIOMaster = objDbutility.BindDataTable(str);
-                    if (dtCompanyIOMaster.Rows.Count > 0)
+                    string str = user.ToString();
+                    Dbutility objDbutility = new Dbutility();
+                    CompanyLoginMasterBLL objCompanyLoginMasterBll = new CompanyLoginMasterBLL();
+                    CloudAccountDA.CompanyLoginMasterDataTable objCompanyLoginMasterDT = new CloudAccountDA.CompanyLoginMasterDataTable();
+                    objCompanyLoginMasterDT = objCompanyLoginMasterBll.GetDataByCompanyLoginName(str);
+                    if (objCompanyLoginMasterDT.Rows.Count > 0)
                     {
-                        string cardNo = Convert.ToString(dtCompanyIOMaster.Rows[0]["CardNumber"]);
-                        string pinNo = Convert.ToString(dtCompanyIOMaster.Rows[0]["PinNumber"]);
-                        if (!string.IsNullOrEmpty(cardNo) && !string.IsNullOrEmpty(pinNo))
+                        str = objCompanyLoginMasterDT.Rows[0]["CompanyID"].ToString();
+                        str = " Select ProductID,MerchantID,MerchantAuthkey,TransactionTypeID,TransactionAuthkey " +
+                            "From CompanyIOPayerMaster Where CompanyID='" + str + "'";
+                        DataTable dtCompanyIOMaster = objDbutility.BindDataTable(str);
+                        if (dtCompanyIOMaster.Rows.Count > 0)
                         {
-                            Regex regReplace = new Regex("name=\"txtCardNumber\"");
-                            responseString = regReplace.Replace(responseString, "name=\"txtCardNumber\" value=\"" + cardNo + "\"  ", 1);
+                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["MerchantID"]);
+                            postData = "MerchantID=" + Uri.EscapeDataString(str);
 
-                            regReplace = new Regex("name=\"txtPIN\"");
-                            responseString = regReplace.Replace(responseString, "name=\"txtPIN\" value=\"" + pinNo + "\"  ", 1);
+                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["ProductID"]);
+                            postData += "&ProductID=" + Uri.EscapeDataString(str);
 
-                            regReplace = new Regex("<body>");
-                            responseString = regReplace.Replace(responseString, "<body onload=\"javascript:document.getElementById('form1').submit();\">  ", 1);
+                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["TransactionTypeID"]);
+                            postData += "&TransactionTypeID=" + Uri.EscapeDataString(str);
+
+                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["MerchantAuthkey"]);
+                            postData += "&MerchantAuthKey=" + Uri.EscapeDataString(str);
+
+                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["TransactionAuthkey"]);
+                            postData += "&TranAuthKey=" + Uri.EscapeDataString(str);
+
+                            postData += "&OrderAmount=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceTotal"]));
+                            postData += "&ReturnURL=" + Uri.EscapeDataString(ConfigurationManager.AppSettings["SuccessClientURL"]);
+                            postData += "&OrderNo=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceNumber"]) + "BT");
                         }
                     }
                 }
-            }
 
-            string strResultnew = responseString.Replace("./IOPayerPaymentGateway.aspx", "http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
-            Response.Write(strResultnew);
+                if (!string.IsNullOrEmpty(postData))
+                {
+                    var data = Encoding.ASCII.GetBytes(postData);
+                    request.Method = "POST";
+                    request.ContentType = "application/x-www-form-urlencoded";
+                    request.ContentLength = data.Length;
+
+                    using (var stream = request.GetRequestStream())
+                    {
+                        stream.Write(data, 0, data.Length);
+                    }
+                    Response.Clear();
+
+                    var response = (HttpWebResponse)request.GetResponse();
+                    var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+                    string strResultnew = responseString.Replace("./IOPayerPaymentGateway.aspx", "http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
+                    Response.Write(strResultnew);
+                }
+
+                else
+                {
+                    this.ClientScript.RegisterClientScriptBlock(this.GetType(), Guid.NewGuid().ToString(),
+                        "<script language=\"JavaScript\">" + "alert('Please fill Company IO Payer Master for before proceeding!');" + "</script>");
+                }
+            }
+            else
+            {
+                this.ClientScript.RegisterClientScriptBlock(this.GetType(), Guid.NewGuid().ToString(),
+                    "<script language=\"JavaScript\">" + "alert('Invoice detail not found!');" + "</script>");
+            }
             return;
         }
 
@@ -150,7 +148,5 @@ namespace IITS_CloudAccounting.Client
             }
             return cipherText;
         }
-
-
     }
 }

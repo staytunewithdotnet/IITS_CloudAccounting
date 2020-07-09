@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Company Paypal Setting Master" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true"
-    CodeBehind="CompanyIOMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CompanyIOMaster" %>
+    CodeBehind="CompanyIOPayerMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CompanyIOPayerMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="CompanyIOMaster.aspx">Company IO Setting Master</a>
+                    <a href="CompanyIOMaster.aspx">Company IO Player Setting Master</a>
                 </li>
             </ol>
         </div>
@@ -35,18 +35,42 @@
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="col-lg-3 control-label">
-                            Card Number
+                            Product ID
                         </div>
                         <div class="col-lg-6">
-                            <asp:TextBox runat="server" ID="txtCardNo" MaxLength="50"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtProductID" MaxLength="5"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-lg-3 control-label">
-                            PIN Number
+                            Merchant ID
                         </div>
                         <div class="col-lg-6">
-                            <asp:TextBox runat="server" ID="txtPINNo" MaxLength="50"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtMerchantID" MaxLength="5"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-3 control-label">
+                            MerchantAuth key
+                        </div>
+                        <div class="col-lg-6">
+                            <asp:TextBox runat="server" ID="txtMerchantAuthkey" MaxLength="50"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-3 control-label">
+                            TransactionType ID
+                        </div>
+                        <div class="col-lg-6">
+                            <asp:TextBox runat="server" ID="txtTransactionTypeID" MaxLength="5"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-3 control-label">
+                            TransactionAuth key
+                        </div>
+                        <div class="col-lg-6">
+                            <asp:TextBox runat="server" ID="txtTransactionAuthkey" MaxLength="50"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
