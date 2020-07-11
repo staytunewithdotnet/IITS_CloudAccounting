@@ -257,7 +257,7 @@
     <Content Include="Admin\PackageMaster.aspx" />
     <Content Include="Admin\PackageModuleMaster.aspx" />
     <Content Include="Admin\PackageUpgradeRequestMaster.aspx" />
-    <Content Include="Admin\PaymentGatewayIOPayerMaster.aspx" />
+    <Content Include="Admin\PaymentGatewayIOPayer.aspx" />
     <Content Include="Admin\PaymentGatewayMaster.aspx" />
     <Content Include="Admin\PaymentGatewayPaypalMaster.aspx" />
     <Content Include="Admin\PaymentMaster.aspx" />
@@ -1117,8 +1117,8 @@
       <DependentUpon>PackageUpgradeRequestMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PaymentGatewayIOPayerMaster.aspx.cs">
-      <DependentUpon>PaymentGatewayIOPayerMaster.aspx</DependentUpon>
+    <Compile Include="Admin\PaymentGatewayIOPayer.aspx.cs">
+      <DependentUpon>PaymentGatewayIOPayer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\PaymentGatewayMaster.aspx.cs">

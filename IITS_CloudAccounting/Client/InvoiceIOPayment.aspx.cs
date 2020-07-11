@@ -35,43 +35,35 @@ namespace IITS_CloudAccounting.Client
             if (objInvoiceMasterDT?.Rows.Count > 0)
             {
                 var request = (HttpWebRequest)WebRequest.Create("http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
-
-                MembershipUser user = Membership.GetUser();
-                if (user != null)
+                string str = Convert.ToString(objInvoiceMasterDT.Rows[0]["CompanyID"]);
+                if (!string.IsNullOrEmpty(str))
                 {
-                    string str = user.ToString();
                     Dbutility objDbutility = new Dbutility();
-                    CompanyLoginMasterBLL objCompanyLoginMasterBll = new CompanyLoginMasterBLL();
-                    CloudAccountDA.CompanyLoginMasterDataTable objCompanyLoginMasterDT = new CloudAccountDA.CompanyLoginMasterDataTable();
-                    objCompanyLoginMasterDT = objCompanyLoginMasterBll.GetDataByCompanyLoginName(str);
-                    if (objCompanyLoginMasterDT.Rows.Count > 0)
+                    str = " Select ProductID,MerchantID,MerchantAuthkey,TransactionTypeID,TransactionAuthkey " +
+                        "From CompanyIOPayerMaster Where CompanyID='" + str + "'";
+                    DataTable dtCompanyIOMaster = objDbutility.BindDataTable(str);
+                    if (dtCompanyIOMaster.Rows.Count > 0)
                     {
-                        str = objCompanyLoginMasterDT.Rows[0]["CompanyID"].ToString();
-                        str = " Select ProductID,MerchantID,MerchantAuthkey,TransactionTypeID,TransactionAuthkey " +
-                            "From CompanyIOPayerMaster Where CompanyID='" + str + "'";
-                        DataTable dtCompanyIOMaster = objDbutility.BindDataTable(str);
-                        if (dtCompanyIOMaster.Rows.Count > 0)
-                        {
-                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["MerchantID"]);
-                            postData = "MerchantID=" + Uri.EscapeDataString(str);
+                        str = Convert.ToString(dtCompanyIOMaster.Rows[0]["MerchantID"]);
+                        postData = "MerchantID=" + Uri.EscapeDataString(str);
 
-                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["ProductID"]);
-                            postData += "&ProductID=" + Uri.EscapeDataString(str);
+                        str = Convert.ToString(dtCompanyIOMaster.Rows[0]["ProductID"]);
+                        postData += "&ProductID=" + Uri.EscapeDataString(str);
 
-                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["TransactionTypeID"]);
-                            postData += "&TransactionTypeID=" + Uri.EscapeDataString(str);
+                        str = Convert.ToString(dtCompanyIOMaster.Rows[0]["TransactionTypeID"]);
+                        postData += "&TransactionTypeID=" + Uri.EscapeDataString(str);
 
-                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["MerchantAuthkey"]);
-                            postData += "&MerchantAuthKey=" + Uri.EscapeDataString(str);
+                        str = Convert.ToString(dtCompanyIOMaster.Rows[0]["MerchantAuthkey"]);
+                        postData += "&MerchantAuthKey=" + Uri.EscapeDataString(str);
 
-                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["TransactionAuthkey"]);
-                            postData += "&TranAuthKey=" + Uri.EscapeDataString(str);
+                        str = Convert.ToString(dtCompanyIOMaster.Rows[0]["TransactionAuthkey"]);
+                        postData += "&TranAuthKey=" + Uri.EscapeDataString(str);
 
-                            postData += "&OrderAmount=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceTotal"]));
-                            postData += "&ReturnURL=" + Uri.EscapeDataString(ConfigurationManager.AppSettings["SuccessClientURL"]);
-                            postData += "&OrderNo=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceNumber"]) + "BT");
-                        }
+                        postData += "&OrderAmount=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceTotal"]));
+                        postData += "&ReturnURL=" + Uri.EscapeDataString(ConfigurationManager.AppSettings["SuccessClientURL"]);
+                        postData += "&OrderNo=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceNumber"]) + "BT");
                     }
+
                 }
 
                 if (!string.IsNullOrEmpty(postData))

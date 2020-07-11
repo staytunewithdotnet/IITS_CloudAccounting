@@ -105,9 +105,9 @@
                                         <span class="title">Payment Gateway Master</span>
                                     </a>
                                 </li>
-                                 <li id="Li1" runat="server">
-                                    <a href="PaymentGatewayIOPayerMaster.aspx">
-                                        <span class="title">Payment Gateway IO Payer Master</span>
+                                 <li id="paymentGatewayIOPayer" runat="server">
+                                    <a href="PaymentGatewayIOPayer.aspx">
+                                        <span class="title">Payment Gateway IO Payer</span>
                                     </a>
                                 </li>
                                 <li id="paymentGatewayPaypal" runat="server">
