@@ -231,7 +231,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvTask_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/TaskMaster.aspx?cmd=add&ID=" + ((WebControl) this.gvTask.SelectedRow.Cells[0].FindControl("chkID")).ToolTip);
+      this.Response.Redirect("~/BillTransact/TaskMaster.aspx?cmd=add&ID=" + ((WebControl) this.gvTask.SelectedRow.Cells[0].FindControl("chkID")).ToolTip);
       this.BindGrid();
     }
 
@@ -243,7 +243,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/TaskMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/TaskMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -265,7 +265,7 @@ namespace IITS_CloudAccounting.Admin
         {
           this.Session["saveTask"] = (object) 1;
           this.DisplayAlert("Details Added Successfully.");
-          this.Response.Redirect("~/Admin/TaskMaster.aspx?cmd=add&ID=" + (object) num);
+          this.Response.Redirect("~/BillTransact/TaskMaster.aspx?cmd=add&ID=" + (object) num);
         }
         else
         {
@@ -289,7 +289,7 @@ namespace IITS_CloudAccounting.Admin
           {
             this.Session["updateTask"] = (object) 1;
             this.DisplayAlert("Update Successfully..");
-            this.Response.Redirect("~/Admin/TaskMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+            this.Response.Redirect("~/BillTransact/TaskMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
           }
           else
             this.DisplayAlert("Fail to Update Details.");
@@ -436,7 +436,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void lnkEdit_OnClick(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/TaskMaster.aspx?cmd=add&ID=" + ((LinkButton) sender).CommandArgument);
+      this.Response.Redirect("~/BillTransact/TaskMaster.aspx?cmd=add&ID=" + ((LinkButton) sender).CommandArgument);
     }
   }
 }

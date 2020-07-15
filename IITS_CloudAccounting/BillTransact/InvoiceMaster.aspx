@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Invoice Master" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="InvoiceMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InvoiceMaster" %>
+﻿<%@ Page Title="Invoice Master" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="InvoiceMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InvoiceMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

@@ -185,10 +185,10 @@ namespace IITS_CloudAccounting.Admin
       if (this.objPrivacyPolicyContentDT.Rows.Count > 0)
       {
         this.hfPrivacyPolicy.Value = this.objPrivacyPolicyContentDT.Rows[0]["PrivacyPolicyContentID"].ToString();
-        this.Response.Redirect("~/Admin/PrivacyPolicyContent.aspx?cmd=add&ID=" + this.hfPrivacyPolicy.Value);
+        this.Response.Redirect("~/BillTransact/PrivacyPolicyContent.aspx?cmd=add&ID=" + this.hfPrivacyPolicy.Value);
       }
       else
-        this.Response.Redirect("~/Admin/PrivacyPolicyContent.aspx?cmd=add");
+        this.Response.Redirect("~/BillTransact/PrivacyPolicyContent.aspx?cmd=add");
     }
 
     private void SetRecord(string iD)
@@ -216,7 +216,7 @@ namespace IITS_CloudAccounting.Admin
         if (num != 0)
         {
           this.DisplayAlert("Details Added Successfully.");
-          this.Response.Redirect("~/Admin/PrivacyPolicyContent.aspx?cmd=add&ID=" + (object) num);
+          this.Response.Redirect("~/BillTransact/PrivacyPolicyContent.aspx?cmd=add&ID=" + (object) num);
         }
         else
         {
@@ -244,7 +244,7 @@ namespace IITS_CloudAccounting.Admin
             if (this.objPrivacyPolicyContentBll.UpdatePrivacyPolicy(int.Parse(this.hfPrivacyPolicy.Value.Trim()), this.txtPrivacyPolicyContent.Text.Trim()))
             {
               this.DisplayAlert("Update Successfully..");
-              this.Response.Redirect("~/Admin/PrivacyPolicyContent.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+              this.Response.Redirect("~/BillTransact/PrivacyPolicyContent.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
             }
             else
               this.DisplayAlert("Fail to Update Details.");

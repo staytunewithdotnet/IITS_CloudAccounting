@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Update Admin Profile" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="UpdateAdminProfile.aspx.cs" Inherits="IITS_CloudAccounting.Admin.UpdateAdminProfile" %>
+﻿<%@ Page Title="Update Admin Profile" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="UpdateAdminProfile.aspx.cs" Inherits="IITS_CloudAccounting.Admin.UpdateAdminProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

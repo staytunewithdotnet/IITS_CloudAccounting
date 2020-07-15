@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Basecamp Classic" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="BasecampClassic.aspx.cs" Inherits="IITS_CloudAccounting.Admin.BasecampClassic" %>
+﻿<%@ Page Title="Basecamp Classic" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="BasecampClassic.aspx.cs" Inherits="IITS_CloudAccounting.Admin.BasecampClassic" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

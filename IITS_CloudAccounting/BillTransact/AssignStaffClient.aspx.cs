@@ -199,7 +199,7 @@ namespace IITS_CloudAccounting.Admin
         if (num == 0)
           return;
         this.Session["saveStaffC"] = (object) 1;
-        this.Response.Redirect("~/Admin/AssignStaffClient.aspx");
+        this.Response.Redirect("~/BillTransact/AssignStaffClient.aspx");
       }
       else
         this.DisplayAlert("Please select a client");
@@ -226,7 +226,7 @@ namespace IITS_CloudAccounting.Admin
         if (num == 0)
           return;
         this.Session["saveStaffC"] = (object) 1;
-        this.Response.Redirect("~/Admin/AssignStaffClient.aspx?staff_to_client=1");
+        this.Response.Redirect("~/BillTransact/AssignStaffClient.aspx?staff_to_client=1");
       }
       else
         this.DisplayAlert("Please select a client");

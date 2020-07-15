@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Export To CSV" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="ExportToCSV.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ExportToCSV" %>
+﻿<%@ Page Title="Export To CSV" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="ExportToCSV.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ExportToCSV" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

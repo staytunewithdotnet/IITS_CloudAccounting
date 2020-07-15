@@ -281,15 +281,15 @@ namespace IITS_CloudAccounting.Admin
       if (this.objContactMasterDT.Rows.Count > 0)
       {
         this.hfContact.Value = this.objContactMasterDT.Rows[0]["ContactID"].ToString();
-        this.Response.Redirect("~/Admin/ContactMaster.aspx?cmd=add&ID=" + this.hfContact.Value);
+        this.Response.Redirect("~/BillTransact/ContactMaster.aspx?cmd=add&ID=" + this.hfContact.Value);
       }
       else
-        this.Response.Redirect("~/Admin/ContactMaster.aspx?cmd=add");
+        this.Response.Redirect("~/BillTransact/ContactMaster.aspx?cmd=add");
     }
 
     protected void btnAddContact_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ContactMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/ContactMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -300,7 +300,7 @@ namespace IITS_CloudAccounting.Admin
       if (num != 0)
       {
         this.DisplayAlert("Details Added Successfully.");
-        this.Response.Redirect("~/Admin/ContactMaster.aspx?cmd=add&ID=" + (object) num);
+        this.Response.Redirect("~/BillTransact/ContactMaster.aspx?cmd=add&ID=" + (object) num);
       }
       else
       {
@@ -318,7 +318,7 @@ namespace IITS_CloudAccounting.Admin
           if (this.objContactMasterBll.UpdateContact(int.Parse(this.hfContact.Value.Trim()), this.txtCompanyName.Text.Trim(), this.txtContactPerson.Text.Trim(), this.txtAddress1.Text.Trim(), this.txtAddress2.Text.Trim(), this.txtAddress3.Text.Trim(), this.txtAddress4.Text.Trim(), this.txtZipCode.Text.Trim(), this.ddlCity.SelectedItem.Text, this.ddlState.SelectedItem.Text, this.ddlCountry.SelectedItem.Text, this.txtPhone1.Text.Trim(), this.txtPhone2.Text.Trim(), this.txtFax1.Text.Trim(), this.txtFax2.Text.Trim(), this.txtMobile1.Text.Trim(), this.txtMobile2.Text.Trim(), this.txtEmail1.Text.Trim(), this.txtEmail2.Text.Trim(), this.txtWebsite.Text.Trim(), this.txtGoogleMapCode.Text.Trim(), this.chkStatus.Checked))
           {
             this.DisplayAlert("Update Successfully..");
-            this.Response.Redirect("~/Admin/ContactMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+            this.Response.Redirect("~/BillTransact/ContactMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
           }
           else
             this.DisplayAlert("Fail to Update Details.");
@@ -339,7 +339,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ContactMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/ContactMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -349,7 +349,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objContactMasterBll.DeleteContact(int.Parse(this.hfContact.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/ContactMaster.aspx");
+          this.Response.Redirect("~/BillTransact/ContactMaster.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -360,12 +360,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ContactMaster.aspx");
+      this.Response.Redirect("~/BillTransact/ContactMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ContactMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/ContactMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

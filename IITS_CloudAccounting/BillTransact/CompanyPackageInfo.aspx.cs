@@ -182,7 +182,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvCompanyPackage_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyPackageInfo.aspx?cmd=view&ID=" + this.gvCompanyPackage.SelectedRow.Cells[0].Text);
+      this.Response.Redirect("~/BillTransact/CompanyPackageInfo.aspx?cmd=view&ID=" + this.gvCompanyPackage.SelectedRow.Cells[0].Text);
       this.BindGrid();
     }
 
@@ -194,7 +194,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvCompanyPackageFree_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyPackageInfo.aspx?cmd=view&ID=" + this.gvCompanyPackageFree.SelectedRow.Cells[0].Text);
+      this.Response.Redirect("~/BillTransact/CompanyPackageInfo.aspx?cmd=view&ID=" + this.gvCompanyPackageFree.SelectedRow.Cells[0].Text);
       this.BindGrid();
     }
 
@@ -206,7 +206,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyPackageInfo.aspx");
+      this.Response.Redirect("~/BillTransact/CompanyPackageInfo.aspx");
     }
 
     public void DisplayAlert(string message)

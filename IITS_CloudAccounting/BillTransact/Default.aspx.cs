@@ -90,7 +90,7 @@ namespace IITS_CloudAccounting.Admin
       if (user == null)
         return;
       this.objCompanyLoginMasterDT = this.objCompanyLoginMasterBll.GetDataByCompanyLoginName(user.UserName);
-      this.Response.Redirect("~/Admin/UpgradeCompanyPackage.aspx?CompanyID=" + this.objCompanyLoginMasterDT.Rows[0]["CompanyID"].ToString());
+      this.Response.Redirect("~/BillTransact/UpgradeCompanyPackage.aspx?CompanyID=" + this.objCompanyLoginMasterDT.Rows[0]["CompanyID"].ToString());
     }
   }
 }

@@ -289,7 +289,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvFeature_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/FeatureMaster.aspx?cmd=view&ID=" + this.gvFeature.SelectedRow.Cells[0].Text);
+      this.Response.Redirect("~/BillTransact/FeatureMaster.aspx?cmd=view&ID=" + this.gvFeature.SelectedRow.Cells[0].Text);
       this.BindGrid();
     }
 
@@ -311,7 +311,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAddFeature_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/FeatureMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/FeatureMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -337,7 +337,7 @@ namespace IITS_CloudAccounting.Admin
           if (num != 0)
           {
             this.DisplayAlert("Details Added Successfully.");
-            this.Response.Redirect("~/Admin/FeatureMaster.aspx?cmd=view&ID=" + (object) num);
+            this.Response.Redirect("~/BillTransact/FeatureMaster.aspx?cmd=view&ID=" + (object) num);
           }
           else
           {
@@ -376,7 +376,7 @@ namespace IITS_CloudAccounting.Admin
               if (this.objFeatureMasterBll.UpdateFeature(int.Parse(this.hfFeature.Value.Trim()), this.txtFeatureName.Text.Trim(), numArray, this.txtDesc.Text.Trim(), this.chkStatus.Checked, this.chkHome.Checked))
               {
                 this.DisplayAlert("Update Successfully..");
-                this.Response.Redirect("~/Admin/FeatureMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+                this.Response.Redirect("~/BillTransact/FeatureMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
               }
               else
                 this.DisplayAlert("Fail to Update Details.");
@@ -387,7 +387,7 @@ namespace IITS_CloudAccounting.Admin
               if (this.objFeatureMasterBll.UpdateFeature(int.Parse(this.hfFeature.Value.Trim()), this.txtFeatureName.Text.Trim(), (byte[]) this.objFeatureMasterDT.Rows[0]["FeatureImage"], this.txtDesc.Text.Trim(), this.chkStatus.Checked, this.chkHome.Checked))
               {
                 this.DisplayAlert("Update Successfully..");
-                this.Response.Redirect("~/Admin/FeatureMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+                this.Response.Redirect("~/BillTransact/FeatureMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
               }
               else
                 this.DisplayAlert("Fail to Update Details.");
@@ -407,7 +407,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/FeatureMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/FeatureMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -417,7 +417,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objFeatureMasterBll.DeleteFeature(int.Parse(this.hfFeature.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/FeatureMaster.aspx");
+          this.Response.Redirect("~/BillTransact/FeatureMaster.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -428,12 +428,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/FeatureMaster.aspx");
+      this.Response.Redirect("~/BillTransact/FeatureMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/FeatureMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/FeatureMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

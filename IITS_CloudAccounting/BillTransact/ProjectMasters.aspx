@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Project Master" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="ProjectMasters.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ProjectMasters" %>
+﻿<%@ Page Title="Project Master" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="ProjectMasters.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ProjectMasters" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../App_Themes/Doyingo/js/searchBox.js"></script>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Frequency Master" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="FrequencyMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.FrequencyMaster" %>
+﻿<%@ Page Title="Frequency Master" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="FrequencyMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.FrequencyMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

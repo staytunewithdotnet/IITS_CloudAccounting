@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Bussiness Master" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="BussinessMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.BussinessMaster" %>
+﻿<%@ Page Title="Bussiness Master" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="BussinessMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.BussinessMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

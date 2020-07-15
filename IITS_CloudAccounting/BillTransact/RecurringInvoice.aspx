@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Recurring Invoice" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="RecurringInvoice.aspx.cs" Inherits="IITS_CloudAccounting.Admin.RecurringInvoice" %>
+﻿<%@ Page Title="Recurring Invoice" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="RecurringInvoice.aspx.cs" Inherits="IITS_CloudAccounting.Admin.RecurringInvoice" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../App_Themes/Doyingo/js/searchBox.js"></script>

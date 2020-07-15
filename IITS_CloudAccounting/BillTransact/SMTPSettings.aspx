@@ -1,4 +1,4 @@
-﻿<%@ Page Title="SMTP Settings" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="SMTPSettings.aspx.cs" Inherits="IITS_CloudAccounting.Admin.SMTPSettings" %>
+﻿<%@ Page Title="SMTP Settings" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="SMTPSettings.aspx.cs" Inherits="IITS_CloudAccounting.Admin.SMTPSettings" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

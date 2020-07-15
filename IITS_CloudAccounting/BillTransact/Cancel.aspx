@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Cancel" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="Cancel.aspx.cs" Inherits="IITS_CloudAccounting.Admin.Cancel" %>
+﻿<%@ Page Title="Cancel" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="Cancel.aspx.cs" Inherits="IITS_CloudAccounting.Admin.Cancel" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

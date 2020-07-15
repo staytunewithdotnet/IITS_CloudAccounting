@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Master" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="HomeMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.HomeMaster" %>
+﻿<%@ Page Title="Home Master" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="HomeMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.HomeMaster" %>
 
 <%@ Register TagPrefix="ajaxToolkit" Namespace="AjaxControlToolkit.HTMLEditor" Assembly="AjaxControlToolkit, Version=4.5.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 

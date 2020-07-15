@@ -449,7 +449,7 @@ namespace IITS_CloudAccounting.Admin
       this.objCompanyMasterBll.UpdateSignUpIDs(int.Parse(this.Application["companyId"].ToString()), iBussinessID, iIndustryID, iCurrentAccountID, iRunningID);
       this.Application.Clear();
       FormsAuthentication.RedirectFromLoginPage(this.txtUsername.Text.Trim(), false);
-      this.Response.Redirect("~/Admin/DefaultDoyingo.aspx");
+      this.Response.Redirect("~/BillTransact/DefaultDoyingo.aspx");
     }
   }
 }

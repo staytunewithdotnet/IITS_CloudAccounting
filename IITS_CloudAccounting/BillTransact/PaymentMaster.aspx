@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Payment Master" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" 
+﻿<%@ Page Title="Payment Master" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" 
     Async="true" CodeBehind="PaymentMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.PaymentMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

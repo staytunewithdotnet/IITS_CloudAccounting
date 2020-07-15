@@ -436,7 +436,7 @@ namespace IITS_CloudAccounting.Admin
 
         protected void gvStaff_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Response.Redirect("~/Admin/EmployeeMaster.aspx?cmd=add&ID=" + this.gvStaff.SelectedRow.Cells[0].Text);
+            this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx?cmd=add&ID=" + this.gvStaff.SelectedRow.Cells[0].Text);
             this.BindGrid();
         }
 
@@ -468,7 +468,7 @@ namespace IITS_CloudAccounting.Admin
                 {
                     int num = int.Parse(this.objCloudPackageDetailsDT.Rows[0]["CloudPackageDetailValue"].ToString());
                     if (count < num)
-                        this.Response.Redirect("~/Admin/EmployeeMaster.aspx?cmd=add");
+                        this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx?cmd=add");
                     else
                         this.DisplayAlert("Can not add more staff in this package. To add more staff please upgrade your package.");
                 }
@@ -477,18 +477,18 @@ namespace IITS_CloudAccounting.Admin
                     try
                     {
                         if (bool.Parse(this.objCloudPackageDetailsDT.Rows[0]["CloudPackageDetailValue"].ToString()))
-                            this.Response.Redirect("~/Admin/EmployeeMaster.aspx?cmd=add");
+                            this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx?cmd=add");
                         else
                             this.DisplayAlert("Can not add more clients in this package. To add more clients please upgrade your package.");
                     }
                     catch (Exception ex2)
                     {
-                        this.Response.Redirect("~/Admin/EmployeeMaster.aspx?cmd=add");
+                        this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx?cmd=add");
                     }
                 }
             }
             else
-                this.Response.Redirect("~/Admin/EmployeeMaster.aspx?cmd=add");
+                this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx?cmd=add");
         }
 
         protected async void btnSubmit_Click(object sender, EventArgs e)
@@ -560,7 +560,7 @@ namespace IITS_CloudAccounting.Admin
                     }
                     this.Session["saveEmployee"] = (object)1;
                     this.DisplayAlert("Details Added Successfully.");
-                    this.Response.Redirect("~/Admin/EmployeeMaster.aspx?cmd=add&ID=" + (object)staffID);
+                    this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx?cmd=add&ID=" + (object)staffID);
                 }
                 else
                 {
@@ -719,7 +719,7 @@ namespace IITS_CloudAccounting.Admin
                         }
                         this.Session["updateEmployee"] = (object)1;
                         this.DisplayAlert("Update Successfully..");
-                        this.Response.Redirect("~/Admin/EmployeeMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+                        this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
                     }
                     else
                         this.DisplayAlert("Fail to Update Details.");
@@ -866,16 +866,16 @@ namespace IITS_CloudAccounting.Admin
             switch (linkButton.ToolTip)
             {
                 case "Staff":
-                    this.Response.Redirect("~/Admin/EmployeeMaster.aspx?cmd=add&ID=" + commandArgument);
+                    this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx?cmd=add&ID=" + commandArgument);
                     break;
                 case "Contractor":
-                    this.Response.Redirect("~/Admin/ContractorMaster.aspx?cmd=add&ID=" + commandArgument);
+                    this.Response.Redirect("~/BillTransact/ContractorMaster.aspx?cmd=add&ID=" + commandArgument);
                     break;
                 case "Admin":
-                    this.Response.Redirect("~/Admin/UpdateCompanyDetail.aspx");
+                    this.Response.Redirect("~/BillTransact/UpdateCompanyDetail.aspx");
                     break;
                 default:
-                    this.Response.Redirect("~/Admin/EmployeeMaster.aspx");
+                    this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx");
                     break;
             }
         }
@@ -945,16 +945,16 @@ namespace IITS_CloudAccounting.Admin
             switch (linkButton.ToolTip)
             {
                 case "Staff":
-                    this.Response.Redirect("~/Admin/EmployeeMaster.aspx?cmd=view&ID=" + commandArgument);
+                    this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx?cmd=view&ID=" + commandArgument);
                     break;
                 case "Contractor":
-                    this.Response.Redirect("~/Admin/ContractorMaster.aspx?cmd=view&ID=" + commandArgument);
+                    this.Response.Redirect("~/BillTransact/ContractorMaster.aspx?cmd=view&ID=" + commandArgument);
                     break;
                 case "Admin":
-                    this.Response.Redirect("~/Admin/UpdateCompanyDetail.aspx");
+                    this.Response.Redirect("~/BillTransact/UpdateCompanyDetail.aspx");
                     break;
                 default:
-                    this.Response.Redirect("~/Admin/EmployeeMaster.aspx");
+                    this.Response.Redirect("~/BillTransact/EmployeeMaster.aspx");
                     break;
             }
         }

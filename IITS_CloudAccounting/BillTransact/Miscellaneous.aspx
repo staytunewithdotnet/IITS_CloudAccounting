@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Miscellaneous" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="Miscellaneous.aspx.cs" Inherits="IITS_CloudAccounting.Admin.Miscellaneous" %>
+﻿<%@ Page Title="Miscellaneous" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="Miscellaneous.aspx.cs" Inherits="IITS_CloudAccounting.Admin.Miscellaneous" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

@@ -133,7 +133,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyPackageDetails.aspx");
+      this.Response.Redirect("~/BillTransact/CompanyPackageDetails.aspx");
     }
 
     protected void btnUpgrade_Click(object sender, EventArgs e)

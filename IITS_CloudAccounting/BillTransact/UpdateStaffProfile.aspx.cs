@@ -177,7 +177,7 @@ namespace IITS_CloudAccounting.Admin
         {
           this.Session["update"] = (object) 1;
           this.DisplayAlert("Update Successfully..");
-          this.Response.Redirect("~/Admin/UpdateStaffProfile.aspx");
+          this.Response.Redirect("~/BillTransact/UpdateStaffProfile.aspx");
         }
         else
           this.DisplayAlert("Fail to Update Details.");

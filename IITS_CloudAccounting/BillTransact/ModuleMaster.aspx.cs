@@ -282,7 +282,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvModule_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ModuleMaster.aspx?cmd=view&ID=" + this.gvModule.SelectedRow.Cells[0].Text);
+      this.Response.Redirect("~/BillTransact/ModuleMaster.aspx?cmd=view&ID=" + this.gvModule.SelectedRow.Cells[0].Text);
       this.BindGrid();
     }
 
@@ -294,7 +294,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAddModule_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ModuleMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/ModuleMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -323,7 +323,7 @@ namespace IITS_CloudAccounting.Admin
                 this.objPackageDetailsBll.AddPackageDetails(int.Parse(this.objPackageMasterDT.Rows[index]["PackageID"].ToString()), iModuleID, false);
             }
             this.DisplayAlert("Details Added Successfully.");
-            this.Response.Redirect("~/Admin/ModuleMaster.aspx?cmd=view&ID=" + (object) iModuleID);
+            this.Response.Redirect("~/BillTransact/ModuleMaster.aspx?cmd=view&ID=" + (object) iModuleID);
           }
           else
           {
@@ -357,7 +357,7 @@ namespace IITS_CloudAccounting.Admin
             if (this.objModuleMasterBll.UpdateModule(int.Parse(this.hfModule.Value.Trim()), this.txtName.Text.Trim(), this.txtDesc.Text.Trim(), this.chkStatus.Checked))
             {
               this.DisplayAlert("Update Successfully..");
-              this.Response.Redirect("~/Admin/ModuleMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+              this.Response.Redirect("~/BillTransact/ModuleMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
             }
             else
               this.DisplayAlert("Fail to Update Details.");
@@ -376,7 +376,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ModuleMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/ModuleMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -386,7 +386,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objModuleMasterBll.DeleteModule(int.Parse(this.hfModule.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/ModuleMaster.aspx");
+          this.Response.Redirect("~/BillTransact/ModuleMaster.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -397,12 +397,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ModuleMaster.aspx");
+      this.Response.Redirect("~/BillTransact/ModuleMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ModuleMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/ModuleMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

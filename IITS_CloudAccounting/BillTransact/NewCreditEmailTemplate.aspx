@@ -1,4 +1,4 @@
-﻿<%@ Page Title="New Credit Email Template" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" ValidateRequest="false" AutoEventWireup="true" CodeBehind="NewCreditEmailTemplate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.NewCreditEmailTemplate" %>
+﻿<%@ Page Title="New Credit Email Template" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" ValidateRequest="false" AutoEventWireup="true" CodeBehind="NewCreditEmailTemplate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.NewCreditEmailTemplate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

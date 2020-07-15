@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Accept Credit Card" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="AcceptCreditCard.aspx.cs" Inherits="IITS_CloudAccounting.Admin.AcceptCreditCard" %>
+﻿<%@ Page Title="Accept Credit Card" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="AcceptCreditCard.aspx.cs" Inherits="IITS_CloudAccounting.Admin.AcceptCreditCard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

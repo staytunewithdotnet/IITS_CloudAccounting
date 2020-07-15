@@ -1,4 +1,4 @@
-﻿<%@ Page Title="New Payment Email Template" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" ValidateRequest="false" AutoEventWireup="true" CodeBehind="NewPaymentEmailTemplate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.NewPaymentEmailTemplate" %>
+﻿<%@ Page Title="New Payment Email Template" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" ValidateRequest="false" AutoEventWireup="true" CodeBehind="NewPaymentEmailTemplate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.NewPaymentEmailTemplate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

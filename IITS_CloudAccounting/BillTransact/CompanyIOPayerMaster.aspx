@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Company Paypal Setting Master" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true"
+﻿<%@ Page Title="Company Paypal Setting Master" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true"
     CodeBehind="CompanyIOPayerMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CompanyIOPayerMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

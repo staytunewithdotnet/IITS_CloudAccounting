@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Expense Master" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="ExpenseMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ExpenseMaster" %>
+﻿<%@ Page Title="Expense Master" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="ExpenseMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ExpenseMaster" %>
 
 <%-- sir 3 project ma je main or error hoy e karavi do atyare reports to query mari ne DB mathi data lavanu 6e eto koi be kari dese.. --%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

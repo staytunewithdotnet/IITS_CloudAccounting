@@ -560,7 +560,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvCompany_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyMaster.aspx?cmd=view&ID=" + this.gvCompany.SelectedRow.Cells[0].Text);
+      this.Response.Redirect("~/BillTransact/CompanyMaster.aspx?cmd=view&ID=" + this.gvCompany.SelectedRow.Cells[0].Text);
       this.BindGrid();
     }
 
@@ -572,7 +572,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvCompanyDeactive_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyMaster.aspx?cmd=view&ID=" + this.gvCompanyDeactive.SelectedRow.Cells[0].Text);
+      this.Response.Redirect("~/BillTransact/CompanyMaster.aspx?cmd=view&ID=" + this.gvCompanyDeactive.SelectedRow.Cells[0].Text);
       this.BindGrid();
     }
 
@@ -584,7 +584,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAddCompany_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/CompanyMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -673,7 +673,7 @@ namespace IITS_CloudAccounting.Admin
               if (num != 0)
               {
                 this.DisplayAlert("Details Added Successfully.");
-                this.Response.Redirect("~/Admin/CompanyMaster.aspx?cmd=view&ID=" + (object) num);
+                this.Response.Redirect("~/BillTransact/CompanyMaster.aspx?cmd=view&ID=" + (object) num);
               }
               else
               {
@@ -797,7 +797,7 @@ namespace IITS_CloudAccounting.Admin
           if (flag)
           {
             this.DisplayAlert("Update Successfully..");
-            this.Response.Redirect("~/Admin/CompanyMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+            this.Response.Redirect("~/BillTransact/CompanyMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
           }
           else
             this.DisplayAlert("Fail to Add New Details..!");
@@ -816,12 +816,12 @@ namespace IITS_CloudAccounting.Admin
       MembershipUser user = Membership.GetUser(this.txtCompanyName.Text.Trim());
       if (user != null)
         user.UnlockUser();
-      this.Response.Redirect("~/Admin/CompanyMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/CompanyMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/CompanyMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -834,7 +834,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objCompanyMasterBll.DeleteCompany(int.Parse(this.hfCompany.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/CompanyMaster.aspx");
+          this.Response.Redirect("~/BillTransact/CompanyMaster.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -845,12 +845,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyMaster.aspx");
+      this.Response.Redirect("~/BillTransact/CompanyMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/CompanyMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

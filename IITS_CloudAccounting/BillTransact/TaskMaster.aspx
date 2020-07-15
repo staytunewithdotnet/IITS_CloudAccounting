@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Task Master" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="TaskMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.TaskMaster" %>
+﻿<%@ Page Title="Task Master" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="TaskMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.TaskMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

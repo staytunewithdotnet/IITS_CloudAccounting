@@ -208,7 +208,7 @@ namespace IITS_CloudAccounting.Admin
           {
             this.Session["update"] = (object) 1;
             this.DisplayAlert("Update Successfully..");
-            this.Response.Redirect("~/Admin/UpdateCompanyDetail.aspx");
+            this.Response.Redirect("~/BillTransact/UpdateCompanyDetail.aspx");
           }
           else
             this.DisplayAlert("Fail to Update New Details..!");

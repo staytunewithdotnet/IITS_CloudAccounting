@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Inquiry Master" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="InquiryMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InquiryMaster" %>
+﻿<%@ Page Title="Inquiry Master" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="InquiryMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InquiryMaster" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

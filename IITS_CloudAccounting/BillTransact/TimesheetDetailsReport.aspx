@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Timesheet Details Report" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="TimesheetDetailsReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.TimesheetDetailsReport" %>
+﻿<%@ Page Title="Timesheet Details Report" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="TimesheetDetailsReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.TimesheetDetailsReport" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

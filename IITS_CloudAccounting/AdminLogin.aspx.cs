@@ -39,7 +39,7 @@ namespace IITS_CloudAccounting
               FormsAuthentication.RedirectFromLoginPage(this.Login1.UserName, false);
               if (!Roles.IsUserInRole(this.Login1.UserName, "Admin"))
                 return;
-              this.Response.Redirect("~/Admin/Default.aspx");
+              this.Response.Redirect("~/BillTransact/Default.aspx");
             }
             else
             {

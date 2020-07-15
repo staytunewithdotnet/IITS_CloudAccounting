@@ -333,7 +333,7 @@ namespace IITS_CloudAccounting.Admin
       MembershipUser user = Membership.GetUser(this.Request.QueryString["ID"]);
       if (user != null)
         user.UnlockUser();
-      this.Response.Redirect("~/Admin/MasterAdminLoginMaster.aspx?ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/MasterAdminLoginMaster.aspx?ID=" + this.Request.QueryString["ID"]);
     }
 
     private void Clear()
@@ -368,7 +368,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvMasterAdmin_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/MasterAdminLoginMaster.aspx?cmd=view&ID=" + this.gvMasterAdmin.SelectedRow.Cells[3].Text);
+      this.Response.Redirect("~/BillTransact/MasterAdminLoginMaster.aspx?cmd=view&ID=" + this.gvMasterAdmin.SelectedRow.Cells[3].Text);
       this.BindGrid();
     }
 
@@ -380,7 +380,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAddMasterAdmin_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/MasterAdminLoginMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/MasterAdminLoginMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -405,7 +405,7 @@ namespace IITS_CloudAccounting.Admin
           if (this.objMasterAdminLoginMasterBll.AddMasterAdmin(this.txtFirstName.Text.Trim(), this.txtLastName.Text.Trim(), this.txtUserName.Text.Trim(), this.txtEmail.Text) != 0 && status == MembershipCreateStatus.Success)
           {
             this.DisplayAlert("Details Added Successfully.");
-            this.Response.Redirect("~/Admin/MasterAdminLoginMaster.aspx?cmd=view&ID=" + this.txtUserName.Text.Trim());
+            this.Response.Redirect("~/BillTransact/MasterAdminLoginMaster.aspx?cmd=view&ID=" + this.txtUserName.Text.Trim());
           }
           else
           {
@@ -445,7 +445,7 @@ namespace IITS_CloudAccounting.Admin
           if (this.objMasterAdminLoginMasterBll.UpdateMasterAdmin(int.Parse(this.hfMasterAdmin.Value.Trim()), this.txtFirstName.Text.Trim(), this.txtLastName.Text.Trim(), this.txtUserName.Text.Trim(), this.txtEmail.Text))
           {
             this.DisplayAlert("Update Successfully..");
-            this.Response.Redirect("~/Admin/MasterAdminLoginMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+            this.Response.Redirect("~/BillTransact/MasterAdminLoginMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
           }
           else
             this.DisplayAlert("Fail to Update Details.");
@@ -461,7 +461,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/MasterAdminLoginMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/MasterAdminLoginMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -472,7 +472,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objMasterAdminLoginMasterBll.DeleteMasterAdmin(int.Parse(this.hfMasterAdmin.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/MasterAdminLoginMaster.aspx");
+          this.Response.Redirect("~/BillTransact/MasterAdminLoginMaster.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -483,12 +483,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/MasterAdminLoginMaster.aspx");
+      this.Response.Redirect("~/BillTransact/MasterAdminLoginMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/MasterAdminLoginMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/MasterAdminLoginMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

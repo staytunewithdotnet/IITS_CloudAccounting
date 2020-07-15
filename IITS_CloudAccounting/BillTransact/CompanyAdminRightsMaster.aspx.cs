@@ -357,7 +357,7 @@ namespace IITS_CloudAccounting.Admin
       Label label2 = this.gvCompanyAdminUserRights.SelectedRow.FindControl("lblCompanyAdminID") as Label;
       if (label1 == null || label2 == null)
         return;
-      this.Response.Redirect("~/Admin/CompanyAdminRightsMaster.aspx?cmd=view&ID=" + label1.Text + "&CompanyAdminID=" + label2.Text);
+      this.Response.Redirect("~/BillTransact/CompanyAdminRightsMaster.aspx?cmd=view&ID=" + label1.Text + "&CompanyAdminID=" + label2.Text);
     }
 
     protected void gvCompanyAdminUserRights_PageIndexChanged(object sender, EventArgs e)
@@ -436,22 +436,22 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyAdminRightsMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/CompanyAdminRightsMaster.aspx?cmd=add");
     }
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyAdminRightsMaster.aspx?cmd=add&ID=" + this.ddlCompanyAdmin.SelectedValue.Trim() + "&CompanyAdminID=" + this.ddlCompanyLogin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
+      this.Response.Redirect("~/BillTransact/CompanyAdminRightsMaster.aspx?cmd=add&ID=" + this.ddlCompanyAdmin.SelectedValue.Trim() + "&CompanyAdminID=" + this.ddlCompanyLogin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
     }
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyAdminRightsMaster.aspx");
+      this.Response.Redirect("~/BillTransact/CompanyAdminRightsMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyAdminRightsMaster.aspx?cmd=view&ID=" + this.ddlCompanyAdmin.SelectedValue.Trim() + "&CompanyAdminID=" + this.ddlCompanyLogin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
+      this.Response.Redirect("~/BillTransact/CompanyAdminRightsMaster.aspx?cmd=view&ID=" + this.ddlCompanyAdmin.SelectedValue.Trim() + "&CompanyAdminID=" + this.ddlCompanyLogin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -466,7 +466,7 @@ namespace IITS_CloudAccounting.Admin
           if (this.objCompanyAdminUserRightsMasterBll.AddCompanyAdminRights(int.Parse(this.ddlCompanyAdmin.SelectedValue.Trim()), int.Parse(this.ddlCompanyLogin.SelectedValue.Trim()), int.Parse(this.ddlModule.SelectedValue.Trim()), int.Parse(((Label) this.gvForm.Rows[index].FindControl("lblFormID")).Text), ((Label) this.gvForm.Rows[index].FindControl("lblFormName")).Text.Trim(), ((CheckBox) this.gvForm.Rows[index].FindControl("chkAdd")).Checked, ((CheckBox) this.gvForm.Rows[index].FindControl("chkEdit")).Checked, ((CheckBox) this.gvForm.Rows[index].FindControl("chkDelete")).Checked, ((CheckBox) this.gvForm.Rows[index].FindControl("chkView")).Checked) == 0)
             this.DisplayAlert("Fail to Add New Details.");
         }
-        this.Response.Redirect("~/Admin/CompanyAdminRightsMaster.aspx?cmd=view&ID=" + this.ddlCompanyAdmin.SelectedValue.Trim() + "&CompanyAdminID=" + this.ddlCompanyLogin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
+        this.Response.Redirect("~/BillTransact/CompanyAdminRightsMaster.aspx?cmd=view&ID=" + this.ddlCompanyAdmin.SelectedValue.Trim() + "&CompanyAdminID=" + this.ddlCompanyLogin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
       }
       else
         this.DisplayAlert("Please Enter All Details.");
@@ -488,7 +488,7 @@ namespace IITS_CloudAccounting.Admin
           if (!this.objCompanyAdminUserRightsMasterBll.UpdateCompanyAdminRights(int.Parse(this.hfCompanyAdminRightsID.Value.Trim()), int.Parse(this.ddlCompanyAdmin.SelectedValue.Trim()), int.Parse(this.ddlCompanyLogin.SelectedValue.Trim()), int.Parse(this.ddlModule.SelectedValue.Trim()), int.Parse(label2.Text), label1.Text.Trim(), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked))
             this.DisplayAlert("Fail to Update Details.");
         }
-        this.Response.Redirect("~/Admin/CompanyAdminRightsMaster.aspx?cmd=view&ID=" + this.ddlCompanyAdmin.SelectedValue.Trim() + "&CompanyAdminID=" + this.ddlCompanyLogin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
+        this.Response.Redirect("~/BillTransact/CompanyAdminRightsMaster.aspx?cmd=view&ID=" + this.ddlCompanyAdmin.SelectedValue.Trim() + "&CompanyAdminID=" + this.ddlCompanyLogin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
       }
       else
         this.DisplayAlert("Please Enter All Details.");

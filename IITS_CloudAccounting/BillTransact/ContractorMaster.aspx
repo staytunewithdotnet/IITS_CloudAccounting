@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Contractor Master" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="ContractorMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ContractorMaster" %>
+﻿<%@ Page Title="Contractor Master" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="ContractorMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ContractorMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../App_Themes/Doyingo/css/invoicing.css" rel="stylesheet" />

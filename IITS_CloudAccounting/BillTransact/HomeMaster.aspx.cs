@@ -190,10 +190,10 @@ namespace IITS_CloudAccounting.Admin
       if (this.objHomeMasterDT.Rows.Count > 0)
       {
         this.hfHome.Value = this.objHomeMasterDT.Rows[0]["HomeID"].ToString();
-        this.Response.Redirect("~/Admin/HomeMaster.aspx?cmd=add&ID=" + this.hfHome.Value);
+        this.Response.Redirect("~/BillTransact/HomeMaster.aspx?cmd=add&ID=" + this.hfHome.Value);
       }
       else
-        this.Response.Redirect("~/Admin/HomeMaster.aspx?cmd=add");
+        this.Response.Redirect("~/BillTransact/HomeMaster.aspx?cmd=add");
     }
 
     private void SetRecord(string iD)
@@ -216,7 +216,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAddHome_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/HomeMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/HomeMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -229,7 +229,7 @@ namespace IITS_CloudAccounting.Admin
         if (num != 0)
         {
           this.DisplayAlert("Details Added Successfully.");
-          this.Response.Redirect("~/Admin/HomeMaster.aspx?cmd=add&ID=" + (object) num);
+          this.Response.Redirect("~/BillTransact/HomeMaster.aspx?cmd=add&ID=" + (object) num);
         }
         else
         {
@@ -257,7 +257,7 @@ namespace IITS_CloudAccounting.Admin
             if (this.objHomeMasterBll.UpdateHome(int.Parse(this.hfHome.Value.Trim()), this.edContent.Content.Trim(), this.txtShortDescription.Text.Trim(), this.chkStatus.Checked))
             {
               this.DisplayAlert("Update Successfully..");
-              this.Response.Redirect("~/Admin/HomeMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+              this.Response.Redirect("~/BillTransact/HomeMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
             }
             else
               this.DisplayAlert("Fail to Update Details.");
@@ -276,7 +276,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/HomeMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/HomeMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -286,7 +286,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objHomeMasterBll.DeleteHome(int.Parse(this.hfHome.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/HomeMaster.aspx");
+          this.Response.Redirect("~/BillTransact/HomeMaster.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -297,12 +297,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/HomeMaster.aspx");
+      this.Response.Redirect("~/BillTransact/HomeMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/HomeMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/HomeMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

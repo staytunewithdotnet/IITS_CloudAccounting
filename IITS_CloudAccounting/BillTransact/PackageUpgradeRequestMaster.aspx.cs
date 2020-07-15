@@ -31,7 +31,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvPackageUpgrade_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/PackageUpgradeRequestMaster.aspx?cmd=view?ID=" + this.gvPackageUpgrade.SelectedRow.Cells[0].Text);
+      this.Response.Redirect("~/BillTransact/PackageUpgradeRequestMaster.aspx?cmd=view?ID=" + this.gvPackageUpgrade.SelectedRow.Cells[0].Text);
       this.BindGrid();
     }
 

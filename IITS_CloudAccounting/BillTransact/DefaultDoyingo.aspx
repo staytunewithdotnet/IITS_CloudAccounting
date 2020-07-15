@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true"  Async="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true"  Async="true"
     CodeBehind="DefaultDoyingo.aspx.cs" Inherits="IITS_CloudAccounting.Admin.DefaultDoyingo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

@@ -58,7 +58,7 @@ namespace IITS_CloudAccounting.Admin
       fileStream.Read(numArray, 0, (int) fileStream.Length);
       fileStream.Close();
       this.objCompanyMasterBll.UpdateOnlyLogo(int.Parse(this.hfCompanyID.Value), "application/jpg", numArray);
-      this.Response.Redirect("~/Admin/UpdateCompanyLogo.aspx");
+      this.Response.Redirect("~/BillTransact/UpdateCompanyLogo.aspx");
       this.Session["saveCmpLogo"] = (object) 1;
     }
 

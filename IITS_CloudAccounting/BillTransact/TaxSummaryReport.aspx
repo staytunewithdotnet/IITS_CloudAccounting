@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Tax Summary Report" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="TaxSummaryReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.TaxSummaryReport" %>
+﻿<%@ Page Title="Tax Summary Report" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="TaxSummaryReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.TaxSummaryReport" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

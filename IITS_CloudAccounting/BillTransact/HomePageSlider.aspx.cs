@@ -214,10 +214,10 @@ namespace IITS_CloudAccounting.Admin
       if (this.objHomePageSliderDT.Rows.Count > 0)
       {
         this.hfHome.Value = this.objHomePageSliderDT.Rows[0]["HomePageSliderID"].ToString();
-        this.Response.Redirect("~/Admin/HomePageSlider.aspx?cmd=view&ID=" + this.hfHome.Value);
+        this.Response.Redirect("~/BillTransact/HomePageSlider.aspx?cmd=view&ID=" + this.hfHome.Value);
       }
       else
-        this.Response.Redirect("~/Admin/HomePageSlider.aspx?cmd=add");
+        this.Response.Redirect("~/BillTransact/HomePageSlider.aspx?cmd=add");
     }
 
     private void ViewRecord(string i)
@@ -250,7 +250,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAddHomePageSlider_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/HomePageSlider.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/HomePageSlider.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -269,7 +269,7 @@ namespace IITS_CloudAccounting.Admin
         if (num != 0)
         {
           this.DisplayAlert("Details Added Successfully.");
-          this.Response.Redirect("~/Admin/HomePageSlider.aspx?cmd=view&ID=" + (object) num);
+          this.Response.Redirect("~/BillTransact/HomePageSlider.aspx?cmd=view&ID=" + (object) num);
         }
         else
         {
@@ -328,7 +328,7 @@ namespace IITS_CloudAccounting.Admin
           if (this.objHomePageSliderBll.UpdateHomePageSlider(int.Parse(this.hfHome.Value.Trim()), numArray1, this.edContent1.Content.Trim(), numArray2, this.edContent2.Content.Trim()))
           {
             this.DisplayAlert("Update Successfully..");
-            this.Response.Redirect("~/Admin/HomePageSlider.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+            this.Response.Redirect("~/BillTransact/HomePageSlider.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
           }
           else
             this.DisplayAlert("Fail to Update Details.");
@@ -344,7 +344,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/HomePageSlider.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/HomePageSlider.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -354,7 +354,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objHomePageSliderBll.DeleteHomePageSlider(int.Parse(this.hfHome.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/HomePageSlider.aspx");
+          this.Response.Redirect("~/BillTransact/HomePageSlider.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -365,12 +365,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/HomePageSlider.aspx");
+      this.Response.Redirect("~/BillTransact/HomePageSlider.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/HomePageSlider.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/HomePageSlider.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

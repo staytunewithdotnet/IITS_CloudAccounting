@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Company Status Date Report" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="CompanyStatusDateReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CompanyStatusDateReport" %>
+﻿<%@ Page Title="Company Status Date Report" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="CompanyStatusDateReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CompanyStatusDateReport" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

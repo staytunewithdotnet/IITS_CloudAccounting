@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Invoice Master" MaintainScrollPositionOnPostback="true" Async="true" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="InvoiceMasterNew.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InvoiceMasterNew" %>
+﻿<%@ Page Title="Invoice Master" MaintainScrollPositionOnPostback="true" Async="true" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="InvoiceMasterNew.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InvoiceMasterNew" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../App_Themes/Doyingo/js/searchBox.js"></script>

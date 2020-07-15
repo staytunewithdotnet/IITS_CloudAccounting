@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Assign Staff To Client" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="AssignStaffClient.aspx.cs" Inherits="IITS_CloudAccounting.Admin.AssignStaffClient" %>
+﻿<%@ Page Title="Assign Staff To Client" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="AssignStaffClient.aspx.cs" Inherits="IITS_CloudAccounting.Admin.AssignStaffClient" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

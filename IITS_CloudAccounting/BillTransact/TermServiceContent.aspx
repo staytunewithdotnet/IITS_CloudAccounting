@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Term Service Content" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="TermServiceContent.aspx.cs" Inherits="IITS_CloudAccounting.Admin.TermServiceContent" %>
+﻿<%@ Page Title="Term Service Content" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="TermServiceContent.aspx.cs" Inherits="IITS_CloudAccounting.Admin.TermServiceContent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Company User Permissions" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="CompanyUserPermissions.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CompanyUserPermissions" %>
+﻿<%@ Page Title="Company User Permissions" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="CompanyUserPermissions.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CompanyUserPermissions" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

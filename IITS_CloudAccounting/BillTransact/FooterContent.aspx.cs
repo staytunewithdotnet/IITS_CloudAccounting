@@ -185,10 +185,10 @@ namespace IITS_CloudAccounting.Admin
       if (this.objFooterContentDT.Rows.Count > 0)
       {
         this.hfFooter.Value = this.objFooterContentDT.Rows[0]["FooterContentID"].ToString();
-        this.Response.Redirect("~/Admin/FooterContent.aspx?cmd=add&ID=" + this.hfFooter.Value);
+        this.Response.Redirect("~/BillTransact/FooterContent.aspx?cmd=add&ID=" + this.hfFooter.Value);
       }
       else
-        this.Response.Redirect("~/Admin/FooterContent.aspx?cmd=add");
+        this.Response.Redirect("~/BillTransact/FooterContent.aspx?cmd=add");
     }
 
     private void SetRecord(string iD)
@@ -216,7 +216,7 @@ namespace IITS_CloudAccounting.Admin
         if (num != 0)
         {
           this.DisplayAlert("Details Added Successfully.");
-          this.Response.Redirect("~/Admin/FooterContent.aspx?cmd=add&ID=" + (object) num);
+          this.Response.Redirect("~/BillTransact/FooterContent.aspx?cmd=add&ID=" + (object) num);
         }
         else
         {
@@ -244,7 +244,7 @@ namespace IITS_CloudAccounting.Admin
             if (this.objFooterContentBll.UpdateFooter(int.Parse(this.hfFooter.Value.Trim()), this.txtFooterContent.Text.Trim()))
             {
               this.DisplayAlert("Update Successfully..");
-              this.Response.Redirect("~/Admin/FooterContent.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+              this.Response.Redirect("~/BillTransact/FooterContent.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
             }
             else
               this.DisplayAlert("Fail to Update Details.");

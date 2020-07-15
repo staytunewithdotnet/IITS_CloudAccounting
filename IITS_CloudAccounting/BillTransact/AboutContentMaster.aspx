@@ -1,4 +1,4 @@
-﻿<%@ Page Title="About Content Master" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="AboutContentMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.AboutContentMaster" %>
+﻿<%@ Page Title="About Content Master" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="AboutContentMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.AboutContentMaster" %>
 
 <%@ Register TagPrefix="ajaxToolkit" Namespace="AjaxControlToolkit.HTMLEditor" Assembly="AjaxControlToolkit, Version=4.5.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 

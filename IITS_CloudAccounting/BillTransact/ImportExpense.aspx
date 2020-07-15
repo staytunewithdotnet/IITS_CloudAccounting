@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Import Expenses" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="ImportExpense.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ImportExpense" %>
+﻿<%@ Page Title="Import Expenses" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="ImportExpense.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ImportExpense" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

@@ -127,7 +127,7 @@ namespace IITS_CloudAccounting.Admin
           this.objStaffMasterDT = this.objStaffMasterBll.GetDataByStaffUserName(str);
           if (this.objStaffMasterDT.Rows.Count > 0)
           {
-            this.Response.Redirect("~/Admin/ProjectMasters.aspx");
+            this.Response.Redirect("~/BillTransact/ProjectMasters.aspx");
             this.hfCompanyID.Value = this.objStaffMasterDT.Rows[0]["CompanyID"].ToString();
             this.hfStaffID.Value = this.objStaffMasterDT.Rows[0]["StaffID"].ToString();
           }
@@ -379,7 +379,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvProject_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ProjectMaster.aspx?cmd=add&ID=" + ((WebControl) this.gvProject.SelectedRow.Cells[0].FindControl("chkID")).ToolTip);
+      this.Response.Redirect("~/BillTransact/ProjectMaster.aspx?cmd=add&ID=" + ((WebControl) this.gvProject.SelectedRow.Cells[0].FindControl("chkID")).ToolTip);
       this.BindGrid();
     }
 
@@ -391,7 +391,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ProjectMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/ProjectMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -457,7 +457,7 @@ namespace IITS_CloudAccounting.Admin
           }
           this.Session["saveProject"] = (object) 1;
           this.DisplayAlert("Project Successfully Added..!");
-          this.Response.Redirect("~/Admin/ProjectMaster.aspx?cmd=add&ID=" + (object) iProjectID);
+          this.Response.Redirect("~/BillTransact/ProjectMaster.aspx?cmd=add&ID=" + (object) iProjectID);
         }
         else
           this.DisplayAlert("Some Error Occured Please Try After Sometime..!");
@@ -520,7 +520,7 @@ namespace IITS_CloudAccounting.Admin
           }
           this.Session["updateProject"] = (object) 1;
           this.DisplayAlert("Project Successfully Added..!");
-          this.Response.Redirect("~/Admin/ProjectMaster.aspx?cmd=add&ID=" + (object) int.Parse(this.hfProjectID.Value));
+          this.Response.Redirect("~/BillTransact/ProjectMaster.aspx?cmd=add&ID=" + (object) int.Parse(this.hfProjectID.Value));
         }
         else
           this.DisplayAlert("Some Error Occured Please Try After Sometime..!");
@@ -661,7 +661,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void lnkEdit_OnClick(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ProjectMaster.aspx?cmd=add&ID=" + ((LinkButton) sender).CommandArgument);
+      this.Response.Redirect("~/BillTransact/ProjectMaster.aspx?cmd=add&ID=" + ((LinkButton) sender).CommandArgument);
     }
 
     public void DisplayAlert(string message)

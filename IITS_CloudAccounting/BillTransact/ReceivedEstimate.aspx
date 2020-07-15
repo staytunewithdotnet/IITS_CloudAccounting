@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Received Estimate" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="ReceivedEstimate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ReceivedEstimate" %>
+﻿<%@ Page Title="Received Estimate" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="ReceivedEstimate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.ReceivedEstimate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../App_Themes/Doyingo/js/searchBox.js"></script>

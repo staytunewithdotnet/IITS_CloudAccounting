@@ -275,7 +275,7 @@ namespace IITS_CloudAccounting.Admin
       MembershipUser user = Membership.GetUser(this.Request.QueryString["ID"]);
       if (user != null)
         user.UnlockUser();
-      this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx?ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx?ID=" + this.Request.QueryString["ID"]);
     }
 
     private void Clear()
@@ -323,7 +323,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvCompanyAdmin_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx?cmd=view&ID=" + this.gvCompanyAdmin.SelectedRow.Cells[2].Text);
+      this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx?cmd=view&ID=" + this.gvCompanyAdmin.SelectedRow.Cells[2].Text);
       this.BindGrid();
     }
 
@@ -335,7 +335,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvCompanyAdminDeactive_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx?cmd=view&ID=" + this.gvCompanyAdminDeactive.SelectedRow.Cells[2].Text);
+      this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx?cmd=view&ID=" + this.gvCompanyAdminDeactive.SelectedRow.Cells[2].Text);
       this.BindGrid();
     }
 
@@ -349,7 +349,7 @@ namespace IITS_CloudAccounting.Admin
     {
       if (Admin.RoleName == "MasterAdmin")
       {
-        this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx?cmd=add");
+        this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx?cmd=add");
       }
       else
       {
@@ -365,7 +365,7 @@ namespace IITS_CloudAccounting.Admin
         }
         this.objCompanyLoginMasterDT = this.objCompanyLoginMasterBll.GetDataByCompanyID(int.Parse(this.hfCompanyID.Value));
         if (this.objCompanyLoginMasterDT.Rows.Count < num)
-          this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx?cmd=add");
+          this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx?cmd=add");
         else
           this.DisplayAlert("SORRY.!! You Can Not Create More Company Admin. To Create More Company Admin Please Upgrade From Current Package.");
       }
@@ -393,7 +393,7 @@ namespace IITS_CloudAccounting.Admin
           if (this.objCompanyLoginMasterBll.AddCompanyLogin(int.Parse(this.ddlCompany.SelectedItem.Value), this.txtUserName.Text.Trim(), this.txtEmail.Text, this.chkStatus.Checked) != 0 && status == MembershipCreateStatus.Success)
           {
             this.DisplayAlert("Details Added Successfully.");
-            this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx?cmd=view&ID=" + this.txtUserName.Text.Trim());
+            this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx?cmd=view&ID=" + this.txtUserName.Text.Trim());
           }
           else
           {
@@ -433,7 +433,7 @@ namespace IITS_CloudAccounting.Admin
             if (this.objCompanyLoginMasterBll.UpdateCompanyLogin(int.Parse(this.hfCompanyAdmin.Value.Trim()), int.Parse(this.ddlCompany.SelectedItem.Value), this.txtUserName.Text.Trim(), this.txtEmail.Text, this.chkStatus.Checked))
             {
               this.DisplayAlert("Update Successfully..");
-              this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+              this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
             }
             else
               this.DisplayAlert("Fail to Update Details.");
@@ -452,7 +452,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -463,7 +463,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objCompanyLoginMasterBll.DeleteCompanyLogin(int.Parse(this.hfCompanyAdmin.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx");
+          this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -474,12 +474,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx");
+      this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CompanyLoginMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/CompanyLoginMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

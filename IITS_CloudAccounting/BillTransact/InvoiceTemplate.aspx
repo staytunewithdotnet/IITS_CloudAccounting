@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Invoice & Estimate Template" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="InvoiceTemplate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InvoiceTemplate" %>
+﻿<%@ Page Title="Invoice & Estimate Template" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="InvoiceTemplate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InvoiceTemplate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

@@ -99,7 +99,7 @@ namespace IITS_CloudAccounting
             this.Application["emailAddress"] = (object)this.txtEmailAddress.Text.Trim();
             Admin.Admin.RoleName = "Admin";
             Doyingo.RoleName = "Admin";
-            this.Response.Redirect("~/Admin/DefaultDoyingo.aspx");
+            this.Response.Redirect("~/BillTransact/DefaultDoyingo.aspx");
         }
 
         public void DisplayAlert(string message)

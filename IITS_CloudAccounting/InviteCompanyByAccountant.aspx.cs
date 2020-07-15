@@ -110,7 +110,7 @@ namespace IITS_CloudAccounting
       string str = string.Empty;
       if (this.Request.QueryString["accId"] != null && this.Request.QueryString["Dated"] != null)
         str = str + "&accId=" + this.Request.QueryString["accId"] + "&Dated=" + this.Request.QueryString["Dated"];
-      this.Response.Redirect("~/Admin/DefaultDoyingo.aspx?" + str);
+      this.Response.Redirect("~/BillTransact/DefaultDoyingo.aspx?" + str);
     }
 
     protected void LoginButtonClick(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace IITS_CloudAccounting
                   string str = string.Empty;
                   if (this.Request.QueryString["accId"] != null && this.Request.QueryString["Dated"] != null)
                     str = str + "&accId=" + this.Request.QueryString["accId"] + "&Dated=" + this.Request.QueryString["Dated"];
-                  this.Response.Redirect("~/Admin/DefaultDoyingo.aspx?add=1" + str);
+                  this.Response.Redirect("~/BillTransact/DefaultDoyingo.aspx?add=1" + str);
                 }
                 else
                 {

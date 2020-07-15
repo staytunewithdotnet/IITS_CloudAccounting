@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Invoice Details Report" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="InvoiceDetailsReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InvoiceDetailsReport" %>
+﻿<%@ Page Title="Invoice Details Report" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="InvoiceDetailsReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InvoiceDetailsReport" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

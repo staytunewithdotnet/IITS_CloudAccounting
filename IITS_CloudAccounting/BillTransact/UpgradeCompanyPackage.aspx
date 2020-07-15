@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Upgrade Company Package Details" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="UpgradeCompanyPackage.aspx.cs" Inherits="IITS_CloudAccounting.Admin.UpgradeCompanyPackage" %>
+﻿<%@ Page Title="Upgrade Company Package Details" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="UpgradeCompanyPackage.aspx.cs" Inherits="IITS_CloudAccounting.Admin.UpgradeCompanyPackage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

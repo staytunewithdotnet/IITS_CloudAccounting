@@ -319,7 +319,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvPackage_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CloudPackageMaster.aspx?cmd=view&ID=" + this.gvPackage.SelectedRow.Cells[0].Text);
+      this.Response.Redirect("~/BillTransact/CloudPackageMaster.aspx?cmd=view&ID=" + this.gvPackage.SelectedRow.Cells[0].Text);
       this.BindGrid();
     }
 
@@ -331,7 +331,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAddPackage_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CloudPackageMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/CloudPackageMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -364,7 +364,7 @@ namespace IITS_CloudAccounting.Admin
               }
             }
             this.DisplayAlert("Details Added Successfully.");
-            this.Response.Redirect("~/Admin/CloudPackageMaster.aspx?cmd=view&ID=" + (object) iCloudPackageID);
+            this.Response.Redirect("~/BillTransact/CloudPackageMaster.aspx?cmd=view&ID=" + (object) iCloudPackageID);
           }
           else
           {
@@ -410,7 +410,7 @@ namespace IITS_CloudAccounting.Admin
                 }
               }
               this.DisplayAlert("Update Successfully..");
-              this.Response.Redirect("~/Admin/CloudPackageMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+              this.Response.Redirect("~/BillTransact/CloudPackageMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
             }
             else
               this.DisplayAlert("Fail to Update Details.");
@@ -429,7 +429,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CloudPackageMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/CloudPackageMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -439,7 +439,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objCloudPackageMasterBll.DeleteCloudPackage(int.Parse(this.hfPackage.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/CloudPackageMaster.aspx");
+          this.Response.Redirect("~/BillTransact/CloudPackageMaster.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -450,12 +450,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CloudPackageMaster.aspx");
+      this.Response.Redirect("~/BillTransact/CloudPackageMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/CloudPackageMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/CloudPackageMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

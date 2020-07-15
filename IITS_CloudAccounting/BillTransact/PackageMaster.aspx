@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Package Master" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="PackageMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.PackageMaster" %>
+﻿<%@ Page Title="Package Master" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="PackageMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.PackageMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>

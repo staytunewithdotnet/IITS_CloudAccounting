@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Invite Accountant" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" Async="true"
+﻿<%@ Page Title="Invite Accountant" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" Async="true"
     CodeBehind="InviteAccountant.aspx.cs" Inherits="IITS_CloudAccounting.Admin.InviteAccountant" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

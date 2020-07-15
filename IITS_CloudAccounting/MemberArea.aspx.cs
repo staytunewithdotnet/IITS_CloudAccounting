@@ -100,18 +100,18 @@ namespace IITS_CloudAccounting
                                     if (Roles.IsUserInRole(this.Login1.UserName, "SuperAdmin"))
                                     {
                                         Admin.Admin.RoleName = "SuperAdmin";
-                                        this.Response.Redirect("~/Admin/Default.aspx");
+                                        this.Response.Redirect("~/BillTransact/Default.aspx");
                                     }
                                     else if (Roles.IsUserInRole(this.Login1.UserName, "MasterAdmin"))
                                     {
                                         Admin.Admin.RoleName = "MasterAdmin";
-                                        this.Response.Redirect("~/Admin/Default.aspx");
+                                        this.Response.Redirect("~/BillTransact/Default.aspx");
                                     }
                                     else if (Roles.IsUserInRole(this.Login1.UserName, "Admin") || Roles.IsUserInRole(this.Login1.UserName, "Employee"))
                                     {
                                         if (this.Application.Count > 0)
                                             this.Application.Clear();
-                                        this.Response.Redirect("~/Admin/DefaultDoyingo.aspx?re=1");
+                                        this.Response.Redirect("~/BillTransact/DefaultDoyingo.aspx?re=1");
                                     }
                                     else
                                     {

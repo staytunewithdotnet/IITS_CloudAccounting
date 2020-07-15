@@ -16,9 +16,9 @@ namespace IITS_CloudAccounting.Admin
     private void Page_PreInit(object sender, EventArgs e)
     {
       if (Admin.RoleName == "Admin" || Doyingo.RoleName == "Admin")
-        this.MasterPageFile = "~/Admin/Doyingo.Master";
+        this.MasterPageFile = "~/BillTransact/Doyingo.Master";
       else
-        this.MasterPageFile = "~/Admin/Admin.Master";
+        this.MasterPageFile = "~/BillTransact/Admin.Master";
     }
 
     protected void Page_Load(object sender, EventArgs e)
@@ -28,9 +28,9 @@ namespace IITS_CloudAccounting.Admin
     protected void CancelPushButtonClick(object sender, EventArgs e)
     {
       if (Admin.RoleName == "Admin" || Doyingo.RoleName == "Admin")
-        this.Response.Redirect("~/Admin/DefaultDoyingo.aspx");
+        this.Response.Redirect("~/BillTransact/DefaultDoyingo.aspx");
       else
-        this.Response.Redirect("~/Admin/Default.aspx");
+        this.Response.Redirect("~/BillTransact/Default.aspx");
     }
   }
 }

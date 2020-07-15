@@ -185,10 +185,10 @@ namespace IITS_CloudAccounting.Admin
       if (this.objTermServiceContentDT.Rows.Count > 0)
       {
         this.hfTermService.Value = this.objTermServiceContentDT.Rows[0]["TermServiceContentID"].ToString();
-        this.Response.Redirect("~/Admin/TermServiceContent.aspx?cmd=add&ID=" + this.hfTermService.Value);
+        this.Response.Redirect("~/BillTransact/TermServiceContent.aspx?cmd=add&ID=" + this.hfTermService.Value);
       }
       else
-        this.Response.Redirect("~/Admin/TermServiceContent.aspx?cmd=add");
+        this.Response.Redirect("~/BillTransact/TermServiceContent.aspx?cmd=add");
     }
 
     private void SetRecord(string iD)
@@ -216,7 +216,7 @@ namespace IITS_CloudAccounting.Admin
         if (num != 0)
         {
           this.DisplayAlert("Details Added Successfully.");
-          this.Response.Redirect("~/Admin/TermServiceContent.aspx?cmd=add&ID=" + (object) num);
+          this.Response.Redirect("~/BillTransact/TermServiceContent.aspx?cmd=add&ID=" + (object) num);
         }
         else
         {
@@ -244,7 +244,7 @@ namespace IITS_CloudAccounting.Admin
             if (this.objTermServiceContentBll.UpdateTermService(int.Parse(this.hfTermService.Value.Trim()), this.txtTermServiceContent.Text.Trim()))
             {
               this.DisplayAlert("Update Successfully..");
-              this.Response.Redirect("~/Admin/TermServiceContent.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+              this.Response.Redirect("~/BillTransact/TermServiceContent.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
             }
             else
               this.DisplayAlert("Fail to Update Details.");

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Category Master" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="CategoryMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CategoryMaster" %>
+﻿<%@ Page Title="Category Master" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="CategoryMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CategoryMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

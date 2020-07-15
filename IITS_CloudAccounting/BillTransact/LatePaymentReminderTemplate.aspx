@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Late Payment Reminder Template" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="LatePaymentReminderTemplate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.LatePaymentReminderTemplate" %>
+﻿<%@ Page Title="Late Payment Reminder Template" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="LatePaymentReminderTemplate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.LatePaymentReminderTemplate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

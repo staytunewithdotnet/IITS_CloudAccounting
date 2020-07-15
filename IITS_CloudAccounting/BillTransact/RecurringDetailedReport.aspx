@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Recurring Detailed Report" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="RecurringDetailedReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.RecurringDetailedReport" %>
+﻿<%@ Page Title="Recurring Detailed Report" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="RecurringDetailedReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.RecurringDetailedReport" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

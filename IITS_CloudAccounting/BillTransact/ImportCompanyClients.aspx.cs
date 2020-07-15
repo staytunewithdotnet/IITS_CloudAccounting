@@ -275,7 +275,7 @@ namespace IITS_CloudAccounting.Admin
         }
       }
       this.Session["importClient"] = (object) num;
-      this.Response.Redirect("~/Admin/CompanyClientMaster.aspx");
+      this.Response.Redirect("~/BillTransact/CompanyClientMaster.aspx");
     }
 
     protected void btnCancelCsv_OnClick(object sender, EventArgs e)
@@ -369,7 +369,7 @@ namespace IITS_CloudAccounting.Admin
           return;
         this.SendMail(str1.Trim(), str2, this.lblEmail.Text);
         this.Session["importClient"] = (object) 1;
-        this.Response.Redirect("~/Admin/CompanyClientMaster.aspx");
+        this.Response.Redirect("~/BillTransact/CompanyClientMaster.aspx");
       }
       else
       {

@@ -325,7 +325,7 @@ namespace IITS_CloudAccounting.Admin
         }
       }
       this.Session["importExp"] = (object) num;
-      this.Response.Redirect("~/Admin/ExpenseMaster.aspx");
+      this.Response.Redirect("~/BillTransact/ExpenseMaster.aspx");
     }
   }
 }

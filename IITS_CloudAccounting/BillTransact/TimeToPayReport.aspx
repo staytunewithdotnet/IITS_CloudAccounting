@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Time To Pay Report" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="TimeToPayReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.TimeToPayReport" %>
+﻿<%@ Page Title="Time To Pay Report" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="TimeToPayReport.aspx.cs" Inherits="IITS_CloudAccounting.Admin.TimeToPayReport" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

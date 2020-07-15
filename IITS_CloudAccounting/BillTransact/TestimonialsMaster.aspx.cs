@@ -299,7 +299,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvTestimonials_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/TestimonialsMaster.aspx?cmd=view&ID=" + this.gvTestimonials.SelectedRow.Cells[0].Text);
+      this.Response.Redirect("~/BillTransact/TestimonialsMaster.aspx?cmd=view&ID=" + this.gvTestimonials.SelectedRow.Cells[0].Text);
       this.BindGrid();
     }
 
@@ -311,7 +311,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAddTestimonials_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/TestimonialsMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/TestimonialsMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -327,7 +327,7 @@ namespace IITS_CloudAccounting.Admin
         if (num != 0)
         {
           this.DisplayAlert("Details Added Successfully.");
-          this.Response.Redirect("~/Admin/TestimonialsMaster.aspx?cmd=view&ID=" + (object) num);
+          this.Response.Redirect("~/BillTransact/TestimonialsMaster.aspx?cmd=view&ID=" + (object) num);
         }
         else
         {
@@ -358,7 +358,7 @@ namespace IITS_CloudAccounting.Admin
             if (this.objTestimonialsMasterBll.UpdateTestimonials(int.Parse(this.hfTestimonials.Value.Trim()), this.txtName.Text.Trim(), this.txtCompanyName.Text.Trim(), this.txtLocation.Text.Trim(), this.txtComment.Text.Trim(), dtTestimonialDate, this.chkStatus.Checked))
             {
               this.DisplayAlert("Update Successfully..");
-              this.Response.Redirect("~/Admin/TestimonialsMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+              this.Response.Redirect("~/BillTransact/TestimonialsMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
             }
             else
               this.DisplayAlert("Fail to Update Details.");
@@ -377,7 +377,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/TestimonialsMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/TestimonialsMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -387,7 +387,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objTestimonialsMasterBll.DeleteTestimonials(int.Parse(this.hfTestimonials.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/TestimonialsMaster.aspx");
+          this.Response.Redirect("~/BillTransact/TestimonialsMaster.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -398,12 +398,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/TestimonialsMaster.aspx");
+      this.Response.Redirect("~/BillTransact/TestimonialsMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/TestimonialsMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/TestimonialsMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

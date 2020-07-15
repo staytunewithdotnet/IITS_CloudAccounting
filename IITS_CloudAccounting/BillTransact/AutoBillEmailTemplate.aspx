@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Auto Bill Email Template" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="AutoBillEmailTemplate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.AutoBillEmailTemplate" %>
+﻿<%@ Page Title="Auto Bill Email Template" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="AutoBillEmailTemplate.aspx.cs" Inherits="IITS_CloudAccounting.Admin.AutoBillEmailTemplate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

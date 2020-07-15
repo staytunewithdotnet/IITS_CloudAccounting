@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Free Package Settings" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="FreePackageSettings.aspx.cs" Inherits="IITS_CloudAccounting.Admin.FreePackageSettings" %>
+﻿<%@ Page Title="Free Package Settings" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="FreePackageSettings.aspx.cs" Inherits="IITS_CloudAccounting.Admin.FreePackageSettings" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script>

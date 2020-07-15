@@ -589,7 +589,7 @@ namespace IITS_CloudAccounting.Admin
 
         protected void gvCompanyClient_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add&ID=" + ((WebControl)this.gvCompanyClient.SelectedRow.Cells[0].FindControl("chkID")).ToolTip);
+            this.Response.Redirect("~/BillTransact/CompanyClientMaster.aspx?cmd=add&ID=" + ((WebControl)this.gvCompanyClient.SelectedRow.Cells[0].FindControl("chkID")).ToolTip);
             this.BindGrid();
         }
 
@@ -637,7 +637,7 @@ namespace IITS_CloudAccounting.Admin
                 {
                     int num = int.Parse(this.objCloudPackageDetailsDT.Rows[0]["CloudPackageDetailValue"].ToString());
                     if (count < num)
-                        this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add");
+                        this.Response.Redirect("~/BillTransact/CompanyClientMaster.aspx?cmd=add");
                     else
                         this.DisplayAlert("Can not add more clients in this package. To add more clients please upgrade your package.");
                 }
@@ -646,18 +646,18 @@ namespace IITS_CloudAccounting.Admin
                     try
                     {
                         if (bool.Parse(this.objCloudPackageDetailsDT.Rows[0]["CloudPackageDetailValue"].ToString()))
-                            this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add");
+                            this.Response.Redirect("~/BillTransact/CompanyClientMaster.aspx?cmd=add");
                         else
                             this.DisplayAlert("Can not add more clients in this package. To add more clients please upgrade your package.");
                     }
                     catch (Exception ex2)
                     {
-                        this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add");
+                        this.Response.Redirect("~/BillTransact/CompanyClientMaster.aspx?cmd=add");
                     }
                 }
             }
             else
-                this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add");
+                this.Response.Redirect("~/BillTransact/CompanyClientMaster.aspx?cmd=add");
         }
 
         protected async void btnSubmit_Click(object sender, EventArgs e)
@@ -805,7 +805,7 @@ namespace IITS_CloudAccounting.Admin
 
                         this.Session["saveClient"] = (object)1;
                         this.DisplayAlert("Details Added Successfully.");
-                        this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add&ID=" + (object)num,false);
+                        this.Response.Redirect("~/BillTransact/CompanyClientMaster.aspx?cmd=add&ID=" + (object)num,false);
                     }
                     else
                     {
@@ -1085,7 +1085,7 @@ namespace IITS_CloudAccounting.Admin
                         }
                         this.Session["updateClient"] = (object)1;
                         this.DisplayAlert("Update Successfully..");
-                        this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"],false);
+                        this.Response.Redirect("~/BillTransact/CompanyClientMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"],false);
                     }
                     else
                         this.DisplayAlert("Fail to Update Details.");
@@ -1211,7 +1211,7 @@ namespace IITS_CloudAccounting.Admin
 
         protected void lnkEdit_OnClick(object sender, EventArgs e)
         {
-            this.Response.Redirect("~/Admin/CompanyClientMaster.aspx?cmd=add&ID=" + ((LinkButton)sender).CommandArgument);
+            this.Response.Redirect("~/BillTransact/CompanyClientMaster.aspx?cmd=add&ID=" + ((LinkButton)sender).CommandArgument);
         }
 
         protected void txtUsername_OnTextChanged(object sender, EventArgs e)

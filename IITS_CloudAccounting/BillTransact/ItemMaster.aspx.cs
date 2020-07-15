@@ -284,7 +284,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvItem_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ItemMaster.aspx?cmd=add&ID=" + ((WebControl) this.gvItem.SelectedRow.Cells[0].FindControl("chkID")).ToolTip);
+      this.Response.Redirect("~/BillTransact/ItemMaster.aspx?cmd=add&ID=" + ((WebControl) this.gvItem.SelectedRow.Cells[0].FindControl("chkID")).ToolTip);
       this.BindGrid();
     }
 
@@ -296,7 +296,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ItemMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/ItemMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -335,7 +335,7 @@ namespace IITS_CloudAccounting.Admin
         {
           this.Session["saveItem"] = (object) 1;
           this.DisplayAlert("Details Added Successfully.");
-          this.Response.Redirect("~/Admin/ItemMaster.aspx?cmd=add&ID=" + (object) num);
+          this.Response.Redirect("~/BillTransact/ItemMaster.aspx?cmd=add&ID=" + (object) num);
         }
         else
         {
@@ -376,7 +376,7 @@ namespace IITS_CloudAccounting.Admin
           {
             this.Session["updateItem"] = (object) 1;
             this.DisplayAlert("Update Successfully..");
-            this.Response.Redirect("~/Admin/ItemMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+            this.Response.Redirect("~/BillTransact/ItemMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
           }
           else
             this.DisplayAlert("Fail to Update Details.");
@@ -543,7 +543,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void lnkEdit_OnClick(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ItemMaster.aspx?cmd=add&ID=" + ((LinkButton) sender).CommandArgument);
+      this.Response.Redirect("~/BillTransact/ItemMaster.aspx?cmd=add&ID=" + ((LinkButton) sender).CommandArgument);
     }
 
     protected string GetColor(string curStock)

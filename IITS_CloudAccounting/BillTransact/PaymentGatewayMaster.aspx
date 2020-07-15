@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="PaymentGatewayMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.PaymentGatewayMaster" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="PaymentGatewayMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.PaymentGatewayMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

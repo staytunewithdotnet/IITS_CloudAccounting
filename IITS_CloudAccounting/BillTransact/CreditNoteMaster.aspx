@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Credit Note" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="CreditNoteMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CreditNoteMaster" %>
+﻿<%@ Page Title="Credit Note" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="CreditNoteMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CreditNoteMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../App_Themes/Doyingo/js/searchBox.js"></script>

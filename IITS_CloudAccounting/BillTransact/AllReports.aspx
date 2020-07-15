@@ -1,4 +1,4 @@
-﻿<%@ Page Title="All Reports" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="AllReports.aspx.cs" Inherits="IITS_CloudAccounting.Admin.AllReports" %>
+﻿<%@ Page Title="All Reports" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="AllReports.aspx.cs" Inherits="IITS_CloudAccounting.Admin.AllReports" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Company Client Master" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" Async="true"
+﻿<%@ Page Title="Company Client Master" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" Async="true"
     AutoEventWireup="true" CodeBehind="CompanyClientMaster.aspx.cs" Inherits="IITS_CloudAccounting.Admin.CompanyClientMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

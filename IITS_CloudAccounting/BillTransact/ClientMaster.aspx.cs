@@ -287,7 +287,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void gvClient_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ClientMaster.aspx?cmd=view&ID=" + this.gvClient.SelectedRow.Cells[0].Text);
+      this.Response.Redirect("~/BillTransact/ClientMaster.aspx?cmd=view&ID=" + this.gvClient.SelectedRow.Cells[0].Text);
       this.BindGrid();
     }
 
@@ -299,7 +299,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAddClient_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ClientMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/ClientMaster.aspx?cmd=add");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -325,7 +325,7 @@ namespace IITS_CloudAccounting.Admin
           if (num != 0)
           {
             this.DisplayAlert("Details Added Successfully.");
-            this.Response.Redirect("~/Admin/ClientMaster.aspx?cmd=view&ID=" + (object) num);
+            this.Response.Redirect("~/BillTransact/ClientMaster.aspx?cmd=view&ID=" + (object) num);
           }
           else
           {
@@ -372,7 +372,7 @@ namespace IITS_CloudAccounting.Admin
             if (flag)
             {
               this.DisplayAlert("Update Successfully..");
-              this.Response.Redirect("~/Admin/ClientMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+              this.Response.Redirect("~/BillTransact/ClientMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
             }
             else
               this.DisplayAlert("Fail to Update Details.");
@@ -391,7 +391,7 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ClientMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/ClientMaster.aspx?cmd=add&ID=" + this.Request.QueryString["ID"]);
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -401,7 +401,7 @@ namespace IITS_CloudAccounting.Admin
         if (this.objClientMasterBll.DeleteClient(int.Parse(this.hfClient.Value)))
         {
           this.DisplayAlert("Details has been Deleted");
-          this.Response.Redirect("~/Admin/ClientMaster.aspx");
+          this.Response.Redirect("~/BillTransact/ClientMaster.aspx");
         }
         else
           this.DisplayAlert("Error In Deleting Detail");
@@ -412,12 +412,12 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ClientMaster.aspx");
+      this.Response.Redirect("~/BillTransact/ClientMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/ClientMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
+      this.Response.Redirect("~/BillTransact/ClientMaster.aspx?cmd=view&ID=" + this.Request.QueryString["ID"]);
     }
 
     public void DisplayAlert(string message)

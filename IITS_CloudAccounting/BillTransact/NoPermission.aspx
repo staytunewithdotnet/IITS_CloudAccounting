@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Uh Oh!" Language="C#" MasterPageFile="~/Admin/Doyingo.Master" AutoEventWireup="true" CodeBehind="NoPermission.aspx.cs" Inherits="IITS_CloudAccounting.Admin.NoPermission" %>
+﻿<%@ Page Title="Uh Oh!" Language="C#" MasterPageFile="~/BillTransact/Doyingo.Master" AutoEventWireup="true" CodeBehind="NoPermission.aspx.cs" Inherits="IITS_CloudAccounting.Admin.NoPermission" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

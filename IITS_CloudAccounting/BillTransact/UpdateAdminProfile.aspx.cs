@@ -116,7 +116,7 @@ namespace IITS_CloudAccounting.Admin
         {
           this.Session["update"] = (object) 1;
           this.DisplayAlert("Admin Profile Updated Successfully..!");
-          this.Response.Redirect("~/Admin/UpdateAdminProfile.aspx");
+          this.Response.Redirect("~/BillTransact/UpdateAdminProfile.aspx");
         }
         else
           this.DisplayAlert("Some Error Occured..Please Try After Some Time..!");

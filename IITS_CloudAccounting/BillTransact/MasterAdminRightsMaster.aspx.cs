@@ -305,7 +305,7 @@ namespace IITS_CloudAccounting.Admin
       Label label = this.gvMasterAdminUserRights.SelectedRow.FindControl("lblMasterAdminID") as Label;
       if (label == null)
         return;
-      this.Response.Redirect("~/Admin/MasterAdminRightsMaster.aspx?cmd=view&ID=&MasterAdminID=" + label.Text);
+      this.Response.Redirect("~/BillTransact/MasterAdminRightsMaster.aspx?cmd=view&ID=&MasterAdminID=" + label.Text);
     }
 
     protected void gvMasterAdminUserRights_PageIndexChanged(object sender, EventArgs e)
@@ -377,22 +377,22 @@ namespace IITS_CloudAccounting.Admin
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/MasterAdminRightsMaster.aspx?cmd=add");
+      this.Response.Redirect("~/BillTransact/MasterAdminRightsMaster.aspx?cmd=add");
     }
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/MasterAdminRightsMaster.aspx?cmd=add&ID=&MasterAdminID=" + this.ddlMasterAdmin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
+      this.Response.Redirect("~/BillTransact/MasterAdminRightsMaster.aspx?cmd=add&ID=&MasterAdminID=" + this.ddlMasterAdmin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
     }
 
     protected void btnListAll_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/MasterAdminRightsMaster.aspx");
+      this.Response.Redirect("~/BillTransact/MasterAdminRightsMaster.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-      this.Response.Redirect("~/Admin/MasterAdminRightsMaster.aspx?cmd=view&ID=&MasterAdminID=" + this.ddlMasterAdmin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
+      this.Response.Redirect("~/BillTransact/MasterAdminRightsMaster.aspx?cmd=view&ID=&MasterAdminID=" + this.ddlMasterAdmin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -407,7 +407,7 @@ namespace IITS_CloudAccounting.Admin
           if (this.objMasterAdminUserRightsMasterBll.AddMasterAdminRights(int.Parse(this.ddlMasterAdmin.SelectedValue.Trim()), int.Parse(this.ddlModule.SelectedValue.Trim()), int.Parse(((Label) this.gvForm.Rows[index].FindControl("lblFormID")).Text), ((Label) this.gvForm.Rows[index].FindControl("lblFormName")).Text.Trim(), ((CheckBox) this.gvForm.Rows[index].FindControl("chkAdd")).Checked, ((CheckBox) this.gvForm.Rows[index].FindControl("chkEdit")).Checked, ((CheckBox) this.gvForm.Rows[index].FindControl("chkDelete")).Checked, ((CheckBox) this.gvForm.Rows[index].FindControl("chkView")).Checked) == 0)
             this.DisplayAlert("Fail to Add New Details.");
         }
-        this.Response.Redirect("~/Admin/MasterAdminRightsMaster.aspx?cmd=view&ID=&MasterAdminID=" + this.ddlMasterAdmin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
+        this.Response.Redirect("~/BillTransact/MasterAdminRightsMaster.aspx?cmd=view&ID=&MasterAdminID=" + this.ddlMasterAdmin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
       }
       else
         this.DisplayAlert("Please Enter All Details.");
@@ -429,7 +429,7 @@ namespace IITS_CloudAccounting.Admin
           if (!this.objMasterAdminUserRightsMasterBll.UpdateMasterAdminRights(int.Parse(this.hfMasterAdminRightsID.Value.Trim()), int.Parse(this.ddlMasterAdmin.SelectedValue.Trim()), int.Parse(this.ddlModule.SelectedValue.Trim()), int.Parse(label2.Text), label1.Text.Trim(), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, checkBox4.Checked))
             this.DisplayAlert("Fail to Update Details.");
         }
-        this.Response.Redirect("~/Admin/MasterAdminRightsMaster.aspx?cmd=view&ID=&MasterAdminID=" + this.ddlMasterAdmin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
+        this.Response.Redirect("~/BillTransact/MasterAdminRightsMaster.aspx?cmd=view&ID=&MasterAdminID=" + this.ddlMasterAdmin.SelectedValue.Trim() + "&ModuleID=" + this.ddlModule.SelectedValue.Trim());
       }
       else
         this.DisplayAlert("Please Enter All Details.");

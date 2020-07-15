@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Footer Content" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="FooterContent.aspx.cs" Inherits="IITS_CloudAccounting.Admin.FooterContent" %>
+﻿<%@ Page Title="Footer Content" Language="C#" MasterPageFile="~/BillTransact/Admin.Master" AutoEventWireup="true" CodeBehind="FooterContent.aspx.cs" Inherits="IITS_CloudAccounting.Admin.FooterContent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
