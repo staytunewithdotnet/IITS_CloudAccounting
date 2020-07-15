@@ -108,7 +108,7 @@
                                                     <asp:ControlParameter ControlID="PackageModuleIDLabel" PropertyName="Text" DefaultValue="0" Name="PackageModuleID"></asp:ControlParameter>
                                                 </SelectParameters>
                                             </asp:SqlDataSource>
-                                            
+
                                         </ul>
                                     </ItemTemplate>
 
@@ -164,27 +164,25 @@
                                         </asp:SqlDataSource>
                                         <div class="skp-btns">
 
-                                            <asp:Label runat="server" ID="lblopen"></asp:Label>
+                                            <%--<asp:Label runat="server" ID="lblopen"></asp:Label>--%>
                                             <%--<asp:Button runat="server" ID="btnClick" Text="Sign Up" CommandName="openPopup"  CommandArgument='<%# Eval("CloudPackageID") %>' ToolTip='<%# Eval("CloudPackageName") %>' />--%>
-                                            <asp:LinkButton runat="server" ID="btnClick" Text="Sign Up" CssClass='<%# (Container.ItemIndex==0? "d-blue" : (Container.ItemIndex==1 ? "d-green" :"d-black"))%>' CommandName="openPopup" CommandArgument='<%# Eval("CloudPackageID") %>' ToolTip='<%# Eval("CloudPackageName") %>' />
-
-
+                                            <%--<asp:LinkButton runat="server" ID="btnClick" Text="Sign Up" CssClass='<%# (Container.ItemIndex==0? "d-blue" : (Container.ItemIndex==1 ? "d-green" :"d-black"))%>' CommandName="openPopup" CommandArgument='<%# Eval("CloudPackageID") %>' ToolTip='<%# Eval("CloudPackageName") %>' />--%>
+                                            <a href='<%# String.Format("PackagePaymentMode.aspx?id={0}&type={1}", Eval("CloudPackageID"),"M") %>'
+                                                class='<%# (Container.ItemIndex==0? "d-blue" : (Container.ItemIndex==1 ? "d-green" :"d-black"))%>' title='<%# Eval("CloudPackageName") %>'>Sign Up</a>
                                         </div>
 
 
-                                        <ajaxToolkit:ModalPopupExtender runat="server" ID="mpPackage" PopupControlID="pnlPackage" CancelControlID="lnkbtnClose" TargetControlID="lblopen" BackgroundCssClass="Background">
-                                        </ajaxToolkit:ModalPopupExtender>
-
-
+                                        <%-- <ajaxToolkit:ModalPopupExtender runat="server" ID="mpPackage" PopupControlID="pnlPackage" CancelControlID="lnkbtnClose" TargetControlID="lblopen" BackgroundCssClass="Background">
+                                        </ajaxToolkit:ModalPopupExtender>--%>
                                     </div>
                                 </ItemTemplate>
                             </asp:Repeater>
                             <asp:SqlDataSource runat="server" ID="sqldsPackage" ConnectionString='<%$ ConnectionStrings:IITS_CloudAccountConnectionString %>' SelectCommand="SELECT CloudPackageID, CloudPackageName, CloudPackageCurrency, CloudPackagePriceMonthly FROM CloudPackageMaster WHERE (CloudPackageStatus = @CloudPackageStatus)">
-                                        <SelectParameters>
-                                            <asp:Parameter DefaultValue="True" Name="CloudPackageStatus"></asp:Parameter>
-                                        </SelectParameters>
-                                    </asp:SqlDataSource>
-                            
+                                <SelectParameters>
+                                    <asp:Parameter DefaultValue="True" Name="CloudPackageStatus"></asp:Parameter>
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+
 
 
                         </div>
@@ -193,7 +191,7 @@
             </div>
         </section>
 
-       
+
 
         <section class="get-started-sec">
             <div class="container">
@@ -331,7 +329,7 @@
             </div>
         </footer>
 
-         <asp:Panel ID="pnlPackage" runat="server" Height="30%" Width="25%" align="center" Style="display: none; background-color: white; padding: 22px 30px 25px; border: 5px solid lightgrey; border-radius: 15px;">
+        <asp:Panel ID="pnlPackage" runat="server" Height="30%" Width="25%" align="center" Style="display: none; background-color: white; padding: 22px 30px 25px; border: 5px solid lightgrey; border-radius: 15px;">
             <%--<table style="width: 100%; height: 100px;">
                 <tr style="background: #0D83DC; border: none;">
                     <td style="color: White; font-weight: bold; font-size: 25px; text-align: center; width: 60%; font-family: FranklinMedium,Arial,sans-serif; padding: 0 10px;">Make Payment

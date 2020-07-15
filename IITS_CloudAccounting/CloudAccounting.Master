@@ -44,13 +44,14 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="Default.aspx">
-                            <asp:Image id="img1" alt="logo" src="App_Themes/sky/uploads/logo.png" runat="server"/></a>
+                            <asp:Image ID="img1" alt="logo" src="App_Themes/sky/uploads/logo.png" runat="server" /></a>
                         <a href="tel:18002345678" class="mob-phone hidden-lg hidden-md hidden-sm"><i class="fa fa-phone" aria-hidden="true"></i></a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav pull-right" id="menu-main-menu">
+                            <li><a href="CompanySignUp.aspx" class="cta-btn-sm">Get Started For Free</a></li>
                             <li><a href="Features.aspx">Feature</a></li>
-                              <li><a  href="AboutUs.aspx">About Us</a></li>
+                            <li><a href="AboutUs.aspx">About Us</a></li>
                             <li><a href="MemberArea.aspx" class="cta-btn-sm">Login</a></li>
                         </ul>
                     </div>
@@ -61,34 +62,35 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
         <section class="get-started-sec">
-          <div class="container">
-              <div class="row">
-                  <div class="col-sm-12 padd-0">
-                      <span class="people">
-                          <img src="App_Themes/sky/uploads/footer-banner.png" alt=""/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 padd-0">
+                        <span class="people">
+                            <img src="App_Themes/sky/uploads/footer-banner.png" alt="" />
 
-                      </span>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6 GetStarted">
-                      <h2>Get started for free today </h2><br />
-                          <a href="CompanySignUp.aspx" class="cta-btn">Free absolutely nothing to pay</a>
-                          <p class="hidden">Email : <a href="mailto:sales@billtransact.com">sales@billtransact.com</a></p>
-                  </div>
-                  <div class="col-md-6 GetStartedUsers">
-                      <span>
-                              <img src="App_Themes/sky/i/cloud.png" alt="cloud-icon"/>
-                          </span>
-                          <div class="user-number">
-                              <h2>4000+</h2>
-                              <h6>users already used our software</h6>
-                          </div>
-                  </div>
-              </div>
-              
-          </div>
-      </section>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 GetStarted">
+                        <h2>Get started for free today </h2>
+                        <br />
+                        <a href="CompanySignUp.aspx" class="cta-btn">Free absolutely nothing to pay</a>
+                        <p class="hidden">Email : <a href="mailto:sales@billtransact.com">sales@billtransact.com</a></p>
+                    </div>
+                    <div class="col-md-6 GetStartedUsers">
+                        <span>
+                            <img src="App_Themes/sky/i/cloud.png" alt="cloud-icon" />
+                        </span>
+                        <div class="user-number">
+                            <h2>4000+</h2>
+                            <h6>users already used our software</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
         <footer class="padd-60">
             <div class="container">
@@ -96,7 +98,7 @@
                     <div class="col-lg-3 col-md-12">
                         <div class="ft-logo">
                             <a href="Default.aspx">
-                                <asp:Image id="img2" alt="logo" src="App_Themes/sky/uploads/logo.png" runat="server"/></a>
+                                <asp:Image ID="img2" alt="logo" src="App_Themes/sky/uploads/logo.png" runat="server" /></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-12">
@@ -251,7 +253,7 @@
 
 
         </script>
-        
+
     </form>
 </body>
 </html>

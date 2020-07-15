@@ -167,140 +167,143 @@
     <Content Include="Accountant\AccountantClients.aspx" />
     <Content Include="Accountant\AccountantProfile.aspx" />
     <Content Include="AdminLogin.aspx" />
-    <Content Include="Admin\AboutCategoryMaster.aspx" />
-    <Content Include="Admin\AboutContentMaster.aspx" />
-    <Content Include="Admin\AcceptCreditCard.aspx" />
-    <Content Include="Admin\AccountsAgingReport.aspx" />
-    <Content Include="Admin\AdminLoginMaster.aspx" />
-    <Content Include="Admin\AllReports.aspx" />
-    <Content Include="Admin\AssignStaffClient.aspx" />
-    <Content Include="Admin\AutoBillEmailTemplate.aspx" />
-    <Content Include="Admin\BasecampClassic.aspx" />
-    <Content Include="Admin\BillingInformation.aspx" />
-    <Content Include="Admin\BussinessMaster.aspx" />
-    <Content Include="Admin\Cancel.aspx" />
-    <Content Include="Admin\CategoryMaster.aspx" />
-    <Content Include="Admin\ChangePassword.aspx" />
-    <Content Include="Admin\CityMaster.aspx" />
-    <Content Include="Admin\ClientContactDetail.ascx" />
-    <Content Include="Admin\ClientMaster.aspx" />
-    <Content Include="Admin\CloudPackageMaster.aspx" />
-    <Content Include="Admin\CompanyAdminRightsMaster.aspx" />
-    <Content Include="Admin\CompanyClientMaster.aspx" />
-    <Content Include="Admin\CompanyLoginMaster.aspx" />
-    <Content Include="Admin\CompanyMaster.aspx" />
-    <Content Include="Admin\CompanyPackageDetails.aspx" />
-    <Content Include="Admin\CompanyPackageInfo.aspx" />
-    <Content Include="Admin\CompanyPackageReport.aspx" />
-    <Content Include="Admin\CompanyIOPayerMaster.aspx" />
-    <Content Include="Admin\CompanyPaypalMaster.aspx" />
-    <Content Include="Admin\CompanyReportStatus.aspx" />
-    <Content Include="Admin\CompanyStatusDateReport.aspx" />
-    <Content Include="Admin\CompanyUserPermissions.aspx" />
-    <Content Include="Admin\ContactMaster.aspx" />
-    <Content Include="Admin\ContractorMaster.aspx" />
-    <Content Include="Admin\CountryMaster.aspx" />
-    <Content Include="Admin\CreditNoteMaster.aspx" />
-    <Content Include="Admin\CurrencyMaster.aspx" />
-    <Content Include="Admin\CurrentAccountMaster.aspx" />
-    <Content Include="Admin\CustomizeEmails.aspx" />
-    <Content Include="Admin\Default.aspx" />
-    <Content Include="Admin\DefaultDoyingo.aspx" />
-    <Content Include="Admin\DoyinGoSupportTicket.aspx" />
-    <Content Include="Admin\EmployeeMaster.aspx" />
-    <Content Include="Admin\EstimatedBillingReport.aspx" />
-    <Content Include="Admin\EstimateMaster.aspx" />
-    <Content Include="Admin\ExpenseMaster.aspx" />
-    <Content Include="Admin\ExpensesReport.aspx" />
-    <Content Include="Admin\ExportToCSV.aspx" />
-    <Content Include="Admin\FAQCategoryMaster.aspx" />
-    <Content Include="Admin\FAQMaster.aspx" />
-    <Content Include="Admin\FeatureCategoryMaster.aspx" />
-    <Content Include="Admin\FeatureContentMaster.aspx" />
-    <Content Include="Admin\FeatureMaster.aspx" />
-    <Content Include="Admin\FooterContent.aspx" />
-    <Content Include="Admin\FormMaster.aspx" />
-    <Content Include="Admin\FreePackageSettings.aspx" />
-    <Content Include="Admin\FrequencyMaster.aspx" />
-    <Content Include="Admin\GenerateInvoice.aspx" />
-    <Content Include="Admin\GmailInformation.aspx" />
-    <Content Include="Admin\HomeMaster.aspx" />
-    <Content Include="Admin\HomePageSlider.aspx" />
-    <Content Include="Admin\ImportCompanyClients.aspx" />
-    <Content Include="Admin\ImportExpense.aspx" />
-    <Content Include="Admin\ImportExport.aspx" />
-    <Content Include="Admin\IndustryMaster.aspx" />
-    <Content Include="Admin\InquiryMaster.aspx" />
-    <Content Include="Admin\InviteAccountant.aspx" />
-    <Content Include="Admin\InvitePeople.aspx" />
-    <Content Include="Admin\InvoiceDetailsReport.aspx" />
-    <Content Include="Admin\InvoiceMaster.aspx" />
-    <Content Include="Admin\InvoiceMasterNew.aspx" />
-    <Content Include="Admin\InvoiceTemplate.aspx" />
-    <Content Include="Admin\ItemMaster.aspx" />
-    <Content Include="Admin\ItemSalesReport.aspx" />
-    <Content Include="Admin\LatePaymentReminderTemplate.aspx" />
-    <Content Include="Admin\MasterAdminLoginMaster.aspx" />
-    <Content Include="Admin\MasterAdminRightsMaster.aspx" />
-    <Content Include="Admin\Miscellaneous.aspx" />
-    <Content Include="Admin\ModuleFormMaster.aspx" />
-    <Content Include="Admin\ModuleMaster.aspx" />
-    <Content Include="Admin\NeedHelp.aspx" />
-    <Content Include="Admin\NewClientEmailTemplate.aspx" />
-    <Content Include="Admin\NewCreditEmailTemplate.aspx" />
-    <Content Include="Admin\NewEstimateEmailTemplate.aspx" />
-    <Content Include="Admin\NewInvoiceEmailTemplate.aspx" />
-    <Content Include="Admin\NewPaymentEmailTemplate.aspx" />
-    <Content Include="Admin\NewStaffEmailTemplate.aspx" />
-    <Content Include="Admin\NoPermission.aspx" />
-    <Content Include="Admin\PackageFeatureMaster.aspx" />
-    <Content Include="Admin\PackageMaster.aspx" />
-    <Content Include="Admin\PackageModuleMaster.aspx" />
-    <Content Include="Admin\PackageUpgradeRequestMaster.aspx" />
-    <Content Include="Admin\PaymentGatewayIOPayer.aspx" />
-    <Content Include="Admin\PaymentGatewayMaster.aspx" />
-    <Content Include="Admin\PaymentGatewayPaypalMaster.aspx" />
-    <Content Include="Admin\PaymentMaster.aspx" />
-    <Content Include="Admin\PaymentsCollectedReport.aspx" />
-    <Content Include="Admin\PrivacyPolicyContent.aspx" />
-    <Content Include="Admin\ProjectMaster.aspx" />
-    <Content Include="Admin\ProjectMasters.aspx" />
-    <Content Include="Admin\ProjectTaskReport.aspx" />
-    <Content Include="Admin\ProjectUserReport.aspx" />
-    <Content Include="Admin\ReceivedEstimate.aspx" />
-    <Content Include="Admin\ReceivedInvoice.aspx" />
-    <Content Include="Admin\RecurringAnnualReport.aspx" />
-    <Content Include="Admin\RecurringDetailedReport.aspx" />
-    <Content Include="Admin\RecurringInvoice.aspx" />
-    <Content Include="Admin\ReferralInformation.aspx" />
-    <Content Include="Admin\RevenueByClientReport.aspx" />
-    <Content Include="Admin\RunningFromMaster.aspx" />
-    <Content Include="Admin\SalesReport.aspx" />
-    <Content Include="Admin\SecurityQuestionMaster.aspx" />
-    <Content Include="Admin\SMTPSettings.aspx" />
-    <Content Include="Admin\StateMaster.aspx" />
-    <Content Include="Admin\SubCategoryMaster.aspx" />
-    <Content Include="Admin\Success.aspx" />
-    <Content Include="Admin\SupportDepartmentMaster.aspx" />
-    <Content Include="Admin\SupportTicketsMaster.aspx" />
-    <Content Include="Admin\TaskMaster.aspx" />
-    <Content Include="Admin\TasksInvoicedReport.aspx" />
-    <Content Include="Admin\TaxMaster.aspx" />
-    <Content Include="Admin\TaxSummaryReport.aspx" />
-    <Content Include="Admin\TeamTimesheet.aspx" />
-    <Content Include="Admin\TermServiceContent.aspx" />
-    <Content Include="Admin\TestimonialsMaster.aspx" />
-    <Content Include="Admin\testinvoice.html" />
-    <Content Include="Admin\Timesheet.aspx" />
-    <Content Include="Admin\TimesheetDetailsReport.aspx" />
-    <Content Include="Admin\TimesheetReport.aspx" />
-    <Content Include="Admin\TimeToPayReport.aspx" />
-    <Content Include="Admin\UpdateAdminProfile.aspx" />
-    <Content Include="Admin\UpdateCompanyDetail.aspx" />
-    <Content Include="Admin\UpdateCompanyLogo.aspx" />
-    <Content Include="Admin\UpdateStaffProfile.aspx" />
-    <Content Include="Admin\UpgradeCompanyPackage.aspx" />
-    <Content Include="Admin\UpgradePackage.aspx" />
+    <Content Include="BillTransact\AboutCategoryMaster.aspx" />
+    <Content Include="BillTransact\AboutContentMaster.aspx" />
+    <Content Include="BillTransact\AcceptCreditCard.aspx" />
+    <Content Include="BillTransact\AccountsAgingReport.aspx" />
+    <Content Include="BillTransact\AdminLoginMaster.aspx" />
+    <Content Include="BillTransact\AllReports.aspx" />
+    <Content Include="BillTransact\AssignStaffClient.aspx" />
+    <Content Include="BillTransact\AutoBillEmailTemplate.aspx" />
+    <Content Include="BillTransact\BasecampClassic.aspx" />
+    <Content Include="BillTransact\BillingInformation.aspx" />
+    <Content Include="BillTransact\BussinessMaster.aspx" />
+    <Content Include="BillTransact\Cancel.aspx" />
+    <Content Include="BillTransact\CategoryMaster.aspx" />
+    <Content Include="BillTransact\ChangePassword.aspx" />
+    <Content Include="BillTransact\CityMaster.aspx" />
+    <Content Include="BillTransact\ClientContactDetail.ascx" />
+    <Content Include="BillTransact\ClientMaster.aspx" />
+    <Content Include="BillTransact\CloudPackageMaster.aspx" />
+    <Content Include="BillTransact\CompanyAdminRightsMaster.aspx" />
+    <Content Include="BillTransact\CompanyClientMaster.aspx" />
+    <Content Include="BillTransact\CompanyLoginMaster.aspx" />
+    <Content Include="BillTransact\CompanyMaster.aspx" />
+    <Content Include="BillTransact\CompanyPackageDetails.aspx" />
+    <Content Include="BillTransact\CompanyPackageInfo.aspx" />
+    <Content Include="BillTransact\CompanyPackageReport.aspx" />
+    <Content Include="BillTransact\CompanyIOPayerMaster.aspx" />
+    <Content Include="BillTransact\CompanyPaypalMaster.aspx" />
+    <Content Include="BillTransact\CompanyReportStatus.aspx" />
+    <Content Include="BillTransact\CompanyStatusDateReport.aspx" />
+    <Content Include="BillTransact\CompanyUserPermissions.aspx" />
+    <Content Include="BillTransact\ContactMaster.aspx" />
+    <Content Include="BillTransact\ContractorMaster.aspx" />
+    <Content Include="BillTransact\CountryMaster.aspx" />
+    <Content Include="BillTransact\CreditNoteMaster.aspx" />
+    <Content Include="BillTransact\CurrencyMaster.aspx" />
+    <Content Include="BillTransact\CurrentAccountMaster.aspx" />
+    <Content Include="BillTransact\CustomizeEmails.aspx" />
+    <Content Include="BillTransact\Default.aspx" />
+    <Content Include="BillTransact\DefaultDoyingo.aspx" />
+    <Content Include="BillTransact\DoyinGoSupportTicket.aspx" />
+    <Content Include="BillTransact\EmployeeMaster.aspx" />
+    <Content Include="BillTransact\EstimatedBillingReport.aspx" />
+    <Content Include="BillTransact\EstimateMaster.aspx" />
+    <Content Include="BillTransact\ExpenseMaster.aspx" />
+    <Content Include="BillTransact\ExpensesReport.aspx" />
+    <Content Include="BillTransact\ExportToCSV.aspx" />
+    <Content Include="BillTransact\FAQCategoryMaster.aspx" />
+    <Content Include="BillTransact\FAQMaster.aspx" />
+    <Content Include="BillTransact\FeatureCategoryMaster.aspx" />
+    <Content Include="BillTransact\FeatureContentMaster.aspx" />
+    <Content Include="BillTransact\FeatureMaster.aspx" />
+    <Content Include="BillTransact\FooterContent.aspx" />
+    <Content Include="BillTransact\FormMaster.aspx" />
+    <Content Include="BillTransact\FreePackageSettings.aspx" />
+    <Content Include="BillTransact\FrequencyMaster.aspx" />
+    <Content Include="BillTransact\GenerateInvoice.aspx" />
+    <Content Include="BillTransact\GmailInformation.aspx" />
+    <Content Include="BillTransact\HomeMaster.aspx" />
+    <Content Include="BillTransact\HomePageSlider.aspx" />
+    <Content Include="BillTransact\ImportCompanyClients.aspx" />
+    <Content Include="BillTransact\ImportExpense.aspx" />
+    <Content Include="BillTransact\ImportExport.aspx" />
+    <Content Include="BillTransact\IndustryMaster.aspx" />
+    <Content Include="BillTransact\InquiryMaster.aspx" />
+    <Content Include="BillTransact\InviteAccountant.aspx" />
+    <Content Include="BillTransact\InvitePeople.aspx" />
+    <Content Include="BillTransact\InvoiceDetailsReport.aspx" />
+    <Content Include="BillTransact\InvoiceMaster.aspx" />
+    <Content Include="BillTransact\InvoiceMasterNew.aspx" />
+    <Content Include="BillTransact\InvoiceTemplate.aspx" />
+    <Content Include="BillTransact\ItemMaster.aspx" />
+    <Content Include="BillTransact\ItemSalesReport.aspx" />
+    <Content Include="BillTransact\LatePaymentReminderTemplate.aspx" />
+    <Content Include="BillTransact\MasterAdminLoginMaster.aspx" />
+    <Content Include="BillTransact\MasterAdminRightsMaster.aspx" />
+    <Content Include="BillTransact\Miscellaneous.aspx" />
+    <Content Include="BillTransact\ModuleFormMaster.aspx" />
+    <Content Include="BillTransact\ModuleMaster.aspx" />
+    <Content Include="BillTransact\NeedHelp.aspx" />
+    <Content Include="BillTransact\NewClientEmailTemplate.aspx" />
+    <Content Include="BillTransact\NewCreditEmailTemplate.aspx" />
+    <Content Include="BillTransact\NewEstimateEmailTemplate.aspx" />
+    <Content Include="BillTransact\NewInvoiceEmailTemplate.aspx" />
+    <Content Include="BillTransact\NewPaymentEmailTemplate.aspx" />
+    <Content Include="BillTransact\NewStaffEmailTemplate.aspx" />
+    <Content Include="BillTransact\NoPermission.aspx" />
+    <Content Include="BillTransact\PackageFeatureMaster.aspx" />
+    <Content Include="BillTransact\PackageMaster.aspx" />
+    <Content Include="BillTransact\PackageModuleMaster.aspx" />
+    <Content Include="BillTransact\PackagePaymentPayPalPayer.aspx" />
+    <Content Include="BillTransact\PackagePaymentIOPayer.aspx" />
+    <Content Include="BillTransact\PackageUpgradeRequestMaster.aspx" />
+    <Content Include="BillTransact\PaymentGatewayIOPayer.aspx" />
+    <Content Include="BillTransact\PaymentGatewayMaster.aspx" />
+    <Content Include="BillTransact\PaymentGatewayPaypalMaster.aspx" />
+    <Content Include="BillTransact\PaymentMaster.aspx" />
+    <Content Include="BillTransact\PaymentsCollectedReport.aspx" />
+    <Content Include="BillTransact\PrivacyPolicyContent.aspx" />
+    <Content Include="BillTransact\ProjectMaster.aspx" />
+    <Content Include="BillTransact\ProjectMasters.aspx" />
+    <Content Include="BillTransact\ProjectTaskReport.aspx" />
+    <Content Include="BillTransact\ProjectUserReport.aspx" />
+    <Content Include="BillTransact\ReceivedEstimate.aspx" />
+    <Content Include="BillTransact\ReceivedInvoice.aspx" />
+    <Content Include="BillTransact\RecurringAnnualReport.aspx" />
+    <Content Include="BillTransact\RecurringDetailedReport.aspx" />
+    <Content Include="BillTransact\RecurringInvoice.aspx" />
+    <Content Include="BillTransact\ReferralInformation.aspx" />
+    <Content Include="BillTransact\RevenueByClientReport.aspx" />
+    <Content Include="BillTransact\RunningFromMaster.aspx" />
+    <Content Include="BillTransact\SalesReport.aspx" />
+    <Content Include="BillTransact\SecurityQuestionMaster.aspx" />
+    <Content Include="BillTransact\SMTPSettings.aspx" />
+    <Content Include="BillTransact\StateMaster.aspx" />
+    <Content Include="BillTransact\SubCategoryMaster.aspx" />
+    <Content Include="BillTransact\Success.aspx" />
+    <Content Include="BillTransact\SupportDepartmentMaster.aspx" />
+    <Content Include="BillTransact\SupportTicketsMaster.aspx" />
+    <Content Include="BillTransact\TaskMaster.aspx" />
+    <Content Include="BillTransact\TasksInvoicedReport.aspx" />
+    <Content Include="BillTransact\TaxMaster.aspx" />
+    <Content Include="BillTransact\TaxSummaryReport.aspx" />
+    <Content Include="BillTransact\TeamTimesheet.aspx" />
+    <Content Include="BillTransact\TermServiceContent.aspx" />
+    <Content Include="BillTransact\TestimonialsMaster.aspx" />
+    <Content Include="BillTransact\testinvoice.html" />
+    <Content Include="BillTransact\Timesheet.aspx" />
+    <Content Include="BillTransact\TimesheetDetailsReport.aspx" />
+    <Content Include="BillTransact\TimesheetReport.aspx" />
+    <Content Include="BillTransact\TimeToPayReport.aspx" />
+    <Content Include="BillTransact\UpdateAdminProfile.aspx" />
+    <Content Include="BillTransact\UpdateCompanyDetail.aspx" />
+    <Content Include="BillTransact\UpdateCompanyLogo.aspx" />
+    <Content Include="BillTransact\UpdateStaffProfile.aspx" />
+    <Content Include="BillTransact\UpgradeCompanyPackage.aspx" />
+    <Content Include="BillTransact\PackagePaymentMode.aspx" />
+    <Content Include="BillTransact\UpgradePackage.aspx" />
     <Content Include="AfterRegister.aspx" />
     <Content Include="App_Themes\Admin\css\bootstrap-colorpalette.css" />
     <Content Include="App_Themes\Admin\css\bootstrap.min.css" />
@@ -749,544 +752,556 @@
       <DependentUpon>AdminLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AboutCategoryMaster.aspx.cs">
+    <Compile Include="BillTransact\AboutCategoryMaster.aspx.cs">
       <DependentUpon>AboutCategoryMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AboutContentMaster.aspx.cs">
+    <Compile Include="BillTransact\AboutContentMaster.aspx.cs">
       <DependentUpon>AboutContentMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AcceptCreditCard.aspx.cs">
+    <Compile Include="BillTransact\AcceptCreditCard.aspx.cs">
       <DependentUpon>AcceptCreditCard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AccountsAgingReport.aspx.cs">
+    <Compile Include="BillTransact\AccountsAgingReport.aspx.cs">
       <DependentUpon>AccountsAgingReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Admin.Master.cs">
+    <Compile Include="BillTransact\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AdminLoginMaster.aspx.cs">
+    <Compile Include="BillTransact\AdminLoginMaster.aspx.cs">
       <DependentUpon>AdminLoginMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AllReports.aspx.cs">
+    <Compile Include="BillTransact\AllReports.aspx.cs">
       <DependentUpon>AllReports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AssignStaffClient.aspx.cs">
+    <Compile Include="BillTransact\AssignStaffClient.aspx.cs">
       <DependentUpon>AssignStaffClient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AutoBillEmailTemplate.aspx.cs">
+    <Compile Include="BillTransact\AutoBillEmailTemplate.aspx.cs">
       <DependentUpon>AutoBillEmailTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\BasecampClassic.aspx.cs">
+    <Compile Include="BillTransact\BasecampClassic.aspx.cs">
       <DependentUpon>BasecampClassic.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\BillingInformation.aspx.cs">
+    <Compile Include="BillTransact\BillingInformation.aspx.cs">
       <DependentUpon>BillingInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\BussinessMaster.aspx.cs">
+    <Compile Include="BillTransact\BussinessMaster.aspx.cs">
       <DependentUpon>BussinessMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Cancel.aspx.cs">
+    <Compile Include="BillTransact\Cancel.aspx.cs">
       <DependentUpon>Cancel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CategoryMaster.aspx.cs">
+    <Compile Include="BillTransact\CategoryMaster.aspx.cs">
       <DependentUpon>CategoryMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ChangePassword.aspx.cs">
+    <Compile Include="BillTransact\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CityMaster.aspx.cs">
+    <Compile Include="BillTransact\CityMaster.aspx.cs">
       <DependentUpon>CityMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ClientContactDetail.ascx.cs">
+    <Compile Include="BillTransact\ClientContactDetail.ascx.cs">
       <DependentUpon>ClientContactDetail.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ClientMaster.aspx.cs">
+    <Compile Include="BillTransact\ClientMaster.aspx.cs">
       <DependentUpon>ClientMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CloudPackageMaster.aspx.cs">
+    <Compile Include="BillTransact\CloudPackageMaster.aspx.cs">
       <DependentUpon>CloudPackageMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyAdminRightsMaster.aspx.cs">
+    <Compile Include="BillTransact\CompanyAdminRightsMaster.aspx.cs">
       <DependentUpon>CompanyAdminRightsMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyClientMaster.aspx.cs">
+    <Compile Include="BillTransact\CompanyClientMaster.aspx.cs">
       <DependentUpon>CompanyClientMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyLoginMaster.aspx.cs">
+    <Compile Include="BillTransact\CompanyLoginMaster.aspx.cs">
       <DependentUpon>CompanyLoginMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyMaster.aspx.cs">
+    <Compile Include="BillTransact\CompanyMaster.aspx.cs">
       <DependentUpon>CompanyMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyPackageDetails.aspx.cs">
+    <Compile Include="BillTransact\CompanyPackageDetails.aspx.cs">
       <DependentUpon>CompanyPackageDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyPackageInfo.aspx.cs">
+    <Compile Include="BillTransact\CompanyPackageInfo.aspx.cs">
       <DependentUpon>CompanyPackageInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyPackageReport.aspx.cs">
+    <Compile Include="BillTransact\CompanyPackageReport.aspx.cs">
       <DependentUpon>CompanyPackageReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyIOPayerMaster.aspx.cs">
+    <Compile Include="BillTransact\CompanyIOPayerMaster.aspx.cs">
       <DependentUpon>CompanyIOPayerMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyPaypalMaster.aspx.cs">
+    <Compile Include="BillTransact\CompanyPaypalMaster.aspx.cs">
       <DependentUpon>CompanyPaypalMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyReportStatus.aspx.cs">
+    <Compile Include="BillTransact\CompanyReportStatus.aspx.cs">
       <DependentUpon>CompanyReportStatus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyStatusDateReport.aspx.cs">
+    <Compile Include="BillTransact\CompanyStatusDateReport.aspx.cs">
       <DependentUpon>CompanyStatusDateReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CompanyUserPermissions.aspx.cs">
+    <Compile Include="BillTransact\CompanyUserPermissions.aspx.cs">
       <DependentUpon>CompanyUserPermissions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ContactMaster.aspx.cs">
+    <Compile Include="BillTransact\ContactMaster.aspx.cs">
       <DependentUpon>ContactMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ContractorMaster.aspx.cs">
+    <Compile Include="BillTransact\ContractorMaster.aspx.cs">
       <DependentUpon>ContractorMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CountryMaster.aspx.cs">
+    <Compile Include="BillTransact\CountryMaster.aspx.cs">
       <DependentUpon>CountryMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CreditNoteMaster.aspx.cs">
+    <Compile Include="BillTransact\CreditNoteMaster.aspx.cs">
       <DependentUpon>CreditNoteMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CurrencyMaster.aspx.cs">
+    <Compile Include="BillTransact\CurrencyMaster.aspx.cs">
       <DependentUpon>CurrencyMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CurrentAccountMaster.aspx.cs">
+    <Compile Include="BillTransact\CurrentAccountMaster.aspx.cs">
       <DependentUpon>CurrentAccountMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CustomizeEmails.aspx.cs">
+    <Compile Include="BillTransact\CustomizeEmails.aspx.cs">
       <DependentUpon>CustomizeEmails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Default.aspx.cs">
+    <Compile Include="BillTransact\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\DefaultDoyingo.aspx.cs">
+    <Compile Include="BillTransact\DefaultDoyingo.aspx.cs">
       <DependentUpon>DefaultDoyingo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Doyingo.Master.cs">
+    <Compile Include="BillTransact\Doyingo.Master.cs">
       <DependentUpon>Doyingo.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\DoyinGoSupportTicket.aspx.cs">
+    <Compile Include="BillTransact\DoyinGoSupportTicket.aspx.cs">
       <DependentUpon>DoyinGoSupportTicket.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\EmployeeMaster.aspx.cs">
+    <Compile Include="BillTransact\EmployeeMaster.aspx.cs">
       <DependentUpon>EmployeeMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\EstimatedBillingReport.aspx.cs">
+    <Compile Include="BillTransact\EstimatedBillingReport.aspx.cs">
       <DependentUpon>EstimatedBillingReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\EstimateMaster.aspx.cs">
+    <Compile Include="BillTransact\EstimateMaster.aspx.cs">
       <DependentUpon>EstimateMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ExpenseMaster.aspx.cs">
+    <Compile Include="BillTransact\ExpenseMaster.aspx.cs">
       <DependentUpon>ExpenseMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ExpensesReport.aspx.cs">
+    <Compile Include="BillTransact\ExpensesReport.aspx.cs">
       <DependentUpon>ExpensesReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ExportToCSV.aspx.cs">
+    <Compile Include="BillTransact\ExportToCSV.aspx.cs">
       <DependentUpon>ExportToCSV.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\FAQCategoryMaster.aspx.cs">
+    <Compile Include="BillTransact\FAQCategoryMaster.aspx.cs">
       <DependentUpon>FAQCategoryMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\FAQMaster.aspx.cs">
+    <Compile Include="BillTransact\FAQMaster.aspx.cs">
       <DependentUpon>FAQMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\FeatureCategoryMaster.aspx.cs">
+    <Compile Include="BillTransact\FeatureCategoryMaster.aspx.cs">
       <DependentUpon>FeatureCategoryMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\FeatureContentMaster.aspx.cs">
+    <Compile Include="BillTransact\FeatureContentMaster.aspx.cs">
       <DependentUpon>FeatureContentMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\FeatureMaster.aspx.cs">
+    <Compile Include="BillTransact\FeatureMaster.aspx.cs">
       <DependentUpon>FeatureMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\FooterContent.aspx.cs">
+    <Compile Include="BillTransact\FooterContent.aspx.cs">
       <DependentUpon>FooterContent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\FormMaster.aspx.cs">
+    <Compile Include="BillTransact\FormMaster.aspx.cs">
       <DependentUpon>FormMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\FreePackageSettings.aspx.cs">
+    <Compile Include="BillTransact\FreePackageSettings.aspx.cs">
       <DependentUpon>FreePackageSettings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\FrequencyMaster.aspx.cs">
+    <Compile Include="BillTransact\FrequencyMaster.aspx.cs">
       <DependentUpon>FrequencyMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\GenerateInvoice.aspx.cs">
+    <Compile Include="BillTransact\GenerateInvoice.aspx.cs">
       <DependentUpon>GenerateInvoice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\GmailInformation.aspx.cs">
+    <Compile Include="BillTransact\GmailInformation.aspx.cs">
       <DependentUpon>GmailInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\HomeMaster.aspx.cs">
+    <Compile Include="BillTransact\HomeMaster.aspx.cs">
       <DependentUpon>HomeMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\HomePageSlider.aspx.cs">
+    <Compile Include="BillTransact\HomePageSlider.aspx.cs">
       <DependentUpon>HomePageSlider.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ImportCompanyClients.aspx.cs">
+    <Compile Include="BillTransact\ImportCompanyClients.aspx.cs">
       <DependentUpon>ImportCompanyClients.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ImportExpense.aspx.cs">
+    <Compile Include="BillTransact\ImportExpense.aspx.cs">
       <DependentUpon>ImportExpense.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ImportExport.aspx.cs">
+    <Compile Include="BillTransact\ImportExport.aspx.cs">
       <DependentUpon>ImportExport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\IndustryMaster.aspx.cs">
+    <Compile Include="BillTransact\IndustryMaster.aspx.cs">
       <DependentUpon>IndustryMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InquiryMaster.aspx.cs">
+    <Compile Include="BillTransact\InquiryMaster.aspx.cs">
       <DependentUpon>InquiryMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InviteAccountant.aspx.cs">
+    <Compile Include="BillTransact\InviteAccountant.aspx.cs">
       <DependentUpon>InviteAccountant.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InvitePeople.aspx.cs">
+    <Compile Include="BillTransact\InvitePeople.aspx.cs">
       <DependentUpon>InvitePeople.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InvoiceDetailsReport.aspx.cs">
+    <Compile Include="BillTransact\InvoiceDetailsReport.aspx.cs">
       <DependentUpon>InvoiceDetailsReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InvoiceMaster.aspx.cs">
+    <Compile Include="BillTransact\InvoiceMaster.aspx.cs">
       <DependentUpon>InvoiceMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InvoiceMasterNew.aspx.cs">
+    <Compile Include="BillTransact\InvoiceMasterNew.aspx.cs">
       <DependentUpon>InvoiceMasterNew.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InvoiceTemplate.aspx.cs">
+    <Compile Include="BillTransact\InvoiceTemplate.aspx.cs">
       <DependentUpon>InvoiceTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ItemMaster.aspx.cs">
+    <Compile Include="BillTransact\ItemMaster.aspx.cs">
       <DependentUpon>ItemMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ItemSalesReport.aspx.cs">
+    <Compile Include="BillTransact\ItemSalesReport.aspx.cs">
       <DependentUpon>ItemSalesReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\LatePaymentReminderTemplate.aspx.cs">
+    <Compile Include="BillTransact\LatePaymentReminderTemplate.aspx.cs">
       <DependentUpon>LatePaymentReminderTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\MasterAdminLoginMaster.aspx.cs">
+    <Compile Include="BillTransact\MasterAdminLoginMaster.aspx.cs">
       <DependentUpon>MasterAdminLoginMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\MasterAdminRightsMaster.aspx.cs">
+    <Compile Include="BillTransact\MasterAdminRightsMaster.aspx.cs">
       <DependentUpon>MasterAdminRightsMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Miscellaneous.aspx.cs">
+    <Compile Include="BillTransact\Miscellaneous.aspx.cs">
       <DependentUpon>Miscellaneous.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ModuleFormMaster.aspx.cs">
+    <Compile Include="BillTransact\ModuleFormMaster.aspx.cs">
       <DependentUpon>ModuleFormMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ModuleMaster.aspx.cs">
+    <Compile Include="BillTransact\ModuleMaster.aspx.cs">
       <DependentUpon>ModuleMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\NeedHelp.aspx.cs">
+    <Compile Include="BillTransact\NeedHelp.aspx.cs">
       <DependentUpon>NeedHelp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\NewClientEmailTemplate.aspx.cs">
+    <Compile Include="BillTransact\NewClientEmailTemplate.aspx.cs">
       <DependentUpon>NewClientEmailTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\NewCreditEmailTemplate.aspx.cs">
+    <Compile Include="BillTransact\NewCreditEmailTemplate.aspx.cs">
       <DependentUpon>NewCreditEmailTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\NewEstimateEmailTemplate.aspx.cs">
+    <Compile Include="BillTransact\NewEstimateEmailTemplate.aspx.cs">
       <DependentUpon>NewEstimateEmailTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\NewInvoiceEmailTemplate.aspx.cs">
+    <Compile Include="BillTransact\NewInvoiceEmailTemplate.aspx.cs">
       <DependentUpon>NewInvoiceEmailTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\NewPaymentEmailTemplate.aspx.cs">
+    <Compile Include="BillTransact\NewPaymentEmailTemplate.aspx.cs">
       <DependentUpon>NewPaymentEmailTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\NewStaffEmailTemplate.aspx.cs">
+    <Compile Include="BillTransact\NewStaffEmailTemplate.aspx.cs">
       <DependentUpon>NewStaffEmailTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\NoPermission.aspx.cs">
+    <Compile Include="BillTransact\NoPermission.aspx.cs">
       <DependentUpon>NoPermission.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PackageFeatureMaster.aspx.cs">
+    <Compile Include="BillTransact\PackageFeatureMaster.aspx.cs">
       <DependentUpon>PackageFeatureMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PackageMaster.aspx.cs">
+    <Compile Include="BillTransact\PackageMaster.aspx.cs">
       <DependentUpon>PackageMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PackageModuleMaster.aspx.cs">
+    <Compile Include="BillTransact\PackageModuleMaster.aspx.cs">
       <DependentUpon>PackageModuleMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PackageUpgradeRequestMaster.aspx.cs">
+    <Compile Include="BillTransact\PackagePaymentPayPalPayer.aspx.cs">
+      <DependentUpon>PackagePaymentPayPalPayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillTransact\PackagePaymentIOPayer.aspx.cs">
+      <DependentUpon>PackagePaymentIOPayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillTransact\PackageUpgradeRequestMaster.aspx.cs">
       <DependentUpon>PackageUpgradeRequestMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PaymentGatewayIOPayer.aspx.cs">
+    <Compile Include="BillTransact\PaymentGatewayIOPayer.aspx.cs">
       <DependentUpon>PaymentGatewayIOPayer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PaymentGatewayMaster.aspx.cs">
+    <Compile Include="BillTransact\PaymentGatewayMaster.aspx.cs">
       <DependentUpon>PaymentGatewayMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PaymentGatewayPaypalMaster.aspx.cs">
+    <Compile Include="BillTransact\PaymentGatewayPaypalMaster.aspx.cs">
       <DependentUpon>PaymentGatewayPaypalMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PaymentMaster.aspx.cs">
+    <Compile Include="BillTransact\PaymentMaster.aspx.cs">
       <DependentUpon>PaymentMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PaymentsCollectedReport.aspx.cs">
+    <Compile Include="BillTransact\PaymentsCollectedReport.aspx.cs">
       <DependentUpon>PaymentsCollectedReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PrivacyPolicyContent.aspx.cs">
+    <Compile Include="BillTransact\PrivacyPolicyContent.aspx.cs">
       <DependentUpon>PrivacyPolicyContent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ProjectMaster.aspx.cs">
+    <Compile Include="BillTransact\ProjectMaster.aspx.cs">
       <DependentUpon>ProjectMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ProjectMasters.aspx.cs">
+    <Compile Include="BillTransact\ProjectMasters.aspx.cs">
       <DependentUpon>ProjectMasters.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ProjectTaskReport.aspx.cs">
+    <Compile Include="BillTransact\ProjectTaskReport.aspx.cs">
       <DependentUpon>ProjectTaskReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ProjectUserReport.aspx.cs">
+    <Compile Include="BillTransact\ProjectUserReport.aspx.cs">
       <DependentUpon>ProjectUserReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ReceivedEstimate.aspx.cs">
+    <Compile Include="BillTransact\ReceivedEstimate.aspx.cs">
       <DependentUpon>ReceivedEstimate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ReceivedInvoice.aspx.cs">
+    <Compile Include="BillTransact\ReceivedInvoice.aspx.cs">
       <DependentUpon>ReceivedInvoice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\RecurringAnnualReport.aspx.cs">
+    <Compile Include="BillTransact\RecurringAnnualReport.aspx.cs">
       <DependentUpon>RecurringAnnualReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\RecurringDetailedReport.aspx.cs">
+    <Compile Include="BillTransact\RecurringDetailedReport.aspx.cs">
       <DependentUpon>RecurringDetailedReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\RecurringInvoice.aspx.cs">
+    <Compile Include="BillTransact\RecurringInvoice.aspx.cs">
       <DependentUpon>RecurringInvoice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ReferralInformation.aspx.cs">
+    <Compile Include="BillTransact\ReferralInformation.aspx.cs">
       <DependentUpon>ReferralInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\RevenueByClientReport.aspx.cs">
+    <Compile Include="BillTransact\RevenueByClientReport.aspx.cs">
       <DependentUpon>RevenueByClientReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\RunningFromMaster.aspx.cs">
+    <Compile Include="BillTransact\RunningFromMaster.aspx.cs">
       <DependentUpon>RunningFromMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\SalesReport.aspx.cs">
+    <Compile Include="BillTransact\SalesReport.aspx.cs">
       <DependentUpon>SalesReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\SecurityQuestionMaster.aspx.cs">
+    <Compile Include="BillTransact\SecurityQuestionMaster.aspx.cs">
       <DependentUpon>SecurityQuestionMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\SmtpClientForCompany.cs" />
-    <Compile Include="Admin\SMTPSettings.aspx.cs">
+    <Compile Include="BillTransact\SmtpClientForCompany.cs" />
+    <Compile Include="BillTransact\SMTPSettings.aspx.cs">
       <DependentUpon>SMTPSettings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\StateMaster.aspx.cs">
+    <Compile Include="BillTransact\StateMaster.aspx.cs">
       <DependentUpon>StateMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\SubCategoryMaster.aspx.cs">
+    <Compile Include="BillTransact\SubCategoryMaster.aspx.cs">
       <DependentUpon>SubCategoryMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Success.aspx.cs">
+    <Compile Include="BillTransact\Success.aspx.cs">
       <DependentUpon>Success.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\SupportDepartmentMaster.aspx.cs">
+    <Compile Include="BillTransact\SupportDepartmentMaster.aspx.cs">
       <DependentUpon>SupportDepartmentMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\SupportTicketsMaster.aspx.cs">
+    <Compile Include="BillTransact\SupportTicketsMaster.aspx.cs">
       <DependentUpon>SupportTicketsMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\TaskMaster.aspx.cs">
+    <Compile Include="BillTransact\TaskMaster.aspx.cs">
       <DependentUpon>TaskMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\TasksInvoicedReport.aspx.cs">
+    <Compile Include="BillTransact\TasksInvoicedReport.aspx.cs">
       <DependentUpon>TasksInvoicedReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\TaxMaster.aspx.cs">
+    <Compile Include="BillTransact\TaxMaster.aspx.cs">
       <DependentUpon>TaxMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\TaxSummaryReport.aspx.cs">
+    <Compile Include="BillTransact\TaxSummaryReport.aspx.cs">
       <DependentUpon>TaxSummaryReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\TeamTimesheet.aspx.cs">
+    <Compile Include="BillTransact\TeamTimesheet.aspx.cs">
       <DependentUpon>TeamTimesheet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\TermServiceContent.aspx.cs">
+    <Compile Include="BillTransact\TermServiceContent.aspx.cs">
       <DependentUpon>TermServiceContent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\TestimonialsMaster.aspx.cs">
+    <Compile Include="BillTransact\TestimonialsMaster.aspx.cs">
       <DependentUpon>TestimonialsMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Timesheet.aspx.cs">
+    <Compile Include="BillTransact\Timesheet.aspx.cs">
       <DependentUpon>Timesheet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\TimesheetDetailsReport.aspx.cs">
+    <Compile Include="BillTransact\TimesheetDetailsReport.aspx.cs">
       <DependentUpon>TimesheetDetailsReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\TimesheetReport.aspx.cs">
+    <Compile Include="BillTransact\TimesheetReport.aspx.cs">
       <DependentUpon>TimesheetReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\TimeToPayReport.aspx.cs">
+    <Compile Include="BillTransact\TimeToPayReport.aspx.cs">
       <DependentUpon>TimeToPayReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\UpdateAdminProfile.aspx.cs">
+    <Compile Include="BillTransact\UpdateAdminProfile.aspx.cs">
       <DependentUpon>UpdateAdminProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\UpdateCompanyDetail.aspx.cs">
+    <Compile Include="BillTransact\UpdateCompanyDetail.aspx.cs">
       <DependentUpon>UpdateCompanyDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\UpdateCompanyLogo.aspx.cs">
+    <Compile Include="BillTransact\UpdateCompanyLogo.aspx.cs">
       <DependentUpon>UpdateCompanyLogo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\UpdateStaffProfile.aspx.cs">
+    <Compile Include="BillTransact\UpdateStaffProfile.aspx.cs">
       <DependentUpon>UpdateStaffProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\UpgradeCompanyPackage.aspx.cs">
+    <Compile Include="BillTransact\UpgradeCompanyPackage.aspx.cs">
       <DependentUpon>UpgradeCompanyPackage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\UpgradePackage.aspx.cs">
+    <Compile Include="BillTransact\PackagePaymentMode.aspx.cs">
+      <DependentUpon>PackagePaymentMode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillTransact\UpgradePackage.aspx.cs">
       <DependentUpon>UpgradePackage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -1488,8 +1503,8 @@
     <Folder Include="TempHTMLFiles\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\Admin.Master" />
-    <Content Include="Admin\Doyingo.Master" />
+    <Content Include="BillTransact\Admin.Master" />
+    <Content Include="BillTransact\Doyingo.Master" />
     <Content Include="Accountant\AccountantMaster.Master" />
     <None Include="App_Themes\Admin\fonts\clip-font.eot" />
     <None Include="App_Themes\Admin\fonts\clip-font.ttf" />

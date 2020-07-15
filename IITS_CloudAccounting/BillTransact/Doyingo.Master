@@ -329,7 +329,7 @@
                                     <li id="paypalSetting" runat="server">
                                         <a href="CompanyPaypalMaster.aspx">Paypal Setting</a>
                                     </li>
-                                     <li id="ioSetting" runat="server">
+                                    <li id="ioSetting" runat="server">
                                         <a href="CompanyIOPayerMaster.aspx">IO Payer Setting</a>
                                     </li>
                                     <li id="taxes" runat="server">
@@ -425,12 +425,16 @@
                 <div class="col-lg-12" style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; min-height: 85px; padding: 15px; color: black; font-size: 15px;">
                     You have <span style="font-weight: bold; color: red; font-size: 18px;">
                         <asp:Label runat="server" ID="lblDays"></asp:Label>&nbsp;days
-                    </span>remaining in your <asp:Label runat="server" ID="lblPackageName" Text="Free Trial"></asp:Label>. 
-                    <ul id="footerPackageDiv" style="display: inline-block;padding: 0;margin-bottom: 40px;">
+                    </span>remaining in your
+                    <asp:Label runat="server" ID="lblPackageName" Text="Free Trial"></asp:Label>. 
+                    <%if (lblPackageName.Text == "Free Trial")
+                        {%>
+                    <ul id="footerPackageDiv" style="display: inline-block; padding: 0; margin-bottom: 40px;">
                         <li class="open" style="list-style: none;">
                             <a href="UpgradePackage.aspx">Upgrade your account</a>
                         </li>
                     </ul>
+                    <%} %>
                 </div>
 
                 <div class="clearfix"></div>
