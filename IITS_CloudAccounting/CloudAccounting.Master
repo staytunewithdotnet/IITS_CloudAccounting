@@ -50,7 +50,7 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav pull-right" id="menu-main-menu">
                             <li><a href="CompanySignUp.aspx" class="cta-btn-sm">Get Started For Free</a></li>
-                            <li><a href="Features.aspx">Feature</a></li>
+                            <li><a href="Features.aspx">Features</a></li>
                             <li><a href="AboutUs.aspx">About Us</a></li>
                             <li><a href="MemberArea.aspx" class="cta-btn-sm">Login</a></li>
                         </ul>

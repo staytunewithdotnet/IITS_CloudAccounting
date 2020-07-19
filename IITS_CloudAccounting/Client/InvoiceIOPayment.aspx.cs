@@ -25,6 +25,7 @@ namespace IITS_CloudAccounting.Client
 {
     public class InvoiceIOPayment : Page
     {
+        protected Image imgLogo;
         private readonly InvoiceMasterBLL objInvoiceMasterBLL = new InvoiceMasterBLL();
         private CloudAccountDA.InvoiceMasterDataTable objInvoiceMasterDT = new CloudAccountDA.InvoiceMasterDataTable();
         protected void Page_Load(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace IITS_CloudAccounting.Client
                 {
                     Dbutility objDbutility = new Dbutility();
                     str = " Select ProductID,MerchantID,MerchantAuthkey,TransactionTypeID,TransactionAuthkey " +
-                        "From CompanyIOPayerMaster Where CompanyID='" + str + "'";
+                        "From CompanyIOPayerMaster Where CompanyID=" + str ;
                     DataTable dtCompanyIOMaster = objDbutility.BindDataTable(str);
                     if (dtCompanyIOMaster.Rows.Count > 0)
                     {
@@ -62,6 +63,11 @@ namespace IITS_CloudAccounting.Client
                         postData += "&OrderAmount=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceTotal"]));
                         postData += "&ReturnURL=" + Uri.EscapeDataString(ConfigurationManager.AppSettings["SuccessClientURL"]);
                         postData += "&OrderNo=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceNumber"]) + "BT");
+                    }
+                    else
+                    {
+                        SetCompanyLogo(Convert.ToString(objInvoiceMasterDT.Rows[0]["CompanyID"]));
+                        return;
                     }
 
                 }
@@ -98,6 +104,14 @@ namespace IITS_CloudAccounting.Client
                     "<script language=\"JavaScript\">" + "alert('Invoice detail not found!');" + "</script>");
             }
             return;
+        }
+
+        private void SetCompanyLogo(string companyId)
+        {
+            if (!string.IsNullOrEmpty(companyId))
+                this.imgLogo.ImageUrl = "../Handler/CompanyLogoFile.ashx?id=" + companyId;
+            else
+                this.imgLogo.ImageUrl = "../App_Themes/Blue/images/logo.jpg";
         }
 
         private static string Decrypt(string cipherText, string key)
