@@ -25,93 +25,93 @@ namespace IITS_CloudAccounting.Client
 {
     public class InvoiceIOPayment : Page
     {
-        protected Image imgLogo;
         private readonly InvoiceMasterBLL objInvoiceMasterBLL = new InvoiceMasterBLL();
         private CloudAccountDA.InvoiceMasterDataTable objInvoiceMasterDT = new CloudAccountDA.InvoiceMasterDataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            string invoiceId = InvoiceIOPayment.Decrypt(HttpUtility.UrlDecode(this.Request.QueryString["invoice"]), this.Request.QueryString["val"]);
-            objInvoiceMasterDT = objInvoiceMasterBLL.GetDataByInvoiceID(Convert.ToInt32(invoiceId));
-            string postData = string.Empty;
-            if (objInvoiceMasterDT?.Rows.Count > 0)
+            if (!Page.IsPostBack)
             {
-                var request = (HttpWebRequest)WebRequest.Create("http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
-                string str = Convert.ToString(objInvoiceMasterDT.Rows[0]["CompanyID"]);
-                if (!string.IsNullOrEmpty(str))
+                string invoiceId = InvoiceIOPayment.Decrypt(HttpUtility.UrlDecode(this.Request.QueryString["invoice"]), this.Request.QueryString["val"]);
+                objInvoiceMasterDT = objInvoiceMasterBLL.GetDataByInvoiceID(Convert.ToInt32(invoiceId));
+                string postData = string.Empty;
+                if (objInvoiceMasterDT?.Rows.Count > 0)
                 {
-                    Dbutility objDbutility = new Dbutility();
-                    str = " Select ProductID,MerchantID,MerchantAuthkey,TransactionTypeID,TransactionAuthkey " +
-                        "From CompanyIOPayerMaster Where CompanyID=" + str ;
-                    DataTable dtCompanyIOMaster = objDbutility.BindDataTable(str);
-                    if (dtCompanyIOMaster.Rows.Count > 0)
+                    var request = (HttpWebRequest)WebRequest.Create("http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
+                    string str = Convert.ToString(objInvoiceMasterDT.Rows[0]["CompanyID"]);
+                    if (!string.IsNullOrEmpty(str))
                     {
-                        str = Convert.ToString(dtCompanyIOMaster.Rows[0]["MerchantID"]);
-                        postData = "MerchantID=" + Uri.EscapeDataString(str);
+                        Dbutility objDbutility = new Dbutility();
+                        str = " Select ProductID,MerchantID,MerchantAuthkey,TransactionTypeID,TransactionAuthkey " +
+                            "From CompanyIOPayerMaster Where CompanyID=" + str;
+                        DataTable dtCompanyIOMaster = objDbutility.BindDataTable(str);
+                        if (dtCompanyIOMaster.Rows.Count > 0)
+                        {
+                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["MerchantID"]);
+                            postData = "MerchantID=" + Uri.EscapeDataString(str);
 
-                        str = Convert.ToString(dtCompanyIOMaster.Rows[0]["ProductID"]);
-                        postData += "&ProductID=" + Uri.EscapeDataString(str);
+                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["ProductID"]);
+                            postData += "&ProductID=" + Uri.EscapeDataString(str);
 
-                        str = Convert.ToString(dtCompanyIOMaster.Rows[0]["TransactionTypeID"]);
-                        postData += "&TransactionTypeID=" + Uri.EscapeDataString(str);
+                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["TransactionTypeID"]);
+                            postData += "&TransactionTypeID=" + Uri.EscapeDataString(str);
 
-                        str = Convert.ToString(dtCompanyIOMaster.Rows[0]["MerchantAuthkey"]);
-                        postData += "&MerchantAuthKey=" + Uri.EscapeDataString(str);
+                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["MerchantAuthkey"]);
+                            postData += "&MerchantAuthKey=" + Uri.EscapeDataString(str);
 
-                        str = Convert.ToString(dtCompanyIOMaster.Rows[0]["TransactionAuthkey"]);
-                        postData += "&TranAuthKey=" + Uri.EscapeDataString(str);
+                            str = Convert.ToString(dtCompanyIOMaster.Rows[0]["TransactionAuthkey"]);
+                            postData += "&TranAuthKey=" + Uri.EscapeDataString(str);
 
-                        postData += "&OrderAmount=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceTotal"]));
-                        postData += "&ReturnURL=" + Uri.EscapeDataString(ConfigurationManager.AppSettings["SuccessClientURL"]);
-                        postData += "&OrderNo=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceNumber"]) + "BT");
+                            postData += "&OrderAmount=" + Uri.EscapeDataString(Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceTotal"]));
+                            postData += "&ReturnURL=" + ConfigurationManager.AppSettings["SuccessClientURL"];
+
+                            string invoiceno = DateTime.Now.ToString("dd MM yyyy HH:mm:ss");
+                            invoiceno = invoiceno.Replace(":", string.Empty);
+                            invoiceno = Regex.Replace(invoiceno, "\\s", string.Empty);
+                            invoiceno += Convert.ToString(objInvoiceMasterDT.Rows[0]["InvoiceNumber"]) + "BT";
+                            str = "Update InvoiceMaster Set OrderNo='" + invoiceno + "' Where InvoiceID=" + invoiceId;
+                            objDbutility.ExecuteQuery(str);
+
+                            postData += "&OrderNo=" + Uri.EscapeDataString(invoiceno);
+                        }
+                        else
+                        {
+                            Response.Redirect("~/Client/InvoiceNoPayment.aspx?companyid=" + Convert.ToString(objInvoiceMasterDT.Rows[0]["CompanyID"]));
+                        }
                     }
+
+                    if (!string.IsNullOrEmpty(postData))
+                    {
+                        var data = Encoding.ASCII.GetBytes(postData);
+                        request.Method = "POST";
+                        request.ContentType = "application/x-www-form-urlencoded";
+                        request.ContentLength = data.Length;
+
+                        using (var stream = request.GetRequestStream())
+                        {
+                            stream.Write(data, 0, data.Length);
+                        }
+                        Response.Clear();
+
+                        var response = (HttpWebResponse)request.GetResponse();
+                        var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+                        string strResultnew = responseString.Replace("./IOPayerPaymentGateway.aspx", "http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
+                        Response.Write(strResultnew);
+                    }
+
                     else
                     {
-                        SetCompanyLogo(Convert.ToString(objInvoiceMasterDT.Rows[0]["CompanyID"]));
-                        return;
+                        this.ClientScript.RegisterClientScriptBlock(this.GetType(), Guid.NewGuid().ToString(),
+                            "<script language=\"JavaScript\">" + "alert('Please fill Company IO Payer Master for before proceeding!');" + "</script>");
                     }
-
                 }
-
-                if (!string.IsNullOrEmpty(postData))
-                {
-                    var data = Encoding.ASCII.GetBytes(postData);
-                    request.Method = "POST";
-                    request.ContentType = "application/x-www-form-urlencoded";
-                    request.ContentLength = data.Length;
-
-                    using (var stream = request.GetRequestStream())
-                    {
-                        stream.Write(data, 0, data.Length);
-                    }
-                    Response.Clear();
-
-                    var response = (HttpWebResponse)request.GetResponse();
-                    var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
-
-                    string strResultnew = responseString.Replace("./IOPayerPaymentGateway.aspx", "http://www.iopayer.com/iopg/IOPayerPaymentGateway.aspx");
-                    Response.Write(strResultnew);
-                }
-
                 else
                 {
                     this.ClientScript.RegisterClientScriptBlock(this.GetType(), Guid.NewGuid().ToString(),
-                        "<script language=\"JavaScript\">" + "alert('Please fill Company IO Payer Master for before proceeding!');" + "</script>");
+                        "<script language=\"JavaScript\">" + "alert('Invoice detail not found!');" + "</script>");
                 }
+                return;
             }
-            else
-            {
-                this.ClientScript.RegisterClientScriptBlock(this.GetType(), Guid.NewGuid().ToString(),
-                    "<script language=\"JavaScript\">" + "alert('Invoice detail not found!');" + "</script>");
-            }
-            return;
-        }
-
-        private void SetCompanyLogo(string companyId)
-        {
-            if (!string.IsNullOrEmpty(companyId))
-                this.imgLogo.ImageUrl = "../Handler/CompanyLogoFile.ashx?id=" + companyId;
-            else
-                this.imgLogo.ImageUrl = "../App_Themes/Blue/images/logo.jpg";
         }
 
         private static string Decrypt(string cipherText, string key)

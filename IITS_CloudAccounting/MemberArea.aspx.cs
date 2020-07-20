@@ -52,9 +52,15 @@ namespace IITS_CloudAccounting
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (this.Master == null)
-            //    return;
-            //((HtmlControl)this.Master.FindControl("login")).Attributes.Add("class", "current-menu-item current-menu-ancestor");
+            string query;
+           if(Request.QueryString["ReturnUrl"] != null)
+            {
+                query = Request.QueryString["ReturnUrl"];
+                query = Uri.UnescapeDataString(query);
+                if (query.ToLower() == "/paymentsuccess.aspx")
+                    Response.Redirect("~"+query);
+            }
+
             if (this.IsPostBack)
                 return;
             if (this.Request.QueryString["cmd"] != null)

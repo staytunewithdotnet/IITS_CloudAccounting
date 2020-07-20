@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Success" Language="C#" MasterPageFile="~/Client/ClientManagement.Master" AutoEventWireup="true" CodeBehind="SuccessClient.aspx.cs" Inherits="IITS_CloudAccounting.Client.SuccessClient" %>
+﻿<%@ Page Title="Success" Language="C#" MasterPageFile="~/Client/ClientManagement.Master" AutoEventWireup="true" 
+    CodeBehind="SuccessClient.aspx.cs" Inherits="IITS_CloudAccounting.Client.SuccessClient" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

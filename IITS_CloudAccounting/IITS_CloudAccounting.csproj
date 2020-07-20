@@ -636,6 +636,7 @@
     <Content Include="Client\ClientPayment.aspx" />
     <Content Include="Client\ClientProfile.aspx" />
     <Content Include="Client\Default.aspx" />
+    <Content Include="Client\InvoiceNoPayment.aspx" />
     <Content Include="Client\InvoiceIOPayment.aspx" />
     <Content Include="Client\InvoicePaymentMode.aspx" />
     <Content Include="Client\InvoicePayment.aspx" />
@@ -652,6 +653,7 @@
     <Content Include="GenerateCaptcha.aspx" />
     <Content Include="Global.asax" />
     <Content Include="InviteCompanyByAccountant.aspx" />
+    <Content Include="PaymentSuccess.aspx" />
     <Content Include="MailTemplate1\AccountantInvitation.html" />
     <Content Include="MailTemplate1\ClientInvitation.html" />
     <Content Include="MailTemplate1\CompanyClient.htm" />
@@ -1345,6 +1347,10 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Client\InvoiceNoPayment.aspx.cs">
+      <DependentUpon>InvoiceNoPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Client\InvoiceIOPayment.aspx.cs">
       <DependentUpon>InvoiceIOPayment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1438,6 +1444,10 @@
     </Compile>
     <Compile Include="InviteCompanyByAccountant.aspx.cs">
       <DependentUpon>InviteCompanyByAccountant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaymentSuccess.aspx.cs">
+      <DependentUpon>PaymentSuccess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MemberArea.aspx.cs">
