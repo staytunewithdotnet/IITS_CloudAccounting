@@ -55,12 +55,15 @@ namespace IITS_CloudAccounting.Client
                     }
                     SetCompanyLogo(query);
                 }
-                query = HttpUtility.ParseQueryString(Request.UrlReferrer.Query)["Status"];
-                if (query.ToLower() == "success")
+                if (Request.UrlReferrer != null)
                 {
-                    query = HttpUtility.ParseQueryString(Request.UrlReferrer.Query)["OrderNo"];
-                    Dbutility dbutility = new Dbutility();
-                    query = dbutility.ExecuteQuery("Update InvoiceMaster Set InvoiceStatus='paid' Where OrderNo='" + query + "'");
+                    query = HttpUtility.ParseQueryString(Request.UrlReferrer.Query)["Status"];
+                    if (query.ToLower() == "success")
+                    {
+                        query = HttpUtility.ParseQueryString(Request.UrlReferrer.Query)["OrderNo"];
+                        Dbutility dbutility = new Dbutility();
+                        query = dbutility.ExecuteQuery("Update InvoiceMaster Set InvoiceStatus='paid' Where OrderNo='" + query + "'");
+                    }
                 }
             }
         }
