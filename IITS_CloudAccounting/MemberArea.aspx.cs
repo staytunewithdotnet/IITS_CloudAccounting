@@ -298,7 +298,7 @@ namespace IITS_CloudAccounting
                     string password = user.GetPassword();
                     string key2 = MemberArea.GenerateCode();
                     string str7 = HttpUtility.UrlEncode(this.Encrypt(password, key2));
-                    str2 = string.Format("http://www.billtransact.com/CheckClient.aspx?page=invoice&anyId={0}&name={1}&tech={2}&keyname={3}&keytech={4}", (object)invoiceId, (object)str6, (object)str7, (object)key1, (object)key2);
+                    str2 = string.Format("https://www.billtransact.com/CheckClient.aspx?page=invoice&anyId={0}&name={1}&tech={2}&keyname={3}&keytech={4}", (object)invoiceId, (object)str6, (object)str7, (object)key1, (object)key2);
                 }
             }
             string str8 = string.Empty;

@@ -2318,7 +2318,7 @@ namespace IITS_CloudAccounting.Admin
           string password = user.GetPassword();
           string key2 = EstimateMaster.GenerateCode();
           string str8 = HttpUtility.UrlEncode(this.Encrypt(password, key2));
-          str3 = string.Format("http://www.billtransact.com/CheckClient.aspx?page=estimate&anyId={0}&name={1}&tech={2}&keyname={3}&keytech={4}", (object) estimateId, (object) str7, (object) str8, (object) key1, (object) key2);
+          str3 = string.Format("https://www.billtransact.com/CheckClient.aspx?page=estimate&anyId={0}&name={1}&tech={2}&keyname={3}&keytech={4}", (object) estimateId, (object) str7, (object) str8, (object) key1, (object) key2);
         }
       }
       string str9 = string.Empty;

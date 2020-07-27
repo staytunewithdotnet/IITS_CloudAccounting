@@ -769,7 +769,7 @@ namespace IITS_CloudAccounting.Client
                     string password = user.GetPassword();
                     string key2 = Doyingo.GenerateCode();
                     string str3 = HttpUtility.UrlEncode(this.Encrypt(password, key2));
-                    str1 = string.Format("http://www.billtransact.com/CheckClient.aspx?page=invoice&anyId={0}&name={1}&tech={2}&keyname={3}&keytech={4}", (object)invoiceId, (object)str2, (object)str3, (object)key1, (object)key2);
+                    str1 = string.Format("https://www.billtransact.com/CheckClient.aspx?page=invoice&anyId={0}&name={1}&tech={2}&keyname={3}&keytech={4}", (object)invoiceId, (object)str2, (object)str3, (object)key1, (object)key2);
                 }
             }
             string str4 = this.txtEmailBody.Text.Replace("\n", "<br />");

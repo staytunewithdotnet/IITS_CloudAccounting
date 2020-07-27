@@ -70,10 +70,12 @@ namespace IITS_CloudAccounting.Client
 
         private void SetCompanyLogo(string companyId)
         {
-            if (!string.IsNullOrEmpty(companyId))
-                this.imgLogo.ImageUrl = "../Handler/CompanyLogoFile.ashx?id=" + companyId;
-            else
-                this.imgLogo.ImageUrl = "../App_Themes/Blue/images/logo.jpg";
+            //if (!string.IsNullOrEmpty(companyId))
+            //    this.imgLogo.ImageUrl = "../Handler/CompanyLogoFile.ashx?id=" + companyId;
+            //else
+            //    this.imgLogo.ImageUrl = "../App_Themes/Blue/images/logo.jpg";
+            this.imgLogo.ImageUrl = "../App_Themes/Blue/images/defaultlogo.png";
+            
         }
 
     }

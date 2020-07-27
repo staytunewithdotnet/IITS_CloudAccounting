@@ -1571,7 +1571,6 @@
     <Content Include="App_Themes\sky\fonts\Tondo_1.woff" />
     <Content Include="App_Themes\sky\fonts\Tondo_1.woff2" />
     <Content Include="App_Themes\sky\uploads\Thumbs.db" />
-    <None Include="Properties\PublishProfiles\Compiled.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="SampleFile\SampleClients.csv" />
     <None Include="SampleFile\sample_expenses.csv" />
