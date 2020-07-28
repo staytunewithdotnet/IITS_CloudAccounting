@@ -14,18 +14,19 @@ namespace IITS_CloudAccounting.Common
 {
     public class CommonHandler
     {
-        public static string WebsiteBaseURL = "http://billtransact.com";
+        public static string WebsiteBaseURL = "https://billtransact.com";
         public static string BaseHost = "mail.billtransact.com";
         public static string BasePort = "25";
         public static string BasePassword = "mykamil@2019";
         public static string BaseUserName = "noreply@billtransact.com";
-        public static string BaseMailFrom = "noreply@billtransact.com";
+        public static string BaseMailFrom = "raushan790@hotmail.com";// "noreply@billtransact.com";
         public static bool BaseEnableSSL = false;
         public static async Task SendMail(string CompanyID, string MailTo, string Subject, string Body, bool IsBodyHTML)
         {
             try
             {
-               string apiKey = "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";
+                string apiKey = "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";
+                //string apiKey = "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";
                 // apiKey = "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";
                 var client = new SendGridClient(apiKey);
                 

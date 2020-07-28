@@ -2799,6 +2799,7 @@ namespace IITS_CloudAccounting.Admin
 
                //Common.CommonHandler.SendSMTPEmail(hfCompanyID.Value, address1, "New invoice " + this.txtInvoiceNum.Text + " from " + displayName + ", sent using Bill Transact", parser2.Parse(), true);
                 await Common.CommonHandler.SendMail(hfCompanyID.Value, address1, "New invoice " + this.txtInvoiceNum.Text + " from " + displayName + ", sent using Bill Transact", parser2.Parse(), true);
+
                 this.objInvoiceMasterBll.UpdateInvoiceStatus("sent", invoiceId);
                 File.Delete(Path.Combine(path1, "Invoice.html"));
             }
